@@ -1,4 +1,4 @@
-#CompetitiveProgramming Library
+# CompetitiveProgramming Library
 
 
 mendakoのライブラリです.
