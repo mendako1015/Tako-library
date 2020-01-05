@@ -8,7 +8,7 @@ public:
     for(i = 0; s[i]; ++i)
       a[(int)s[i]] = i;
   }
-  std::string to(long long p, int q) {
+  string to(long long p, int q) {
     int i;
     if(!p)
       return "0";
@@ -17,7 +17,7 @@ public:
       t[i] = s[p % q];
       p /= q;
     }
-    return std::string(t + i + 1);
+    return string(t + i + 1);
   }
   std::string to(const std::string& t, int p, int q) {
     return to(to(t, p), q);
