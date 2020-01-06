@@ -1,3 +1,6 @@
+int fac[10010];
+int finv[10010];
+
 void COMinit() {
     fac[0] = fac[1] = 1;
     finv[0] = finv[1] = 1;
