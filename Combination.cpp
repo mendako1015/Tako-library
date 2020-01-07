@@ -1,11 +1,17 @@
+const int MAX;
+const int MOD;
+
+int fac[10010];
+int finv[10010];
+
 void COMinit() {
     fac[0] = fac[1] = 1;
     finv[0] = finv[1] = 1;
-    inv[1] = 1;
+    finv[1] = 1;
     for (int i = 2; i < MAX; i++){
         fac[i] = fac[i - 1] * i % MOD;
-        inv[i] = MOD - inv[MOD%i] * (MOD / i) % MOD;
-        finv[i] = finv[i - 1] * inv[i] % MOD;
+        finv[i] = MOD - finv[MOD%i] * (MOD / i) % MOD;
+        finv[i] = finv[i - 1] * finv[i] % MOD;
     }
 }
 
