@@ -1,28 +1,31 @@
-const int MAX_V = ;
+#include <bits/stdc++.h>
+using namespace std;
+#define cost first
+#define to second
+typedef pair<int, int> P;
+#define INF INT_MAX
 
-struct edge {
-  int to, cost;
-};
+const int MAX_V = 100010;
 
-vector<edge> G[MAX_V];
-int d[MAX_V];
+vector<P> G[MAX_V];
+int dist[MAX_V];
+int V; // 頂点数
 
-void dijikstra(int V, int s) { // V ... 頂点数
-  priority_queue< P, vector<P>, greater<P> > que;
-  fill(d, d + V, INF);
-  d[s] = 0;
-  que.push(P(0, s));
+void dijikstra(int s) {
+	priority_queue< P, vector<P>, greater<P> > que;
+	fill(dist, dist + V, INF);
+	dist[s] = 0;
+	que.push(P(0, s));
 
-  while(!que.empty()) {
-    P p = que.top(); que.pop();
-    int v = p.second;
-    if(d[v] < p.first) continue;
-    for(int i = 0; i < G[v].size(); i++) {
-      edge e = G[v][i];
-      if(d[e.to] > d[v] + e.cost) {
-        d[e.to] = d[v] + e.cost;
-        que.push(P(d[e.to], e.to));
-      }
-    }
-  }
+	while(!que.empty()) {
+		P p = que.top(); que.pop();
+		int next = p.to;
+		if(dist[next] < p.cost) continue;
+		for(P e : G[next]) {
+			if(dist[e.to] > dist[next] + e.cost) {
+				dist[e.to] = dist[next] + e.cost;
+				que.push(P(dist[e.to], e.to));
+			}
+		}
+	}
 }
