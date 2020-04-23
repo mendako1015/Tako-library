@@ -1,3 +1,6 @@
+// kmp(s, t)
+// sに含まれるtの個数を返す
+
 vector<int> makeTable(const string& s) {
     int n = s.size();
     vector<int> ret(n+1);
