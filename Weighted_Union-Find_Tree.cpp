@@ -25,7 +25,7 @@ struct UnionFind {
         return root(x) == root(y);
     }
 
-    bool merge(int x, int y) {
+    bool unite(int x, int y) {
         x = root(x); y = root(y);
         if (x == y) return false;
         if (rank[x] < rank[y]) swap(x, y);
