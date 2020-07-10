@@ -1,5 +1,6 @@
 # CompetitiveProgramming Library
 
+[![mdk_51](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2Fmdk_51)](https://atcoder.jp/users/mdk_51)
 
 mendakoの競技プログラミング用ライブラリです.
 
