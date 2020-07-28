@@ -12,12 +12,12 @@ void dijkstra(int s) {
 
 	while(!que.empty()) {
 		P p = que.top(); que.pop();
-		int next = p.to;
+		int next = p.second;
 		if(dist[next] < p.cost) continue;
 		for(P e : graph[next]) {
-			if(dist[e.to] > dist[next] + e.cost) {
-				dist[e.to] = dist[next] + e.cost;
-				que.push(P(dist[e.to], e.to));
+			if(dist[e.second] > dist[next] + e.first) {
+				dist[e.second] = dist[next] + e.first;
+				que.push(P(dist[e.second], e.second));
 			}
 		}
 	}
