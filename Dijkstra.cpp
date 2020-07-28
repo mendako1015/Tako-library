@@ -13,7 +13,7 @@ void dijkstra(int s) {
 	while(!que.empty()) {
 		P p = que.top(); que.pop();
 		int next = p.second;
-		if(dist[next] < p.cost) continue;
+		if(dist[next] < p.first) continue;
 		for(P e : graph[next]) {
 			if(dist[e.second] > dist[next] + e.first) {
 				dist[e.second] = dist[next] + e.first;
