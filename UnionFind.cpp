@@ -1,16 +1,16 @@
 class UnionFind {
 public:
-    vector <ll> par; // 各元の親を表す配列
-    vector <ll> siz; // 素集合のサイズを表す配列(1 で初期化)
+    vector<ll> par; // 各元の親を表す配列
+    vector<ll> siz; // 素集合のサイズを表す配列(1 で初期化)
 
     // Constructor
     UnionFind(ll sz_): par(sz_), siz(sz_, 1LL) {
-        for (ll i = 0; i < sz_; ++i) par[i] = i; // 初期では親は自分自身
+        for(ll i = 0; i < sz_; i++) par[i] = i; // 初期では親は自分自身
     }
     void init(ll sz_) {
         par.resize(sz_);
         siz.assign(sz_, 1LL);  // resize だとなぜか初期化されなかった
-        for (ll i = 0; i < sz_; ++i) par[i] = i; // 初期では親は自分自身
+        for(ll i = 0; i < sz_; i++) par[i] = i; // 初期では親は自分自身
     }
 
     // Member Function
