@@ -1,3 +1,5 @@
+const int MOD;
+
 int mod_pow(int x, int pow) {
     if(pow == 0) return 1;
     int a = mod_pow(x, pow / 2);
