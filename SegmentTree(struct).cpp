@@ -1,5 +1,5 @@
 template<typename T>
-class SegTree {
+class SegmentTree {
 	private:
 	int leaf_num = 1;
 	const T INF = numeric_limits<T>::max();
