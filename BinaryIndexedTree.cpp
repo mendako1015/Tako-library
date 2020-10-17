@@ -1,28 +1,23 @@
-template<typename T>
-class BinaryIndexedTree {
-	private:
+template<class T, T e>
+struct BIT {
 	vector<T> bit;
-	int bit_siz;
+	BIT(int n): bit(n+1, e) {};
 
-	public:
-	BinaryIndexedTree(int n) {
-		size = n;
-		bit.resize(n);
-	}
-
-	void update(int id, int x) {
-		while(id <= bit_siz) {
-			bit[i] += x;
-			i += i & -i;
+	void add(int pos, T val) {
+		pos++;
+		while(pos < bit.size()) {
+			bit[pos] += val;
+			pos += pos & -pos;
 		}
 	}
-
-	T get_sum(int r) {
-		int res = 0;
-		while(i > 0) {
-			res += bit[i];
-			i -= i & -i;
+	// sum[0, pos]
+	T get(int pos) {
+		pos++;
+		T res = e;
+		while(pos < bit.size()) {
+			ret += bit[pos];
+			pos -= pos & -pos;
 		}
-		return res;
+		return ret;
 	}
 };
