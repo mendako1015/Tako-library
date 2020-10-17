@@ -15,9 +15,9 @@ struct BIT {
 		pos++;
 		T res = e;
 		while(pos < bit.size()) {
-			ret += bit[pos];
+			res += bit[pos];
 			pos -= pos & -pos;
 		}
-		return ret;
+		return res;
 	}
 };
