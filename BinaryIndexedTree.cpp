@@ -14,7 +14,7 @@ struct BIT {
 	T get(int pos) {
 		pos++;
 		T res = e;
-		while(pos < bit.size()) {
+		while(pos) {
 			res += bit[pos];
 			pos -= pos & -pos;
 		}
