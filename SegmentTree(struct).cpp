@@ -26,7 +26,7 @@ class SegmentTree {
 	}
 
 	T _get_interval(int a, int b, int k, int l, int r) {
-		evaluate(k);
+		//evaluate(k);
     	if(b <= l || r <= a) {
     	    return identity_element();
     	}
@@ -39,7 +39,7 @@ class SegmentTree {
 	}
 
 	void _range_update(int a, int b, int x, int k, int l, int r) {
-		evaluate(k);
+		//evaluate(k);
 		if(a <= l && r <= b) { // 全区間を含む場合
 			lazy[k] = x;
 			evaluate(k);
@@ -56,8 +56,8 @@ class SegmentTree {
         	leaf_num *= 2;
     	}
 		seg.resize(leaf_num * 2);
-		lazy.resize(leaf_num * 2);
-		fill(lazy.begin(), lazy.end(), INF);
+		//lazy.resize(leaf_num * 2);
+		//fill(lazy.begin(), lazy.end(), INF);
 	}
 
 	void set_vals(T vals[], int valsize) {

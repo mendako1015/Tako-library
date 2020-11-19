@@ -14,10 +14,10 @@ int mod_div(int a, int b) {
 
 vector<int> fact;
 
-void init_fact(int n) {
-    fact = vector<int>(n);
+void init_fact(int factSize) {
+    fact = vector<int>(factSize);
     fact[0] = 1;
-    for(int i = 1; i < n; i++) fact[i] = fact[i - 1] * i % MOD;
+    for(int i = 1; i < factSize; i++) fact[i] = fact[i - 1] * i % MOD;
 }
 
 int calc_comb(int n, int r) {
