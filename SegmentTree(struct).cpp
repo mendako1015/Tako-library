@@ -15,17 +15,17 @@ class SegmentTree {
 	}
 
 	// 遅延評価用
-	void evaluate(int k) {
-		if(lazy[k] == INF) return ;
-		if(k < leaf_num-1) {
-			lazy[k * 2 + 1] = lazy[k];
-			lazy[k * 2 + 2] = lazy[k];
-		}
-		seg[k] = lazy[k];
-		lazy[k] = INF;
-	}
+	// void evaluate(int k) {
+	// 	if(lazy[k] == INF) return ;
+	// 	if(k < leaf_num-1) {
+	// 		lazy[k * 2 + 1] = lazy[k];
+	// 		lazy[k * 2 + 2] = lazy[k];
+	// 	}
+	// 	seg[k] = lazy[k];
+	// 	lazy[k] = INF;
+	// }
 
-	T _get_interval(int a, int b, int k, int l, int r) {
+	T get_interval(int a, int b, int k, int l, int r) {
 		//evaluate(k);
     	if(b <= l || r <= a) {
     	    return identity_element();
@@ -33,19 +33,19 @@ class SegmentTree {
     	if(a <= l && r <= b) {
      	    return seg[k];
     	}
-    	int lch = _get_interval(a, b, k * 2 + 1, l, (l+r) / 2);
-    	int rch = _get_interval(a, b, k * 2 + 2, (l+r) / 2, r);
+    	int lch = get_interval(a, b, k * 2 + 1, l, (l+r) / 2);
+    	int rch = get_interval(a, b, k * 2 + 2, (l+r) / 2, r);
     	return func(lch, rch);
 	}
 
-	void _range_update(int a, int b, int x, int k, int l, int r) {
+	void range_update(int a, int b, int x, int k, int l, int r) {
 		//evaluate(k);
 		if(a <= l && r <= b) { // 全区間を含む場合
 			lazy[k] = x;
 			evaluate(k);
 		} else if(a < r && l < b) { // 一部区間を含む場合
-			_range_update(a, b, x, k * 2 + 1, l, (l + r) / 2);  // left_child
-        	_range_update(a, b, x, k * 2 + 2, (l + r) / 2, r); // right_child
+			range_update(a, b, x, k * 2 + 1, l, (l + r) / 2);  // left_child
+        	range_update(a, b, x, k * 2 + 2, (l + r) / 2, r); // right_child
 			seg[k] = func(seg[k * 2 + 1], seg[k * 2 + 2]);
 		}
 	}
@@ -83,11 +83,11 @@ class SegmentTree {
 
 	// 0-indexed, [l, r)
 	void range_update(int l, int r, int x) {
-		_range_update(l, r, x, 0, 0, leaf_num);
+		range_update(l, r, x, 0, 0, leaf_num);
 	}
 
 	// 0-indexed, [l, r)
 	T get_interval(int l, int r) {
-    	return _get_interval(l, r - 1, 0, 0, leaf_num);
+    	return get_interval(l, r - 1, 0, 0, leaf_num);
 	}
 };
