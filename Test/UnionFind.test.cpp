@@ -4,6 +4,7 @@
 using namespace std;
 #include "../DataStructure/UnionFind.cpp"
 
+
 int main() {
 	int n, q;
 	cin >> n >> q;
