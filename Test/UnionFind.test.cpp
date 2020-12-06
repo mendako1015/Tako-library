@@ -11,7 +11,7 @@ int main() {
 	for(int i = 0; i < q; i++) {
 		int t, u, v;
 		cin >> t >> u >> v;
-		if(t == 1) ut.unite(u, v);
+		if(t == 0) ut.unite(u, v);
 		else cout << ut.same(u, v) << endl;
 	}
 	return 0;
