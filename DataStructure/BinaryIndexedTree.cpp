@@ -1,7 +1,7 @@
-template<class T, T e>
+template<class T>
 struct BIT {
 	vector<T> bit;
-	BIT(int n): bit(n+1, e) {};
+	BIT(int n): bit(n+1, 0) {};
 
 	void add(int pos, T val) {
 		pos++;
@@ -13,7 +13,7 @@ struct BIT {
 	// sum[0, pos]
 	T get(int pos) {
 		pos++;
-		T res = e;
+		T res = 0;
 		while(pos) {
 			res += bit[pos];
 			pos -= pos & -pos;
