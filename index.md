@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: DataStructure
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: DataStructure/BinaryIndexedTree.cpp
       title: DataStructure/BinaryIndexedTree.cpp
     - icon: ':warning:'
@@ -66,6 +66,9 @@ data:
   verificationCategories:
   - name: Test
     pages:
+    - icon: ':x:'
+      path: Test/BinaryIndexedTree.test.cpp
+      title: Test/BinaryIndexedTree.test.cpp
     - icon: ':heavy_check_mark:'
       path: Test/UnionFind.test.cpp
       title: Test/UnionFind.test.cpp

@@ -2,29 +2,40 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: Test/BinaryIndexedTree.test.cpp
+    title: Test/BinaryIndexedTree.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"DataStructure/BinaryIndexedTree.cpp\"\ntemplate<class T>\n\
-    struct BIT {\n\tvector<T> bit;\n\tBIT(int n): bit(n+1, 0) {};\n\n\tvoid add(int\
-    \ pos, T val) {\n\t\tpos++;\n\t\twhile(pos < bit.size()) {\n\t\t\tbit[pos] +=\
-    \ val;\n\t\t\tpos += pos & -pos;\n\t\t}\n\t}\n\t// sum[0, pos]\n\tT get(int pos)\
-    \ {\n\t\tpos++;\n\t\tT res = 0;\n\t\twhile(pos) {\n\t\t\tres += bit[pos];\n\t\t\
-    \tpos -= pos & -pos;\n\t\t}\n\t\treturn res;\n\t}\n};\n"
-  code: "template<class T>\nstruct BIT {\n\tvector<T> bit;\n\tBIT(int n): bit(n+1,\
-    \ 0) {};\n\n\tvoid add(int pos, T val) {\n\t\tpos++;\n\t\twhile(pos < bit.size())\
-    \ {\n\t\t\tbit[pos] += val;\n\t\t\tpos += pos & -pos;\n\t\t}\n\t}\n\t// sum[0,\
-    \ pos]\n\tT get(int pos) {\n\t\tpos++;\n\t\tT res = 0;\n\t\twhile(pos) {\n\t\t\
-    \tres += bit[pos];\n\t\t\tpos -= pos & -pos;\n\t\t}\n\t\treturn res;\n\t}\n};"
+  bundledCode: "#line 1 \"DataStructure/BinaryIndexedTree.cpp\"\ntemplate<class T\
+    \ = int>\nstruct BinaryIndexedTree {\n\tint N;\n\tvector<T> bit;\n\n\tBinaryIndexedTree()\
+    \ : N(0) {}\n\tBinaryIndexedTree(int n) : N(n), bit(N + 1, 0) {}\n\tBinaryIndexedTree(int\
+    \ n, T init) : N(n), bit(N + 1, init) {}\n\n\tvoid add(int pos, T x) {\n\t\tpos++;\n\
+    \t\twhile(pos <= N) {\n\t\t\tbit[pos] += x;\n\t\t\tpos += pos & -pos;\n\t\t}\n\
+    \t}\n\n\tT sum(int pos) {\n\t\tT ret = 0;\n\t\twhile(pos > 0) {\n\t\t\tret +=\
+    \ bit[pos];\n\t\t\tpos -= pos & -pos;\n\t\t}\n\t\treturn ret;\n\t}\n\n\tT sum(int\
+    \ l, int r) {\n\t\treturn sum(r) - sum(l);\n\t}\n\n\tconst T& operator[](const\
+    \ int &pos) const {\n\t\treturn bit[pos];\n\t}\n};\n"
+  code: "template<class T = int>\nstruct BinaryIndexedTree {\n\tint N;\n\tvector<T>\
+    \ bit;\n\n\tBinaryIndexedTree() : N(0) {}\n\tBinaryIndexedTree(int n) : N(n),\
+    \ bit(N + 1, 0) {}\n\tBinaryIndexedTree(int n, T init) : N(n), bit(N + 1, init)\
+    \ {}\n\n\tvoid add(int pos, T x) {\n\t\tpos++;\n\t\twhile(pos <= N) {\n\t\t\t\
+    bit[pos] += x;\n\t\t\tpos += pos & -pos;\n\t\t}\n\t}\n\n\tT sum(int pos) {\n\t\
+    \tT ret = 0;\n\t\twhile(pos > 0) {\n\t\t\tret += bit[pos];\n\t\t\tpos -= pos &\
+    \ -pos;\n\t\t}\n\t\treturn ret;\n\t}\n\n\tT sum(int l, int r) {\n\t\treturn sum(r)\
+    \ - sum(l);\n\t}\n\n\tconst T& operator[](const int &pos) const {\n\t\treturn\
+    \ bit[pos];\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: DataStructure/BinaryIndexedTree.cpp
   requiredBy: []
-  timestamp: '2020-12-11 22:41:50+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2020-12-13 19:08:54+09:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - Test/BinaryIndexedTree.test.cpp
 documentation_of: DataStructure/BinaryIndexedTree.cpp
 layout: document
 redirect_from:
