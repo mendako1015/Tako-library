@@ -3,12 +3,9 @@ data:
   libraryCategories:
   - name: DataStructure
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/BinaryIndexedTree.cpp
       title: DataStructure/BinaryIndexedTree.cpp
-    - icon: ':warning:'
-      path: DataStructure/SegmentTree(function).cpp
-      title: DataStructure/SegmentTree(function).cpp
     - icon: ':warning:'
       path: DataStructure/SegmentTree(struct).cpp
       title: DataStructure/SegmentTree(struct).cpp
@@ -66,7 +63,7 @@ data:
   verificationCategories:
   - name: Test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: Test/BinaryIndexedTree.test.cpp
       title: Test/BinaryIndexedTree.test.cpp
     - icon: ':heavy_check_mark:'
