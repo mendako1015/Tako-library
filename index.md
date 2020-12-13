@@ -44,6 +44,9 @@ data:
       path: Mathmatics/Modint.cpp
       title: Mathmatics/Modint.cpp
     - icon: ':warning:'
+      path: Mathmatics/divisor_enumeration.cpp
+      title: Mathmatics/divisor_enumeration.cpp
+    - icon: ':warning:'
       path: Mathmatics/mod_series.cpp
       title: Mathmatics/mod_series.cpp
     - icon: ':warning:'
