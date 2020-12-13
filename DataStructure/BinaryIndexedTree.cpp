@@ -1,23 +1,34 @@
-template<class T>
-struct BIT {
+template<class T = int>
+struct BinaryIndexedTree {
+	int N;
 	vector<T> bit;
-	BIT(int n): bit(n+1, 0) {};
 
-	void add(int pos, T val) {
+	BinaryIndexedTree() : N(0) {}
+	BinaryIndexedTree(int n) : N(n), bit(N + 1, 0) {}
+	BinaryIndexedTree(int n, T init) : N(n), bit(N + 1, init) {}
+
+	void add(int pos, T x) {
 		pos++;
-		while(pos < bit.size()) {
-			bit[pos] += val;
+		while(pos <= N) {
+			bit[pos] += x;
 			pos += pos & -pos;
 		}
 	}
-	// sum[0, pos]
-	T get(int pos) {
-		pos++;
-		T res = 0;
-		while(pos) {
-			res += bit[pos];
+
+	T sum(int pos) {
+		T ret = 0;
+		while(pos > 0) {
+			ret += bit[pos];
 			pos -= pos & -pos;
 		}
-		return res;
+		return ret;
+	}
+
+	T sum(int l, int r) {
+		return sum(r) - sum(l);
+	}
+
+	const T& operator[](const int &pos) const {
+		return bit[pos];
 	}
 };
