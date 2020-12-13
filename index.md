@@ -15,9 +15,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/UnionFind.cpp
       title: DataStructure/UnionFind.cpp
-    - icon: ':warning:'
-      path: DataStructure/Weighted_Union-Find_Tree.cpp
-      title: DataStructure/Weighted_Union-Find_Tree.cpp
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/WeightedUnionFind.cpp
+      title: DataStructure/WeightedUnionFind.cpp
   - name: Graph
     pages:
     - icon: ':warning:'
@@ -69,6 +69,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: Test/UnionFind.test.cpp
       title: Test/UnionFind.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: Test/WeighedUnionFind.test.cpp
+      title: Test/WeighedUnionFind.test.cpp
     - icon: ':heavy_check_mark:'
       path: Test/example-test.test.cpp
       title: Test/example-test.test.cpp

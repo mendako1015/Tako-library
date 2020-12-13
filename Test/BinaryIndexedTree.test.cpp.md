@@ -23,14 +23,14 @@ data:
     \ = 0;\n\t\twhile(pos > 0) {\n\t\t\tret += bit[pos];\n\t\t\tpos -= pos & -pos;\n\
     \t\t}\n\t\treturn ret;\n\t}\n\n\tT sum(int l, int r) {\n\t\treturn sum(r) - sum(l);\n\
     \t}\n\n\tconst T& operator[](const int &pos) const {\n\t\treturn bit[pos];\n\t\
-    }\n};\n#line 6 \"Test/BinaryIndexedTree.test.cpp\"\n\nint main() {\n\tint n, q;\n\
-    \tcin >> n >> q;\n\tBinaryIndexedTree<long long> BIT(n);\n\tfor(int i = 0; i <\
-    \ n; i++) {\n\t\tint a;\n\t\tcin >> a;\n\t\tBIT.add(i, a);\n\t}\n\twhile(q--)\
+    }\n};\n#line 6 \"Test/BinaryIndexedTree.test.cpp\"\n\n\nint main() {\n\tint n,\
+    \ q;\n\tcin >> n >> q;\n\tBinaryIndexedTree<long long> BIT(n);\n\tfor(int i =\
+    \ 0; i < n; i++) {\n\t\tint a;\n\t\tcin >> a;\n\t\tBIT.add(i, a);\n\t}\n\twhile(q--)\
     \ {\n\t\tint com, a, b;\n\t\tcin >> com >> a >> b;\n\t\tif(com == 0) BIT.add(a,\
     \ b);\n\t\telse cout << BIT.sum(a, b) << endl;\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n#include \"../DataStructure/BinaryIndexedTree.cpp\"\
-    \n\nint main() {\n\tint n, q;\n\tcin >> n >> q;\n\tBinaryIndexedTree<long long>\
+    \n\n\nint main() {\n\tint n, q;\n\tcin >> n >> q;\n\tBinaryIndexedTree<long long>\
     \ BIT(n);\n\tfor(int i = 0; i < n; i++) {\n\t\tint a;\n\t\tcin >> a;\n\t\tBIT.add(i,\
     \ a);\n\t}\n\twhile(q--) {\n\t\tint com, a, b;\n\t\tcin >> com >> a >> b;\n\t\t\
     if(com == 0) BIT.add(a, b);\n\t\telse cout << BIT.sum(a, b) << endl;\n\t}\n}"
@@ -39,7 +39,7 @@ data:
   isVerificationFile: true
   path: Test/BinaryIndexedTree.test.cpp
   requiredBy: []
-  timestamp: '2020-12-13 19:14:48+09:00'
+  timestamp: '2020-12-13 20:40:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Test/BinaryIndexedTree.test.cpp
