@@ -4,7 +4,6 @@ class SegmentTree {
 	int leaf_num = 1;
 	const T INF = numeric_limits<T>::max();
 	vector<T> seg;
-	vector<T> lazy; // 遅延評価
 
 	T func(T x, T y) {
 		return ;
@@ -14,16 +13,6 @@ class SegmentTree {
 		return ;
 	}
 
-	// 遅延評価用
-	// void evaluate(int k) {
-	// 	if(lazy[k] == INF) return ;
-	// 	if(k < leaf_num-1) {
-	// 		lazy[k * 2 + 1] = lazy[k];
-	// 		lazy[k * 2 + 2] = lazy[k];
-	// 	}
-	// 	seg[k] = lazy[k];
-	// 	lazy[k] = INF;
-	// }
 
 	T get_interval(int a, int b, int k, int l, int r) {
 		//evaluate(k);
@@ -56,8 +45,6 @@ class SegmentTree {
         	leaf_num *= 2;
     	}
 		seg.resize(leaf_num * 2);
-		//lazy.resize(leaf_num * 2);
-		//fill(lazy.begin(), lazy.end(), INF);
 	}
 
 	void set_vals(T vals[], int valsize) {
