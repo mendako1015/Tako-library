@@ -9,9 +9,6 @@ data:
     - icon: ':warning:'
       path: DataStructure/SegmentTree(struct).cpp
       title: DataStructure/SegmentTree(struct).cpp
-    - icon: ':warning:'
-      path: DataStructure/UnionFind-t.cpp
-      title: DataStructure/UnionFind-t.cpp
     - icon: ':heavy_check_mark:'
       path: DataStructure/UnionFind.cpp
       title: DataStructure/UnionFind.cpp
