@@ -10,7 +10,7 @@ int main() {
 	cin >> n >> q;
 	SegmentTree<ll> segtree(n, 0,
 		[](ll a, ll b) { return a + b; },
-		[](ll a, ll b) { return b; });
+		[](ll a, ll b) { return a + b; });
 	for(int i = 0; i < n; i++) {
 		int a;
 		cin >> a;
