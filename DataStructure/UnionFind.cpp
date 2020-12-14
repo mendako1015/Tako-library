@@ -1,4 +1,5 @@
-template<class T> struct UnionFind {
+template<class T = int>
+struct UnionFind {
 	vector<T> data;
 
     UnionFind(int size): data(size, -1) {}
