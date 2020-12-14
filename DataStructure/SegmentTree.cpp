@@ -1,7 +1,9 @@
 template <class T = int>
 class SegmentTree {
 	int leaf_num;
+	bool is_lazy;
 	vector<T> data;
+	vector<T> lazy;
 	T identity_element;
 	function<T(T, T)> operation;
 	function<T(T, T)> update_type;
@@ -18,11 +20,12 @@ class SegmentTree {
 	}
 
 	public:
-	SegmentTree(size_t n, T id_el, function<T(T, T)> ope, function<T(T, T)> upd)
-	: identity_element(id_el), operation(ope), update_type(upd) {
+	SegmentTree(size_t n, bool lzy, T id_el, function<T(T, T)> ope, function<T(T, T)> upd)
+	: is_lazy(lzy), identity_element(id_el), operation(ope), update_type(upd) {
 		leaf_num = 1;
 		while(leaf_num < n) leaf_num *= 2;
 		data = vector<T>(2 * leaf_num - 1, identity_element);
+		lazy = vector<T>(2 * leaf_num - 1, identity_element);
 	}
 
 	// point update query(0-indexed)

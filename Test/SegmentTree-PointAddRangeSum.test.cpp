@@ -8,7 +8,7 @@ typedef long long ll;
 int main() {
 	int n, q;
 	cin >> n >> q;
-	SegmentTree<ll> segtree(n, 0,
+	SegmentTree<ll> segtree(n, false, 0,
 		[](ll a, ll b) { return a + b; },
 		[](ll a, ll b) { return a + b; });
 	for(int i = 0; i < n; i++) {
