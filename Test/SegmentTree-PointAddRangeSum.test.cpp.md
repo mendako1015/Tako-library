@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: DataStructure/SegmentTree.cpp
     title: DataStructure/SegmentTree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -35,8 +35,8 @@ data:
     \t}\n\n\tT operator[](int pos) {\n\t\treturn data[pos + leaf_num - 1];\n\t}\n\
     };\n#line 6 \"Test/SegmentTree-PointAddRangeSum.test.cpp\"\ntypedef long long\
     \ ll;\n\nint main() {\n\tint n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll> segtree(n,\
-    \ 0,\n\t\t[](ll a, ll b) { return a + b; },\n\t\t[](ll a, ll b) { return b; });\n\
-    \tfor(int i = 0; i < n; i++) {\n\t\tint a;\n\t\tcin >> a;\n\t\tsegtree.update(i,\
+    \ 0,\n\t\t[](ll a, ll b) { return a + b; },\n\t\t[](ll a, ll b) { return a + b;\
+    \ });\n\tfor(int i = 0; i < n; i++) {\n\t\tint a;\n\t\tcin >> a;\n\t\tsegtree.update(i,\
     \ a);\n\t}\n\twhile(q--) {\n\t\tint cmd, x, y;\n\t\tcin >> cmd >> x >> y;\n\t\t\
     if(cmd == 0) segtree.update(x, y);\n\t\telse cout << segtree.get_interval(x, y)\
     \ << endl;\n\t}\n\treturn 0;\n}\n"
@@ -44,17 +44,17 @@ data:
     \n#include <bits/stdc++.h>\nusing namespace std;\n#include \"../DataStructure/SegmentTree.cpp\"\
     \ntypedef long long ll;\n\nint main() {\n\tint n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll>\
     \ segtree(n, 0,\n\t\t[](ll a, ll b) { return a + b; },\n\t\t[](ll a, ll b) { return\
-    \ b; });\n\tfor(int i = 0; i < n; i++) {\n\t\tint a;\n\t\tcin >> a;\n\t\tsegtree.update(i,\
-    \ a);\n\t}\n\twhile(q--) {\n\t\tint cmd, x, y;\n\t\tcin >> cmd >> x >> y;\n\t\t\
-    if(cmd == 0) segtree.update(x, y);\n\t\telse cout << segtree.get_interval(x, y)\
-    \ << endl;\n\t}\n\treturn 0;\n}"
+    \ a + b; });\n\tfor(int i = 0; i < n; i++) {\n\t\tint a;\n\t\tcin >> a;\n\t\t\
+    segtree.update(i, a);\n\t}\n\twhile(q--) {\n\t\tint cmd, x, y;\n\t\tcin >> cmd\
+    \ >> x >> y;\n\t\tif(cmd == 0) segtree.update(x, y);\n\t\telse cout << segtree.get_interval(x,\
+    \ y) << endl;\n\t}\n\treturn 0;\n}"
   dependsOn:
   - DataStructure/SegmentTree.cpp
   isVerificationFile: true
   path: Test/SegmentTree-PointAddRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2020-12-15 01:41:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-12-15 01:49:32+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Test/SegmentTree-PointAddRangeSum.test.cpp
 layout: document
