@@ -2,16 +2,19 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: Test/SegmentTree-StaticRangeSum.test.cpp
+    title: Test/SegmentTree-StaticRangeSum.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"DataStructure/SegmentTree.cpp\"\ntemplate <class T = int>\n\
     class SegmentTree {\n\tint leaf_num;\n\tvector<T> data;\n\tT identity_element;\n\
     \tfunction<T(T, T)> operation;\n\tfunction<T(T, T)> update_type;\n\t// ex.) point\
-    \ add RSQ\n\t// SegmentTree<ll> segtree(n, 0, \n\t//\t\t[](ll a, ll b){ return\
-    \ a + b; },\n    //\t\t[](ll a, ll b) {return b; });\n\n    T get_interval(int\
+    \ add RSQ\n\t// SegmentTree<ll> segtree(n, 0, \n\t//\t\t[](ll a, ll b) { return\
+    \ a + b; },\n    //\t\t[](ll a, ll b) { return b; });\n\n    T get_interval(int\
     \ l, int r, int pos, int btm, int tp) {\n        if(tp <= l || r <= btm) return\
     \ identity_element;\n        if(l <= btm && tp <= r) return data[pos];\n     \
     \   int mid = (btm + tp) / 2;\n        T l_child = get_interval(l, r, 2 * pos\
@@ -30,7 +33,7 @@ data:
   code: "template <class T = int>\nclass SegmentTree {\n\tint leaf_num;\n\tvector<T>\
     \ data;\n\tT identity_element;\n\tfunction<T(T, T)> operation;\n\tfunction<T(T,\
     \ T)> update_type;\n\t// ex.) point add RSQ\n\t// SegmentTree<ll> segtree(n, 0,\
-    \ \n\t//\t\t[](ll a, ll b){ return a + b; },\n    //\t\t[](ll a, ll b) {return\
+    \ \n\t//\t\t[](ll a, ll b) { return a + b; },\n    //\t\t[](ll a, ll b) { return\
     \ b; });\n\n    T get_interval(int l, int r, int pos, int btm, int tp) {\n   \
     \     if(tp <= l || r <= btm) return identity_element;\n        if(l <= btm &&\
     \ tp <= r) return data[pos];\n        int mid = (btm + tp) / 2;\n        T l_child\
@@ -51,9 +54,10 @@ data:
   isVerificationFile: false
   path: DataStructure/SegmentTree.cpp
   requiredBy: []
-  timestamp: '2020-12-15 00:58:43+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2020-12-15 00:59:52+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - Test/SegmentTree-StaticRangeSum.test.cpp
 documentation_of: DataStructure/SegmentTree.cpp
 layout: document
 redirect_from:

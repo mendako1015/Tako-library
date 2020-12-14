@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/BinaryIndexedTree.cpp
       title: DataStructure/BinaryIndexedTree.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/SegmentTree.cpp
       title: DataStructure/SegmentTree.cpp
     - icon: ':heavy_check_mark:'
@@ -63,6 +63,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: Test/BinaryIndexedTree.test.cpp
       title: Test/BinaryIndexedTree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: Test/SegmentTree-StaticRangeSum.test.cpp
+      title: Test/SegmentTree-StaticRangeSum.test.cpp
     - icon: ':heavy_check_mark:'
       path: Test/UnionFind.test.cpp
       title: Test/UnionFind.test.cpp
