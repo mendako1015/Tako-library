@@ -7,8 +7,8 @@ data:
       path: DataStructure/BinaryIndexedTree.cpp
       title: DataStructure/BinaryIndexedTree.cpp
     - icon: ':warning:'
-      path: DataStructure/SegmentTree(struct).cpp
-      title: DataStructure/SegmentTree(struct).cpp
+      path: DataStructure/SegmentTree.cpp
+      title: DataStructure/SegmentTree.cpp
     - icon: ':heavy_check_mark:'
       path: DataStructure/UnionFind.cpp
       title: DataStructure/UnionFind.cpp
