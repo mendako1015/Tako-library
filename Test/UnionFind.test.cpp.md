@@ -15,7 +15,7 @@ data:
     - https://judge.yosupo.jp/problem/unionfind
   bundledCode: "#line 1 \"Test/UnionFind.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n#line 1 \"DataStructure/UnionFind.cpp\"\
-    \ntemplate<class T = int>\nstruct UnionFind {\n\tvector<T> data;\n\n    UnionFind(int\
+    \ntemplate<class T = int>\nstruct UnionFind {\n    vector<T> data;\n\n    UnionFind(int\
     \ size): data(size, -1) {}\n\n    void unite(int x, int y) {\n        x = root(x),\
     \ y = root(y);\n        if(x == y) return ;\n        if(data[x] > data[y]) swap(x,\
     \ y);\n        data[x] += data[y];\n        data[y] = x;\n    }\n\n    int root(int\
@@ -36,7 +36,7 @@ data:
   isVerificationFile: true
   path: Test/UnionFind.test.cpp
   requiredBy: []
-  timestamp: '2020-12-14 22:55:49+09:00'
+  timestamp: '2020-12-15 01:08:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Test/UnionFind.test.cpp
