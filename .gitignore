@@ -32,4 +32,4 @@
 *.app
 
 *.DS_Store
-*.dSYM
+a.out.dSYM
