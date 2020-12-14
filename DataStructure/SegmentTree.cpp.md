@@ -26,12 +26,12 @@ data:
     \ T)> upd)\n\t: identity_element(id_el), operation(ope), update_type(upd) {\n\t\
     \tleaf_num = 1;\n\t\twhile(leaf_num < n) leaf_num *= 2;\n\t\tdata = vector<T>(2\
     \ * leaf_num - 1, identity_element);\n\t}\n\n\t// point update query(0-indexed)\n\
-    \tvoid update(int pos, T x) {\n\t\tpos += leaf_num - 1;\n\t\tdata[pos] = update_type(data[pos],\
-    \ x);\n\t\twhile(pos > 0) {\n\t\t\tpos = (pos - 1) / 2;\n\t\t\tdata[pos] = operation(data[pos\
-    \ * 2 + 1], data[pos * 2 + 2]);\n\t\t}\n\t}\n\n\t// get [l, r) (0-indexed)\n\t\
-    T get_interval(int l, int r) {\n\t\treturn get_interval(l, r, 0, 0, leaf_num);\n\
-    \t}\n\n\tT operator[](int pos) {\n\t\treturn data[pos + leaf_num - 1];\n\t}\n\
-    };\n"
+    \tvoid point_update(int pos, T x) {\n\t\tpos += leaf_num - 1;\n\t\tdata[pos] =\
+    \ update_type(data[pos], x);\n\t\twhile(pos > 0) {\n\t\t\tpos = (pos - 1) / 2;\n\
+    \t\t\tdata[pos] = operation(data[pos * 2 + 1], data[pos * 2 + 2]);\n\t\t}\n\t\
+    }\n\n\t// get [l, r) (0-indexed)\n\tT get_interval(int l, int r) {\n\t\treturn\
+    \ get_interval(l, r, 0, 0, leaf_num);\n\t}\n\n\tT operator[](int pos) {\n\t\t\
+    return data[pos + leaf_num - 1];\n\t}\n};\n"
   code: "template <class T = int>\nclass SegmentTree {\n\tint leaf_num;\n\tvector<T>\
     \ data;\n\tT identity_element;\n\tfunction<T(T, T)> operation;\n\tfunction<T(T,\
     \ T)> update_type;\n\t// ex.) point add RSQ\n\t// SegmentTree<ll> segtree(n, 0,\
@@ -44,17 +44,17 @@ data:
     \ T)> upd)\n\t: identity_element(id_el), operation(ope), update_type(upd) {\n\t\
     \tleaf_num = 1;\n\t\twhile(leaf_num < n) leaf_num *= 2;\n\t\tdata = vector<T>(2\
     \ * leaf_num - 1, identity_element);\n\t}\n\n\t// point update query(0-indexed)\n\
-    \tvoid update(int pos, T x) {\n\t\tpos += leaf_num - 1;\n\t\tdata[pos] = update_type(data[pos],\
-    \ x);\n\t\twhile(pos > 0) {\n\t\t\tpos = (pos - 1) / 2;\n\t\t\tdata[pos] = operation(data[pos\
-    \ * 2 + 1], data[pos * 2 + 2]);\n\t\t}\n\t}\n\n\t// get [l, r) (0-indexed)\n\t\
-    T get_interval(int l, int r) {\n\t\treturn get_interval(l, r, 0, 0, leaf_num);\n\
-    \t}\n\n\tT operator[](int pos) {\n\t\treturn data[pos + leaf_num - 1];\n\t}\n\
-    };"
+    \tvoid point_update(int pos, T x) {\n\t\tpos += leaf_num - 1;\n\t\tdata[pos] =\
+    \ update_type(data[pos], x);\n\t\twhile(pos > 0) {\n\t\t\tpos = (pos - 1) / 2;\n\
+    \t\t\tdata[pos] = operation(data[pos * 2 + 1], data[pos * 2 + 2]);\n\t\t}\n\t\
+    }\n\n\t// get [l, r) (0-indexed)\n\tT get_interval(int l, int r) {\n\t\treturn\
+    \ get_interval(l, r, 0, 0, leaf_num);\n\t}\n\n\tT operator[](int pos) {\n\t\t\
+    return data[pos + leaf_num - 1];\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: DataStructure/SegmentTree.cpp
   requiredBy: []
-  timestamp: '2020-12-15 01:38:01+09:00'
+  timestamp: '2020-12-15 02:09:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - Test/SegmentTree-PointAddRangeSum.test.cpp
