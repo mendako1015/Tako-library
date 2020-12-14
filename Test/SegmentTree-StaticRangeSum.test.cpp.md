@@ -54,7 +54,7 @@ data:
   isVerificationFile: true
   path: Test/SegmentTree-StaticRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2020-12-15 01:05:41+09:00'
+  timestamp: '2020-12-15 01:17:22+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Test/SegmentTree-StaticRangeSum.test.cpp
