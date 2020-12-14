@@ -1,6 +1,6 @@
 template<class T = int>
 struct UnionFind {
-	vector<T> data;
+    vector<T> data;
 
     UnionFind(int size): data(size, -1) {}
 
