@@ -32,4 +32,4 @@
 *.app
 
 *.DS_Store
-Test/a.out.dSYM/
+/Test/a.out.dSYM/
