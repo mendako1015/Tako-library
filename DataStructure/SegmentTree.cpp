@@ -7,8 +7,8 @@ class SegmentTree {
 	function<T(T, T)> update_type;
 	// ex.) point add RSQ
 	// SegmentTree<ll> segtree(n, 0, 
-	//		[](ll a, ll b){ return a + b; },
-    //		[](ll a, ll b) {return b; });
+	//		[](ll a, ll b) { return a + b; },
+    //		[](ll a, ll b) { return b; });
 
     T get_interval(int l, int r, int pos, int btm, int tp) {
         if(tp <= l || r <= btm) return identity_element;
