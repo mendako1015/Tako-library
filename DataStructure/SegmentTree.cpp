@@ -26,7 +26,7 @@ class SegmentTree {
 	}
 
 	// point update query(0-indexed)
-	void update(int pos, T x) {
+	void point_update(int pos, T x) {
 		pos += leaf_num - 1;
 		data[pos] = update_type(data[pos], x);
 		while(pos > 0) {

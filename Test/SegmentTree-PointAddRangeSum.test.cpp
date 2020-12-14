@@ -14,12 +14,12 @@ int main() {
 	for(int i = 0; i < n; i++) {
 		int a;
 		cin >> a;
-		segtree.update(i, a);
+		segtree.point_update(i, a);
 	}
 	while(q--) {
 		int cmd, x, y;
 		cin >> cmd >> x >> y;
-		if(cmd == 0) segtree.update(x, y);
+		if(cmd == 0) segtree.point_update(x, y);
 		else cout << segtree.get_interval(x, y) << endl;
 	}
 	return 0;
