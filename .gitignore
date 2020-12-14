@@ -32,5 +32,4 @@
 *.app
 
 *.DS_Store
-a.out.dSYM
-*.plist
+a.out.dSYM/
