@@ -3,11 +3,14 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: Test/SegmentTree-PointAddRangeSum.test.cpp
+    title: Test/SegmentTree-PointAddRangeSum.test.cpp
   - icon: ':heavy_check_mark:'
     path: Test/SegmentTree-StaticRangeSum.test.cpp
     title: Test/SegmentTree-StaticRangeSum.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"DataStructure/SegmentTree.cpp\"\ntemplate <class T = int>\n\
@@ -54,8 +57,9 @@ data:
   path: DataStructure/SegmentTree.cpp
   requiredBy: []
   timestamp: '2020-12-15 01:05:41+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - Test/SegmentTree-PointAddRangeSum.test.cpp
   - Test/SegmentTree-StaticRangeSum.test.cpp
 documentation_of: DataStructure/SegmentTree.cpp
 layout: document

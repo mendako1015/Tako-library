@@ -7,13 +7,13 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
     links:
     - https://judge.yosupo.jp/problem/static_range_sum
-  bundledCode: "#line 1 \"Test/SegmentTree-StaticRangeSum.test.cpp\"\n#define PROBLEM\
+  bundledCode: "#line 1 \"Test/SegmentTree-PointAddRangeSum.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n#line 1 \"DataStructure/SegmentTree.cpp\"\ntemplate <class\
     \ T = int>\nclass SegmentTree {\n\tint leaf_num;\n\tvector<T> data;\n\tT identity_element;\n\
@@ -34,33 +34,35 @@ data:
     \ = operation(data[pos * 2 + 1], data[pos * 2 + 2]);\n        }\n    }\n\n   \
     \ // get [l, r) (0-indexed)\n    T get_interval(int l, int r) {\n        return\
     \ get_interval(l, r, 0, 0, leaf_num);\n    }\n\n\tT operator[](int pos) {\n\t\t\
-    return data[pos + leaf_num - 1];\n\t}\n};\n#line 6 \"Test/SegmentTree-StaticRangeSum.test.cpp\"\
+    return data[pos + leaf_num - 1];\n\t}\n};\n#line 6 \"Test/SegmentTree-PointAddRangeSum.test.cpp\"\
     \ntypedef long long ll;\n\nint main() {\n\tint n, q;\n    cin >> n >> q;\n   \
     \ SegmentTree<ll> segtree(n, 0,\n        [](ll a, ll b) { return a + b; },\n \
     \       [](ll a, ll b) { return b; });\n    for(int i = 0; i < n; i++) {\n   \
     \     int a;\n        cin >> a;\n        segtree.update(i, a);\n    }\n    while(q--)\
-    \ {\n        int l, r;\n        cin >> l >> r;\n        cout << segtree.get_interval(l,\
-    \ r) << endl;\n    }\n\treturn 0;\n}\n"
+    \ {\n        int cmd, x, y;\n\t\tcin >> cmd >> x >> y;\n\t\tif(cmd == 0) segtree.update(x,\
+    \ y);\n\t\telse cout << segtree.get_interval(x, y) << endl;\n\t}\n\treturn 0;\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n\
     #include <bits/stdc++.h>\nusing namespace std;\n#include \"../DataStructure/SegmentTree.cpp\"\
     \ntypedef long long ll;\n\nint main() {\n\tint n, q;\n    cin >> n >> q;\n   \
     \ SegmentTree<ll> segtree(n, 0,\n        [](ll a, ll b) { return a + b; },\n \
     \       [](ll a, ll b) { return b; });\n    for(int i = 0; i < n; i++) {\n   \
     \     int a;\n        cin >> a;\n        segtree.update(i, a);\n    }\n    while(q--)\
-    \ {\n        int l, r;\n        cin >> l >> r;\n        cout << segtree.get_interval(l,\
-    \ r) << endl;\n    }\n\treturn 0;\n}"
+    \ {\n        int cmd, x, y;\n\t\tcin >> cmd >> x >> y;\n\t\tif(cmd == 0) segtree.update(x,\
+    \ y);\n\t\telse cout << segtree.get_interval(x, y) << endl;\n\t}\n\treturn 0;\n\
+    }"
   dependsOn:
   - DataStructure/SegmentTree.cpp
   isVerificationFile: true
-  path: Test/SegmentTree-StaticRangeSum.test.cpp
+  path: Test/SegmentTree-PointAddRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2020-12-15 01:17:22+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-12-15 01:25:57+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: Test/SegmentTree-StaticRangeSum.test.cpp
+documentation_of: Test/SegmentTree-PointAddRangeSum.test.cpp
 layout: document
 redirect_from:
-- /verify/Test/SegmentTree-StaticRangeSum.test.cpp
-- /verify/Test/SegmentTree-StaticRangeSum.test.cpp.html
-title: Test/SegmentTree-StaticRangeSum.test.cpp
+- /verify/Test/SegmentTree-PointAddRangeSum.test.cpp
+- /verify/Test/SegmentTree-PointAddRangeSum.test.cpp.html
+title: Test/SegmentTree-PointAddRangeSum.test.cpp
 ---
