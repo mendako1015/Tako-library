@@ -10,7 +10,32 @@ class SegmentTree {
 	// ex.) point add RSQ
 	// SegmentTree<ll> segtree(n, 0, [](ll a, ll b) { return a + b; }, [](ll a, ll b) { return b; });
 
+	void evaluation(int pos) {
+        if(lazy[pos] == identity_element) return ;
+        if(pos < leaf_num - 1) {
+            lazy[pos * 2 + 1] = lazy[pos];
+            lazy[pos * 2 + 2] = lazy[pos];
+        }
+        data[pos] = lazy[pos];
+        lazy[pos] = identity_element;
+    }
+
+	void range_update(int l, int r, T x, int pos, int btm, int tp) {
+        evaluation(pos);
+        if(tp <= l || r <= btm) return ;
+        if(l <= btm && tp <= r) {
+            lazy[pos] = x;
+            evaluation(pos);
+        } else {
+            int mid = (btm + tp) / 2;
+            range_update(l, r, x, pos * 2 + 1, btm, mid);
+            range_update(l, r, x, pos * 2 + 2, mid, tp);
+            data[pos] = operation(data[pos * 2 + 1], data[pos * 2 + 2]);
+        }
+    }
+
 	T get_interval(int l, int r, int pos, int btm, int tp) {
+		if(is_lazy) evaluation(pos);
 		if(tp <= l || r <= btm) return identity_element;
 		if(l <= btm && tp <= r) return data[pos];
 		int mid = (btm + tp) / 2;
@@ -37,6 +62,10 @@ class SegmentTree {
 			data[pos] = operation(data[pos * 2 + 1], data[pos * 2 + 2]);
 		}
 	}
+
+	void range_update(int l, int r, T x) {
+        range_update(l, r, x, 0, 0, leaf_num);
+    }
 
 	// get [l, r) (0-indexed)
 	T get_interval(int l, int r) {
