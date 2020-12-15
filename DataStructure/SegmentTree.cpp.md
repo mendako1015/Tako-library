@@ -44,7 +44,8 @@ data:
     \ x) {\n        range_update(l, r, x, 0, 0, leaf_num);\n    }\n\n\t// get [l,\
     \ r) (0-indexed)\n\tT get_interval(int l, int r) {\n\t\treturn get_interval(l,\
     \ r, 0, 0, leaf_num);\n\t}\n\n\tT operator[](int pos) {\n\t\treturn data[pos +\
-    \ leaf_num - 1];\n\t}\n};\n"
+    \ leaf_num - 1];\n\t}\n\n\tvoid print(int n) {\n\t\tfor(int i = 0; i < n; i++)\
+    \ cout << data[i + leaf_num - 1] << \" \";\n\t\tcout << endl;\n\t}\n};\n"
   code: "template <class T = int>\nclass SegmentTree {\n\tint leaf_num;\n\tbool is_lazy;\n\
     \tvector<T> data;\n\tvector<T> lazy;\n\tT identity_element;\n\tfunction<T(T, T)>\
     \ operation;\n\tfunction<T(T, T)> update_type;\n\t// ex.) point add RSQ\n\t//\
@@ -75,13 +76,14 @@ data:
     \ * 2 + 2]);\n\t\t}\n\t}\n\n\tvoid range_update(int l, int r, T x) {\n       \
     \ range_update(l, r, x, 0, 0, leaf_num);\n    }\n\n\t// get [l, r) (0-indexed)\n\
     \tT get_interval(int l, int r) {\n\t\treturn get_interval(l, r, 0, 0, leaf_num);\n\
-    \t}\n\n\tT operator[](int pos) {\n\t\treturn data[pos + leaf_num - 1];\n\t}\n\
-    };"
+    \t}\n\n\tT operator[](int pos) {\n\t\treturn data[pos + leaf_num - 1];\n\t}\n\n\
+    \tvoid print(int n) {\n\t\tfor(int i = 0; i < n; i++) cout << data[i + leaf_num\
+    \ - 1] << \" \";\n\t\tcout << endl;\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: DataStructure/SegmentTree.cpp
   requiredBy: []
-  timestamp: '2020-12-15 19:33:45+09:00'
+  timestamp: '2020-12-15 20:30:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - Test/SegmentTree-PointAddRangeSum.test.cpp
