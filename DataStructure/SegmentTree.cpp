@@ -13,10 +13,10 @@ class SegmentTree {
 	void evaluation(int pos) {
         if(lazy[pos] == identity_element) return ;
         if(pos < leaf_num - 1) {
-            lazy[pos * 2 + 1] = lazy[pos];
-            lazy[pos * 2 + 2] = lazy[pos];
+            lazy[pos * 2 + 1] = update_type(lazy[pos * 2 + 1], lazy[pos]);
+            lazy[pos * 2 + 2] = update_type(lazy[pos * 2 + 2], lazy[pos]);
         }
-        data[pos] = lazy[pos];
+        data[pos] = update_type(data[pos], lazy[pos]);
         lazy[pos] = identity_element;
     }
 
@@ -67,6 +67,10 @@ class SegmentTree {
         range_update(l, r, x, 0, 0, leaf_num);
     }
 
+	T get_point(int pos) {
+		return get_interval(pos, pos + 1, 0, 0, leaf_num);
+	}
+
 	// get [l, r) (0-indexed)
 	T get_interval(int l, int r) {
 		return get_interval(l, r, 0, 0, leaf_num);
@@ -77,7 +81,7 @@ class SegmentTree {
 	}
 
 	void print(int n) {
-		for(int i = 0; i < n; i++) cout << data[i + leaf_num - 1] << " ";
+		for(int i = 0; i < n; i++) cout << "(" << data[i + leaf_num - 1] << ", " << lazy[i + leaf_num - 1] << "), ";
 		cout << endl;
 	}
 };
