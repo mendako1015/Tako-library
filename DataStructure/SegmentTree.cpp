@@ -76,7 +76,7 @@ class SegmentTree {
 		return data[pos + leaf_num - 1];
 	}
 
-	void print() {
+	void print(int n) {
 		for(int i = 0; i < n; i++) cout << data[i + leaf_num - 1] << " ";
 		cout << endl;
 	}
