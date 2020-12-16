@@ -20,7 +20,7 @@ int main() {
 		} else {
 			ll x, y;
 			cin >> x >> y;
-			cout << segtree.get_interval(--x, y) << endl;
+			cout << segtree.get_interval(x, y) << endl;
 		}
 	}
 	return 0;
