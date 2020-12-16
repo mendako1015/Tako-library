@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: DataStructure/BinaryIndexedTree.cpp
     title: DataStructure/BinaryIndexedTree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -26,13 +26,13 @@ data:
     \t}\n\n\tconst T& operator[](const int &pos) const {\n\t\treturn bit[pos];\n\t\
     }\n};\n#line 6 \"Test/yosupo-judge/BinaryIndexedTree.test.cpp\"\n\n\nint main()\
     \ {\n\tint n, q;\n\tcin >> n >> q;\n\tBinaryIndexedTree<long long> BIT(n);\n\t\
-    for(int i = 0; i < n; i++) {\n\t\tint a;\n\t\tcin >> a;\n\t\tBIT.add(i+10, a);\n\
-    \t}\n\twhile(q--) {\n\t\tint com, a, b;\n\t\tcin >> com >> a >> b;\n\t\tif(com\
-    \ == 0) BIT.add(a, b);\n\t\telse cout << BIT.sum(a, b) << endl;\n\t}\n}\n"
+    for(int i = 0; i < n; i++) {\n\t\tint a;\n\t\tcin >> a;\n\t\tBIT.add(i, a);\n\t\
+    }\n\twhile(q--) {\n\t\tint com, a, b;\n\t\tcin >> com >> a >> b;\n\t\tif(com ==\
+    \ 0) BIT.add(a, b);\n\t\telse cout << BIT.sum(a, b) << endl;\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n#include \"../../DataStructure/BinaryIndexedTree.cpp\"\
     \n\n\nint main() {\n\tint n, q;\n\tcin >> n >> q;\n\tBinaryIndexedTree<long long>\
-    \ BIT(n);\n\tfor(int i = 0; i < n; i++) {\n\t\tint a;\n\t\tcin >> a;\n\t\tBIT.add(i+10,\
+    \ BIT(n);\n\tfor(int i = 0; i < n; i++) {\n\t\tint a;\n\t\tcin >> a;\n\t\tBIT.add(i,\
     \ a);\n\t}\n\twhile(q--) {\n\t\tint com, a, b;\n\t\tcin >> com >> a >> b;\n\t\t\
     if(com == 0) BIT.add(a, b);\n\t\telse cout << BIT.sum(a, b) << endl;\n\t}\n}"
   dependsOn:
@@ -40,8 +40,8 @@ data:
   isVerificationFile: true
   path: Test/yosupo-judge/BinaryIndexedTree.test.cpp
   requiredBy: []
-  timestamp: '2020-12-16 19:06:39+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-12-16 19:14:26+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Test/yosupo-judge/BinaryIndexedTree.test.cpp
 layout: document

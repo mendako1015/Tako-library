@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: DataStructure
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/BinaryIndexedTree.cpp
       title: DataStructure/BinaryIndexedTree.cpp
     - icon: ':heavy_check_mark:'
@@ -70,7 +70,7 @@ data:
       title: Test/AOJ/WeighedUnionFind.test.cpp
   - name: Test/yosupo-judge
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: Test/yosupo-judge/BinaryIndexedTree.test.cpp
       title: Test/yosupo-judge/BinaryIndexedTree.test.cpp
     - icon: ':heavy_check_mark:'
