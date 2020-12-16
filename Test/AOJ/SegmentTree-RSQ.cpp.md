@@ -56,7 +56,7 @@ data:
     \ ll y){ return x + y; }, [](ll x, ll y){ return x + y; } );\n\tsegtree.range_update(0,\
     \ n, 0);\n\twhile(q--) {\n\t\tint com;\n\t\tcin >> com;\n\t\tif(com == 0) {\n\t\
     \t\tll x, y, z;\n\t\t\tcin >> x >> y;\n\t\t\tsegtree.point_update(--x, y);\n\t\
-    \t} else {\n\t\t\tll x, y;\n\t\t\tcin >> x >> y;\n\t\t\tcout << segtree.get_interval(--x,\
+    \t} else {\n\t\t\tll x, y;\n\t\t\tcin >> x >> y;\n\t\t\tcout << segtree.get_interval(x,\
     \ y) << endl;\n\t\t}\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B\"\n\n\
     #include <bits/stdc++.h>\nusing namespace std;\n#include \"../../DataStructure/SegmentTree.cpp\"\
@@ -65,14 +65,14 @@ data:
     \ x + y; } );\n\tsegtree.range_update(0, n, 0);\n\twhile(q--) {\n\t\tint com;\n\
     \t\tcin >> com;\n\t\tif(com == 0) {\n\t\t\tll x, y, z;\n\t\t\tcin >> x >> y;\n\
     \t\t\tsegtree.point_update(--x, y);\n\t\t} else {\n\t\t\tll x, y;\n\t\t\tcin >>\
-    \ x >> y;\n\t\t\tcout << segtree.get_interval(--x, y) << endl;\n\t\t}\n\t}\n\t\
-    return 0;\n}"
+    \ x >> y;\n\t\t\tcout << segtree.get_interval(x, y) << endl;\n\t\t}\n\t}\n\treturn\
+    \ 0;\n}"
   dependsOn:
   - DataStructure/SegmentTree.cpp
   isVerificationFile: false
   path: Test/AOJ/SegmentTree-RSQ.cpp
   requiredBy: []
-  timestamp: '2020-12-16 18:47:37+09:00'
+  timestamp: '2020-12-16 18:57:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: Test/AOJ/SegmentTree-RSQ.cpp
