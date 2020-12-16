@@ -3,29 +3,29 @@ class SegmentTree {
 	int leaf_num;
 	bool is_lazy;
 	vector<T> data;
-	vector<T> lazy;
+	vector<T> lazy, lazy_changed;
 	T identity_element;
 	function<T(T, T)> operation;
 	function<T(T, T)> update_type;
 	// ex.) point add RSQ
 	// SegmentTree<ll> segtree(n, 0, [](ll a, ll b) { return a + b; }, [](ll a, ll b) { return b; });
 
-	void evaluation(int pos) {
-        if(lazy[pos] == identity_element) return ;
-        if(pos < leaf_num - 1) {
-            lazy[pos * 2 + 1] = update_type(lazy[pos * 2 + 1], lazy[pos]);
-            lazy[pos * 2 + 2] = update_type(lazy[pos * 2 + 2], lazy[pos]);
-        }
-        data[pos] = update_type(data[pos], lazy[pos]);
-        lazy[pos] = identity_element;
+	void evaluation(int pos, int btm, int tp) {
+		if(!lazy_changed[pos]) return ;
+		if(tp - btm > 1) {
+			lazy[pos * 2 + 1] = update_type(lazy[pos * 2 + 1], lazy[pos]), lazy_changed[pos * 2 + 1] = true;
+			lazy[pos * 2 + 2] = update_type(lazy[pos * 2 + 2], lazy[pos]), lazy_changed[pos * 2 + 2] = true;
+		}
+		data[pos] = update_type(data[pos], lazy[pos]);
+		lazy[pos] = identity_element, lazy_changed[pos] = false;
     }
 
 	void range_update(int l, int r, T x, int pos, int btm, int tp) {
-        evaluation(pos);
+        evaluation(pos, btm, tp);
         if(tp <= l || r <= btm) return ;
         if(l <= btm && tp <= r) {
-            lazy[pos] = x;
-            evaluation(pos);
+            lazy[pos] = update_type(lazy[pos], x), lazy_changed[pos] = true;
+            evaluation(pos, btm, tp);
         } else {
             int mid = (btm + tp) / 2;
             range_update(l, r, x, pos * 2 + 1, btm, mid);
@@ -35,8 +35,8 @@ class SegmentTree {
     }
 
 	T get_interval(int l, int r, int pos, int btm, int tp) {
-		if(is_lazy) evaluation(pos);
 		if(tp <= l || r <= btm) return identity_element;
+		if(is_lazy) evaluation(pos, btm, tp);
 		if(l <= btm && tp <= r) return data[pos];
 		int mid = (btm + tp) / 2;
 		T l_child = get_interval(l, r, 2 * pos + 1, btm, mid);
@@ -51,6 +51,7 @@ class SegmentTree {
 		while(leaf_num < n) leaf_num *= 2;
 		data = vector<T>(2 * leaf_num - 1, identity_element);
 		lazy = vector<T>(2 * leaf_num - 1, identity_element);
+		lazy_changed = vector<T>(2 * leaf_num - 1);
 	}
 
 	// point update query(0-indexed)
