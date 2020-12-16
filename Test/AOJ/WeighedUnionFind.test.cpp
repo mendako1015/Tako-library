@@ -2,7 +2,7 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-#include "../DataStructure/WeightedUnionFind.cpp"
+#include "../../DataStructure/WeightedUnionFind.cpp"
 
 int main() {
 	cin.tie(0);

@@ -2,7 +2,7 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-#include "../DataStructure/BinaryIndexedTree.cpp"
+#include "../../DataStructure/BinaryIndexedTree.cpp"
 
 
 int main() {
