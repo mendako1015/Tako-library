@@ -3,16 +3,16 @@ data:
   libraryCategories:
   - name: DataStructure
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: DataStructure/BinaryIndexedTree.cpp
       title: DataStructure/BinaryIndexedTree.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: DataStructure/SegmentTree.cpp
       title: DataStructure/SegmentTree.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: DataStructure/UnionFind.cpp
       title: DataStructure/UnionFind.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: DataStructure/WeightedUnionFind.cpp
       title: DataStructure/WeightedUnionFind.cpp
   - name: Graph
@@ -58,25 +58,27 @@ data:
       path: String/LongestCommonString.cpp
       title: String/LongestCommonString.cpp
   verificationCategories:
-  - name: Test
+  - name: Test/AOJ
     pages:
+    - icon: ':x:'
+      path: Test/AOJ/WeighedUnionFind.test.cpp
+      title: Test/AOJ/WeighedUnionFind.test.cpp
+  - name: Test/yosupo-judge
+    pages:
+    - icon: ':x:'
+      path: Test/yosupo-judge/BinaryIndexedTree.test.cpp
+      title: Test/yosupo-judge/BinaryIndexedTree.test.cpp
+    - icon: ':x:'
+      path: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
+      title: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
+    - icon: ':x:'
+      path: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
+      title: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
+    - icon: ':x:'
+      path: Test/yosupo-judge/UnionFind.test.cpp
+      title: Test/yosupo-judge/UnionFind.test.cpp
     - icon: ':heavy_check_mark:'
-      path: Test/BinaryIndexedTree.test.cpp
-      title: Test/BinaryIndexedTree.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: Test/SegmentTree-PointAddRangeSum.test.cpp
-      title: Test/SegmentTree-PointAddRangeSum.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: Test/SegmentTree-StaticRangeSum.test.cpp
-      title: Test/SegmentTree-StaticRangeSum.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: Test/UnionFind.test.cpp
-      title: Test/UnionFind.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: Test/WeighedUnionFind.test.cpp
-      title: Test/WeighedUnionFind.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: Test/example-test.test.cpp
-      title: Test/example-test.test.cpp
+      path: Test/yosupo-judge/example-test.test.cpp
+      title: Test/yosupo-judge/example-test.test.cpp
 layout: toppage
 ---

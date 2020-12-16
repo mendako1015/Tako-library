@@ -2,15 +2,9 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: Test/SegmentTree-PointAddRangeSum.test.cpp
-    title: Test/SegmentTree-PointAddRangeSum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: Test/SegmentTree-StaticRangeSum.test.cpp
-    title: Test/SegmentTree-StaticRangeSum.test.cpp
+  _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"DataStructure/SegmentTree.cpp\"\ntemplate <class T = int>\n\
@@ -90,10 +84,8 @@ data:
   path: DataStructure/SegmentTree.cpp
   requiredBy: []
   timestamp: '2020-12-15 22:17:43+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - Test/SegmentTree-PointAddRangeSum.test.cpp
-  - Test/SegmentTree-StaticRangeSum.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: DataStructure/SegmentTree.cpp
 layout: document
 redirect_from:

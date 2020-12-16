@@ -10,23 +10,24 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/aplusb
     links:
     - https://judge.yosupo.jp/problem/aplusb
-  bundledCode: "#line 1 \"Test/example-test.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\
-    \n#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n\tint a, b;\n\
-    \tcin >> a >> b;\n\tcout << a + b << endl;\n}\n"
+  bundledCode: "#line 1 \"Test/yosupo-judge/example-test.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/aplusb\"\n#include <bits/stdc++.h>\nusing\
+    \ namespace std;\n\nint main() {\n\tint a, b;\n\tcin >> a >> b;\n\tcout << a +\
+    \ b << endl;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/aplusb\"\n#include <bits/stdc++.h>\n\
     using namespace std;\n\nint main() {\n\tint a, b;\n\tcin >> a >> b;\n\tcout <<\
     \ a + b << endl;\n}"
   dependsOn: []
   isVerificationFile: true
-  path: Test/example-test.test.cpp
+  path: Test/yosupo-judge/example-test.test.cpp
   requiredBy: []
-  timestamp: '2020-12-06 22:53:09+09:00'
+  timestamp: '2020-12-16 18:33:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: Test/example-test.test.cpp
+documentation_of: Test/yosupo-judge/example-test.test.cpp
 layout: document
 redirect_from:
-- /verify/Test/example-test.test.cpp
-- /verify/Test/example-test.test.cpp.html
-title: Test/example-test.test.cpp
+- /verify/Test/yosupo-judge/example-test.test.cpp
+- /verify/Test/yosupo-judge/example-test.test.cpp.html
+title: Test/yosupo-judge/example-test.test.cpp
 ---

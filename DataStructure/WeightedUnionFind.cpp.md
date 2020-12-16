@@ -2,12 +2,9 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: Test/WeighedUnionFind.test.cpp
-    title: Test/WeighedUnionFind.test.cpp
+  _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"DataStructure/WeightedUnionFind.cpp\"\ntemplate <typename\
@@ -37,9 +34,8 @@ data:
   path: DataStructure/WeightedUnionFind.cpp
   requiredBy: []
   timestamp: '2020-12-15 01:38:01+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - Test/WeighedUnionFind.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: DataStructure/WeightedUnionFind.cpp
 layout: document
 redirect_from:
