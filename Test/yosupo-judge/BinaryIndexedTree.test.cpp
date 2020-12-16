@@ -12,7 +12,7 @@ int main() {
 	for(int i = 0; i < n; i++) {
 		int a;
 		cin >> a;
-		BIT.add(i+10, a);
+		BIT.add(i, a);
 	}
 	while(q--) {
 		int com, a, b;
