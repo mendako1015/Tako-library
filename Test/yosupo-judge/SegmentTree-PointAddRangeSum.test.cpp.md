@@ -1,34 +1,78 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: DataStructure/SegmentTree.cpp
+    title: DataStructure/SegmentTree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
-  attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 193, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 399, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 258, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: ../DataStructure/SegmentTree.cpp:\
-    \ line -1: no such header\n"
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
+    links:
+    - https://judge.yosupo.jp/problem/point_add_range_sum
+  bundledCode: "#line 1 \"Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n\
+    #include <bits/stdc++.h>\nusing namespace std;\n#line 1 \"DataStructure/SegmentTree.cpp\"\
+    \ntemplate <class T = int>\nclass SegmentTree {\n\tint leaf_num;\n\tbool is_lazy;\n\
+    \tvector<T> data;\n\tvector<T> lazy;\n\tT identity_element;\n\tfunction<T(T, T)>\
+    \ operation;\n\tfunction<T(T, T)> update_type;\n\t// ex.) point add RSQ\n\t//\
+    \ SegmentTree<ll> segtree(n, 0, [](ll a, ll b) { return a + b; }, [](ll a, ll\
+    \ b) { return b; });\n\n\tvoid evaluation(int pos) {\n        if(lazy[pos] ==\
+    \ identity_element) return ;\n        if(pos < leaf_num - 1) {\n            lazy[pos\
+    \ * 2 + 1] = update_type(lazy[pos * 2 + 1], lazy[pos]);\n            lazy[pos\
+    \ * 2 + 2] = update_type(lazy[pos * 2 + 2], lazy[pos]);\n        }\n        data[pos]\
+    \ = update_type(data[pos], lazy[pos]);\n        lazy[pos] = identity_element;\n\
+    \    }\n\n\tvoid range_update(int l, int r, T x, int pos, int btm, int tp) {\n\
+    \        evaluation(pos);\n        if(tp <= l || r <= btm) return ;\n        if(l\
+    \ <= btm && tp <= r) {\n            lazy[pos] = x;\n            evaluation(pos);\n\
+    \        } else {\n            int mid = (btm + tp) / 2;\n            range_update(l,\
+    \ r, x, pos * 2 + 1, btm, mid);\n            range_update(l, r, x, pos * 2 + 2,\
+    \ mid, tp);\n            data[pos] = operation(data[pos * 2 + 1], data[pos * 2\
+    \ + 2]);\n        }\n    }\n\n\tT get_interval(int l, int r, int pos, int btm,\
+    \ int tp) {\n\t\tif(is_lazy) evaluation(pos);\n\t\tif(tp <= l || r <= btm) return\
+    \ identity_element;\n\t\tif(l <= btm && tp <= r) return data[pos];\n\t\tint mid\
+    \ = (btm + tp) / 2;\n\t\tT l_child = get_interval(l, r, 2 * pos + 1, btm, mid);\n\
+    \t\tT r_child = get_interval(l, r, 2 * pos + 2, mid, tp);\n\t\treturn operation(l_child,\
+    \ r_child);\n\t}\n\n\tpublic:\n\tSegmentTree(size_t n, bool lzy, T id_el, function<T(T,\
+    \ T)> ope, function<T(T, T)> upd)\n\t: is_lazy(lzy), identity_element(id_el),\
+    \ operation(ope), update_type(upd) {\n\t\tleaf_num = 1;\n\t\twhile(leaf_num <\
+    \ n) leaf_num *= 2;\n\t\tdata = vector<T>(2 * leaf_num - 1, identity_element);\n\
+    \t\tlazy = vector<T>(2 * leaf_num - 1, identity_element);\n\t}\n\n\t// point update\
+    \ query(0-indexed)\n\tvoid point_update(int pos, T x) {\n\t\tpos += leaf_num -\
+    \ 1;\n\t\tdata[pos] = update_type(data[pos], x);\n\t\twhile(pos > 0) {\n\t\t\t\
+    pos = (pos - 1) / 2;\n\t\t\tdata[pos] = operation(data[pos * 2 + 1], data[pos\
+    \ * 2 + 2]);\n\t\t}\n\t}\n\n\tvoid range_update(int l, int r, T x) {\n       \
+    \ range_update(l, r, x, 0, 0, leaf_num);\n    }\n\n\tT get_point(int pos) {\n\t\
+    \treturn get_interval(pos, pos + 1, 0, 0, leaf_num);\n\t}\n\n\t// get [l, r) (0-indexed)\n\
+    \tT get_interval(int l, int r) {\n\t\treturn get_interval(l, r, 0, 0, leaf_num);\n\
+    \t}\n\n\tT operator[](int pos) {\n\t\treturn data[pos + leaf_num - 1];\n\t}\n\n\
+    \tvoid print(int n) {\n\t\tfor(int i = 0; i < n; i++) cout << \"(\" << data[i\
+    \ + leaf_num - 1] << \", \" << lazy[i + leaf_num - 1] << \"), \";\n\t\tcout <<\
+    \ endl;\n\t}\n};\n#line 6 \"Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp\"\
+    \ntypedef long long ll;\n\nint main() {\n\tint n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll>\
+    \ segtree(n, false, 0,\n\t\t[](ll a, ll b) { return a + b; },\n\t\t[](ll a, ll\
+    \ b) { return a + b; });\n\tfor(int i = 0; i < n; i++) {\n\t\tint a;\n\t\tcin\
+    \ >> a;\n\t\tsegtree.point_update(i, a);\n\t}\n\twhile(q--) {\n\t\tint cmd, x,\
+    \ y;\n\t\tcin >> cmd >> x >> y;\n\t\tif(cmd == 0) segtree.point_update(x, y);\n\
+    \t\telse cout << segtree.get_interval(x, y) << endl;\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
-    \n#include <bits/stdc++.h>\nusing namespace std;\n#include \"../DataStructure/SegmentTree.cpp\"\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n#include \"../../DataStructure/SegmentTree.cpp\"\
     \ntypedef long long ll;\n\nint main() {\n\tint n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll>\
     \ segtree(n, false, 0,\n\t\t[](ll a, ll b) { return a + b; },\n\t\t[](ll a, ll\
     \ b) { return a + b; });\n\tfor(int i = 0; i < n; i++) {\n\t\tint a;\n\t\tcin\
     \ >> a;\n\t\tsegtree.point_update(i, a);\n\t}\n\twhile(q--) {\n\t\tint cmd, x,\
     \ y;\n\t\tcin >> cmd >> x >> y;\n\t\tif(cmd == 0) segtree.point_update(x, y);\n\
     \t\telse cout << segtree.get_interval(x, y) << endl;\n\t}\n\treturn 0;\n}"
-  dependsOn: []
+  dependsOn:
+  - DataStructure/SegmentTree.cpp
   isVerificationFile: true
   path: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-12-16 18:35:24+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
 layout: document

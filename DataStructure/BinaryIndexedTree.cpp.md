@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: Test/yosupo-judge/BinaryIndexedTree.test.cpp
+    title: Test/yosupo-judge/BinaryIndexedTree.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"DataStructure/BinaryIndexedTree.cpp\"\ntemplate<class T\
@@ -30,8 +33,9 @@ data:
   path: DataStructure/BinaryIndexedTree.cpp
   requiredBy: []
   timestamp: '2020-12-13 19:08:54+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - Test/yosupo-judge/BinaryIndexedTree.test.cpp
 documentation_of: DataStructure/BinaryIndexedTree.cpp
 layout: document
 redirect_from:
