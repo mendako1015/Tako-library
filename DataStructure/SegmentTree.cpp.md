@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: Test/AOJ/SegmentTree-RSQ.cpp
+    title: Test/AOJ/SegmentTree-RSQ.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
@@ -92,7 +95,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: DataStructure/SegmentTree.cpp
-  requiredBy: []
+  requiredBy:
+  - Test/AOJ/SegmentTree-RSQ.cpp
   timestamp: '2020-12-16 18:43:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
