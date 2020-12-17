@@ -2,7 +2,7 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-#include "../../DataStructure/SegmentTree.cpp"
+#include "../../DataStructure/SegmentTree.cpp" 
 typedef long long ll;
 
 int main() {
