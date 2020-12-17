@@ -17,21 +17,21 @@ class SegmentTree {
 			lazy[pos * 2 + 2] = update_type(lazy[pos * 2 + 2], lazy[pos]), lazy_changed[pos * 2 + 2] = true;
 		}
 		lazy[pos] = update_identity_element, lazy_changed[pos] = false;
-    }
+	}
 
 	void range_update(int l, int r, T x, int pos, int btm, int tp) {
-        evaluation(pos, btm, tp);
-        if(tp <= l || r <= btm) return ;
-        if(l <= btm && tp <= r) {
-            lazy[pos] = update_type(lazy[pos], x), lazy_changed[pos] = true;
-            evaluation(pos, btm, tp);
-        } else {
-            int mid = (btm + tp) / 2;
-            range_update(l, r, x, pos * 2 + 1, btm, mid);
-            range_update(l, r, x, pos * 2 + 2, mid, tp);
-            data[pos] = operation(data[pos * 2 + 1], data[pos * 2 + 2]);
-        }
-    }
+		evaluation(pos, btm, tp);
+		if(tp <= l || r <= btm) return ;
+		if(l <= btm && tp <= r) {
+			lazy[pos] = update_type(lazy[pos], x), lazy_changed[pos] = true;
+			evaluation(pos, btm, tp);
+		} else {
+			int mid = (btm + tp) / 2;
+			range_update(l, r, x, pos * 2 + 1, btm, mid);
+			range_update(l, r, x, pos * 2 + 2, mid, tp);
+			data[pos] = operation(data[pos * 2 + 1], data[pos * 2 + 2]);
+		}
+	}
 
 	// point update query(0-indexed) : not support lazy evaluation
 	void point_update(int pos, T x) {
@@ -71,11 +71,11 @@ class SegmentTree {
 
 	// update [l, r) (0-indexed)
 	void update(int l, int r, T x) {
-        if(is_lazy) range_update(l, r, x, 0, 0, leaf_num);
+		if(is_lazy) range_update(l, r, x, 0, 0, leaf_num);
 		else {
 			for(int i = l; i < r; i++) point_update(i, x);
 		}
-    }
+	}
 
 	// get [pos] (0-indexed)
 	T get(int pos) {
