@@ -67,7 +67,7 @@ data:
     }\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n#include \"../../DataStructure/SegmentTree.cpp\"\
-    \ntypedef long long ll;\n\nint main() {\n\tint n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll>\
+    \ \ntypedef long long ll;\n\nint main() {\n\tint n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll>\
     \ segtree(n, false, 0, 0, \n\t\t[](ll a, ll b) { return a + b; },\n\t\t[](ll a,\
     \ ll b) { return a + b; },\n\t\t[](ll x, ll btm, ll tp) { return x; });\n\tfor(int\
     \ i = 0; i < n; i++) {\n\t\tint a;\n\t\tcin >> a;\n\t\tsegtree.update(i, a);\n\
@@ -79,7 +79,7 @@ data:
   isVerificationFile: true
   path: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2020-12-18 07:40:15+09:00'
+  timestamp: '2020-12-18 07:54:58+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
