@@ -52,27 +52,27 @@ data:
     \t\tfor(int i = 0; i < n; i++) cout << \"(\" << data[i + leaf_num - 1] << \",\
     \ \" << lazy[i + leaf_num - 1] << \"), \";\n\t\tcout << endl;\n\t}\n};\n#line\
     \ 6 \"Test/AOJ/SegmentTree-RSQ.cpp\"\ntypedef long long ll;\n\nint main() {\n\t\
-    // ll n, q;\n\t// cin >> n >> q;\n\t// SegmentTree<ll> segtree(n+10, true, 0,\
-    \ [](ll x, ll y){ return x + y; }, [](ll x, ll y){ return x + y; } );\n\t// segtree.range_update(0,\
-    \ n, 0);\n\t// while(q--) {\n\t// \tint com;\n\t// \tcin >> com;\n\t// \tif(com\
-    \ == 0) {\n\t// \t\tll x, y, z;\n\t// \t\tcin >> x >> y;\n\t// \t\tsegtree.point_update(--x,\
-    \ y);\n\t// \t} else {\n\t// \t\tll x, y;\n\t// \t\tcin >> x >> y;\n\t// \t\t\
-    cout << segtree.get_interval(x, y) << endl;\n\t// \t}\n\t// }\n\treturn 0;\n}\n"
+    ll n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll> segtree(n+10, true, 0, [](ll x,\
+    \ ll y){ return x + y; }, [](ll x, ll y){ return x + y; } );\n\tsegtree.range_update(0,\
+    \ n, 0);\n\twhile(q--) {\n\t\tint com;\n\t\tcin >> com;\n\t\tif(com == 0) {\n\t\
+    \t\tll x, y, z;\n\t\t\tcin >> x >> y;\n\t\t\tsegtree.point_update(--x, y);\n\t\
+    \t} else {\n\t\t\tll x, y;\n\t\t\tcin >> x >> y;\n\t\t\tcout << segtree.get_interval(x,\
+    \ y) << endl;\n\t\t}\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B\"\n\n\
     #include <bits/stdc++.h>\nusing namespace std;\n#include \"../../DataStructure/SegmentTree.cpp\"\
-    \ntypedef long long ll;\n\nint main() {\n\t// ll n, q;\n\t// cin >> n >> q;\n\t\
-    // SegmentTree<ll> segtree(n+10, true, 0, [](ll x, ll y){ return x + y; }, [](ll\
-    \ x, ll y){ return x + y; } );\n\t// segtree.range_update(0, n, 0);\n\t// while(q--)\
-    \ {\n\t// \tint com;\n\t// \tcin >> com;\n\t// \tif(com == 0) {\n\t// \t\tll x,\
-    \ y, z;\n\t// \t\tcin >> x >> y;\n\t// \t\tsegtree.point_update(--x, y);\n\t//\
-    \ \t} else {\n\t// \t\tll x, y;\n\t// \t\tcin >> x >> y;\n\t// \t\tcout << segtree.get_interval(x,\
-    \ y) << endl;\n\t// \t}\n\t// }\n\treturn 0;\n}"
+    \ntypedef long long ll;\n\nint main() {\n\tll n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll>\
+    \ segtree(n+10, true, 0, [](ll x, ll y){ return x + y; }, [](ll x, ll y){ return\
+    \ x + y; } );\n\tsegtree.range_update(0, n, 0);\n\twhile(q--) {\n\t\tint com;\n\
+    \t\tcin >> com;\n\t\tif(com == 0) {\n\t\t\tll x, y, z;\n\t\t\tcin >> x >> y;\n\
+    \t\t\tsegtree.point_update(--x, y);\n\t\t} else {\n\t\t\tll x, y;\n\t\t\tcin >>\
+    \ x >> y;\n\t\t\tcout << segtree.get_interval(x, y) << endl;\n\t\t}\n\t}\n\treturn\
+    \ 0;\n}"
   dependsOn:
   - DataStructure/SegmentTree.cpp
   isVerificationFile: false
   path: Test/AOJ/SegmentTree-RSQ.cpp
   requiredBy: []
-  timestamp: '2020-12-16 19:01:41+09:00'
+  timestamp: '2020-12-17 22:04:59+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: Test/AOJ/SegmentTree-RSQ.cpp

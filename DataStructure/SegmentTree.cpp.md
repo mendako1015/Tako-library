@@ -100,8 +100,8 @@ data:
   timestamp: '2020-12-16 18:43:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
   - Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
+  - Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
 documentation_of: DataStructure/SegmentTree.cpp
 layout: document
 redirect_from:
