@@ -13,6 +13,9 @@ data:
     path: Test/AOJ/SegmentTree-RSQ.test.cpp
     title: Test/AOJ/SegmentTree-RSQ.test.cpp
   - icon: ':heavy_check_mark:'
+    path: Test/AOJ/SegmentTree-RUQ.test.cpp
+    title: Test/AOJ/SegmentTree-RUQ.test.cpp
+  - icon: ':heavy_check_mark:'
     path: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
     title: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -119,6 +122,7 @@ data:
   - Test/AOJ/SegmentTree-RMQ.test.cpp
   - Test/AOJ/SegmentTree-RSQ.test.cpp
   - Test/AOJ/SegmentTree-RAQ.test.cpp
+  - Test/AOJ/SegmentTree-RUQ.test.cpp
 documentation_of: DataStructure/SegmentTree.cpp
 layout: document
 redirect_from:

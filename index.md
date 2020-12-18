@@ -70,6 +70,9 @@ data:
       path: Test/AOJ/SegmentTree-RSQ.test.cpp
       title: Test/AOJ/SegmentTree-RSQ.test.cpp
     - icon: ':heavy_check_mark:'
+      path: Test/AOJ/SegmentTree-RUQ.test.cpp
+      title: Test/AOJ/SegmentTree-RUQ.test.cpp
+    - icon: ':heavy_check_mark:'
       path: Test/AOJ/WeighedUnionFind.test.cpp
       title: Test/AOJ/WeighedUnionFind.test.cpp
   - name: Test/yosupo-judge
