@@ -48,7 +48,7 @@ data:
     \t\twhile(leaf_num < n) leaf_num *= 2;\n\t\tdata = vector<T>(2 * leaf_num - 1,\
     \ 0);\n\t\tlazy = vector<T>(2 * leaf_num - 1, update_identity_element);\n\t\t\
     lazy_changed = vector<bool>(2 * leaf_num - 1, false);\n\t}\n\n\t// update [pos]\
-    \ (0-indexed)\n\tvoid update(int pos, int x) {\n\t\tif(is_lazy) return range_update(pos,\
+    \ (0-indexed)\n\tvoid update(int pos, T x) {\n\t\tif(is_lazy) return range_update(pos,\
     \ pos + 1, x, 0, 0, leaf_num);\n\t\telse point_update(pos, x);\n\t}\n\n\t// update\
     \ [l, r) (0-indexed)\n\tvoid update(int l, int r, T x) {\n\t\tif(is_lazy) range_update(l,\
     \ r, x, 0, 0, leaf_num);\n\t\telse {\n\t\t\tfor(int i = l; i < r; i++) point_update(i,\
@@ -80,7 +80,7 @@ data:
   isVerificationFile: true
   path: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2020-12-18 16:28:01+09:00'
+  timestamp: '2020-12-18 16:58:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
