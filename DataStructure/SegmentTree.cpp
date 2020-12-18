@@ -7,7 +7,7 @@ class SegmentTree {
 	T operation_identity_element, update_identity_element;
 	function<T(T, T)> operation;
 	function<T(T, T)> update_type;
-	function<T(T, ll, ll)> lazy_update;
+	function<T(T, int, int)> lazy_update;
 
 	void evaluation(int pos, int btm, int tp) {
 		if(!lazy_changed[pos]) return ;
@@ -54,13 +54,13 @@ class SegmentTree {
 	}
 
 	public:
-	SegmentTree(size_t n, bool lzy, T ope_id_el, T upd_id_el, function<T(T, T)> ope, function<T(T, T)> upd, function<T(T, T, T)> lazy_upd)
+	SegmentTree(size_t n, bool lzy, T ope_id_el, T upd_id_el, function<T(T, T)> ope, function<T(T, T)> upd, function<T(T, int, int)> lazy_upd)
 	: is_lazy(lzy), operation_identity_element(ope_id_el), update_identity_element(upd_id_el), operation(ope), update_type(upd), lazy_update(lazy_upd) {
 		leaf_num = 1;
 		while(leaf_num < n) leaf_num *= 2;
 		data = vector<T>(2 * leaf_num - 1, 0);
 		lazy = vector<T>(2 * leaf_num - 1, update_identity_element);
-		lazy_changed = vector<T>(2 * leaf_num - 1, false);
+		lazy_changed = vector<bool>(2 * leaf_num - 1, false);
 	}
 
 	// update [pos] (0-indexed)

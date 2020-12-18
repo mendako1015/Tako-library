@@ -11,7 +11,7 @@ int main() {
 	SegmentTree<ll> segtree(n+10, true, 0, 0, 
 	[](ll x, ll y){ return x + y; },
 	[](ll x, ll y){ return x + y; },
-	[](ll x, ll btm, ll tp){ return x * (tp - btm); });
+	[](ll x, int btm, int tp){ return (x * (tp - btm)); });
 
 	segtree.update(0, n, 0);
 	while(q--) {
