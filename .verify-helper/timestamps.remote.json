@@ -1,6 +1,16 @@
 {
+"Test/AOJ/SegmentTree-RAQ.test.cpp": "2020-12-18 16:28:01 +0900",
+"Test/AOJ/SegmentTree-RMQ.test.cpp": "2020-12-18 16:28:01 +0900",
+"Test/AOJ/SegmentTree-RMQandRAQ.test.cpp": "2020-12-18 16:28:01 +0900",
+"Test/AOJ/SegmentTree-RMQandRUQ.test.cpp": "2020-12-18 16:28:01 +0900",
+"Test/AOJ/SegmentTree-RSQ.test.cpp": "2020-12-18 16:28:01 +0900",
+"Test/AOJ/SegmentTree-RSQandRAQ.test.cpp": "2020-12-18 16:28:01 +0900",
+"Test/AOJ/SegmentTree-RSQandRUQ.test.cpp": "2020-12-18 16:28:01 +0900",
+"Test/AOJ/SegmentTree-RUQ.test.cpp": "2020-12-18 16:28:01 +0900",
 "Test/AOJ/WeighedUnionFind.test.cpp": "2020-12-16 18:35:24 +0900",
 "Test/yosupo-judge/BinaryIndexedTree.test.cpp": "2020-12-16 19:14:26 +0900",
+"Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp": "2020-12-18 16:28:01 +0900",
+"Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp": "2020-12-18 16:28:01 +0900",
 "Test/yosupo-judge/UnionFind.test.cpp": "2020-12-16 18:35:24 +0900",
 "Test/yosupo-judge/example-test.test.cpp": "2020-12-16 18:33:09 +0900"
 }
