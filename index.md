@@ -64,6 +64,9 @@ data:
       path: Test/AOJ/SegmentTree-RAQ.test.cpp
       title: Test/AOJ/SegmentTree-RAQ.test.cpp
     - icon: ':heavy_check_mark:'
+      path: Test/AOJ/SegmentTree-RMQ.test.cpp
+      title: Test/AOJ/SegmentTree-RMQ.test.cpp
+    - icon: ':heavy_check_mark:'
       path: Test/AOJ/SegmentTree-RSQ.test.cpp
       title: Test/AOJ/SegmentTree-RSQ.test.cpp
     - icon: ':heavy_check_mark:'
