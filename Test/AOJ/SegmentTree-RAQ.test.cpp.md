@@ -19,8 +19,8 @@ data:
     \ T = int>\nclass SegmentTree {\n\tint leaf_num;\n\tbool is_lazy;\n\tvector<T>\
     \ data;\n\tvector<T> lazy, lazy_changed;\n\tT operation_identity_element, update_identity_element;\n\
     \tfunction<T(T, T)> operation;\n\tfunction<T(T, T)> update_type;\n\tfunction<T(T,\
-    \ ll, ll)> lazy_update;\n\n\tvoid evaluation(int pos, int btm, int tp) {\n\t\t\
-    if(!lazy_changed[pos]) return ;\n\t\tdata[pos] = update_type(data[pos], lazy_update(lazy[pos],\
+    \ int, int)> lazy_update;\n\n\tvoid evaluation(int pos, int btm, int tp) {\n\t\
+    \tif(!lazy_changed[pos]) return ;\n\t\tdata[pos] = update_type(data[pos], lazy_update(lazy[pos],\
     \ btm, tp));\n\t\tif(tp - btm > 1) {\n\t\t\tlazy[pos * 2 + 1] = update_type(lazy[pos\
     \ * 2 + 1], lazy[pos]), lazy_changed[pos * 2 + 1] = true;\n\t\t\tlazy[pos * 2\
     \ + 2] = update_type(lazy[pos * 2 + 2], lazy[pos]), lazy_changed[pos * 2 + 2]\
@@ -42,12 +42,12 @@ data:
     \ btm, mid);\n\t\tT r_child = get_interval(l, r, 2 * pos + 2, mid, tp);\n\t\t\
     return operation(l_child, r_child);\n\t}\n\n\tpublic:\n\tSegmentTree(size_t n,\
     \ bool lzy, T ope_id_el, T upd_id_el, function<T(T, T)> ope, function<T(T, T)>\
-    \ upd, function<T(T, T, T)> lazy_upd)\n\t: is_lazy(lzy), operation_identity_element(ope_id_el),\
+    \ upd, function<T(T, int, int)> lazy_upd)\n\t: is_lazy(lzy), operation_identity_element(ope_id_el),\
     \ update_identity_element(upd_id_el), operation(ope), update_type(upd), lazy_update(lazy_upd)\
     \ {\n\t\tleaf_num = 1;\n\t\twhile(leaf_num < n) leaf_num *= 2;\n\t\tdata = vector<T>(2\
     \ * leaf_num - 1, 0);\n\t\tlazy = vector<T>(2 * leaf_num - 1, update_identity_element);\n\
-    \t\tlazy_changed = vector<T>(2 * leaf_num - 1, false);\n\t}\n\n\t// update [pos]\
-    \ (0-indexed)\n\tvoid update(int pos, int x) {\n\t\tif(is_lazy) return range_update(pos,\
+    \t\tlazy_changed = vector<bool>(2 * leaf_num - 1, false);\n\t}\n\n\t// update\
+    \ [pos] (0-indexed)\n\tvoid update(int pos, int x) {\n\t\tif(is_lazy) return range_update(pos,\
     \ pos + 1, x, 0, 0, leaf_num);\n\t\telse point_update(pos, x);\n\t}\n\n\t// update\
     \ [l, r) (0-indexed)\n\tvoid update(int l, int r, T x) {\n\t\tif(is_lazy) range_update(l,\
     \ r, x, 0, 0, leaf_num);\n\t\telse {\n\t\t\tfor(int i = l; i < r; i++) point_update(i,\
@@ -60,7 +60,7 @@ data:
     }\n};\n#line 6 \"Test/AOJ/SegmentTree-RAQ.test.cpp\"\ntypedef long long ll;\n\n\
     int main() {\n\tll n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll> segtree(n+10, true,\
     \ 0, 0, \n\t[](ll x, ll y){ return x + y; },\n\t[](ll x, ll y){ return x + y;\
-    \ },\n\t[](ll x, ll btm, ll tp){ return x * (tp - btm); });\n\n\tsegtree.update(0,\
+    \ },\n\t[](ll x, int btm, int tp){ return (x * (tp - btm)); });\n\n\tsegtree.update(0,\
     \ n, 0);\n\twhile(q--) {\n\t\tint com;\n\t\tcin >> com;\n\t\tif(com == 0) {\n\t\
     \t\tll x, y, z;\n\t\t\tcin >> x >> y >> z;\n\t\t\tsegtree.update(--x, y, z);\n\
     \t\t} else {\n\t\t\tll x, y, z;\n\t\t\tcin >> x;\n\t\t\tcout << segtree.get(--x)\
@@ -69,17 +69,17 @@ data:
     #include <bits/stdc++.h>\nusing namespace std;\n#include \"../../DataStructure/SegmentTree.cpp\"\
     \ntypedef long long ll;\n\nint main() {\n\tll n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll>\
     \ segtree(n+10, true, 0, 0, \n\t[](ll x, ll y){ return x + y; },\n\t[](ll x, ll\
-    \ y){ return x + y; },\n\t[](ll x, ll btm, ll tp){ return x * (tp - btm); });\n\
-    \n\tsegtree.update(0, n, 0);\n\twhile(q--) {\n\t\tint com;\n\t\tcin >> com;\n\t\
-    \tif(com == 0) {\n\t\t\tll x, y, z;\n\t\t\tcin >> x >> y >> z;\n\t\t\tsegtree.update(--x,\
-    \ y, z);\n\t\t} else {\n\t\t\tll x, y, z;\n\t\t\tcin >> x;\n\t\t\tcout << segtree.get(--x)\
-    \ << endl;\n\t\t}\n\t}\n}"
+    \ y){ return x + y; },\n\t[](ll x, int btm, int tp){ return (x * (tp - btm));\
+    \ });\n\n\tsegtree.update(0, n, 0);\n\twhile(q--) {\n\t\tint com;\n\t\tcin >>\
+    \ com;\n\t\tif(com == 0) {\n\t\t\tll x, y, z;\n\t\t\tcin >> x >> y >> z;\n\t\t\
+    \tsegtree.update(--x, y, z);\n\t\t} else {\n\t\t\tll x, y, z;\n\t\t\tcin >> x;\n\
+    \t\t\tcout << segtree.get(--x) << endl;\n\t\t}\n\t}\n}"
   dependsOn:
   - DataStructure/SegmentTree.cpp
   isVerificationFile: true
   path: Test/AOJ/SegmentTree-RAQ.test.cpp
   requiredBy: []
-  timestamp: '2020-12-18 15:55:06+09:00'
+  timestamp: '2020-12-18 16:22:43+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: Test/AOJ/SegmentTree-RAQ.test.cpp
