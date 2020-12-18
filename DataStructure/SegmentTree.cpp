@@ -7,7 +7,7 @@ class SegmentTree {
 	T operation_identity_element, update_identity_element;
 	function<T(T, T)> operation;
 	function<T(T, T)> update_type;
-	function<T(T, T, T)> lazy_update;
+	function<T(T, ll, ll)> lazy_update;
 
 	void evaluation(int pos, int btm, int tp) {
 		if(!lazy_changed[pos]) return ;
