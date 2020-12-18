@@ -64,7 +64,7 @@ class SegmentTree {
 	}
 
 	// update [pos] (0-indexed)
-	void update(int pos, int x) {
+	void update(int pos, T x) {
 		if(is_lazy) return range_update(pos, pos + 1, x, 0, 0, leaf_num);
 		else point_update(pos, x);
 	}
