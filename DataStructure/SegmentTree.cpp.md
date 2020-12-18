@@ -1,11 +1,11 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: Test/AOJ/SegmentTree-RSQ.cpp
-    title: Test/AOJ/SegmentTree-RSQ.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: Test/AOJ/SegmentTree-RSQ.test.cpp
+    title: Test/AOJ/SegmentTree-RSQ.test.cpp
   - icon: ':heavy_check_mark:'
     path: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
     title: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
@@ -104,13 +104,13 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: DataStructure/SegmentTree.cpp
-  requiredBy:
-  - Test/AOJ/SegmentTree-RSQ.cpp
+  requiredBy: []
   timestamp: '2020-12-18 07:40:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
   - Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
+  - Test/AOJ/SegmentTree-RSQ.test.cpp
 documentation_of: DataStructure/SegmentTree.cpp
 layout: document
 redirect_from:

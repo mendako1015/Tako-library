@@ -57,14 +57,12 @@ data:
     - icon: ':warning:'
       path: String/LongestCommonString.cpp
       title: String/LongestCommonString.cpp
-  - name: Test/AOJ
-    pages:
-    - icon: ':warning:'
-      path: Test/AOJ/SegmentTree-RSQ.cpp
-      title: Test/AOJ/SegmentTree-RSQ.cpp
   verificationCategories:
   - name: Test/AOJ
     pages:
+    - icon: ':heavy_check_mark:'
+      path: Test/AOJ/SegmentTree-RSQ.test.cpp
+      title: Test/AOJ/SegmentTree-RSQ.test.cpp
     - icon: ':heavy_check_mark:'
       path: Test/AOJ/WeighedUnionFind.test.cpp
       title: Test/AOJ/WeighedUnionFind.test.cpp
