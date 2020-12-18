@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: DataStructure/SegmentTree.cpp
     title: DataStructure/SegmentTree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -17,7 +17,7 @@ data:
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n\
     #include <bits/stdc++.h>\nusing namespace std;\n#line 1 \"DataStructure/SegmentTree.cpp\"\
     \ntemplate <class T = int>\nclass SegmentTree {\n\tint leaf_num;\n\tbool is_lazy;\n\
-    \tvector<T> data;\n\tvector<T> lazy, lazy_changed;\n\tT operation_identity_element,\
+    \tvector<T> data, lazy;\n\tvector<bool> lazy_changed;\n\tT operation_identity_element,\
     \ update_identity_element;\n\tfunction<T(T, T)> operation;\n\tfunction<T(T, T)>\
     \ update_type;\n\tfunction<T(T, int, int)> lazy_update;\n\n\tvoid evaluation(int\
     \ pos, int btm, int tp) {\n\t\tif(!lazy_changed[pos]) return ;\n\t\tdata[pos]\
@@ -80,8 +80,8 @@ data:
   isVerificationFile: true
   path: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2020-12-18 16:22:43+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-12-18 16:28:01+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
 layout: document

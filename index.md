@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/BinaryIndexedTree.cpp
       title: DataStructure/BinaryIndexedTree.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/SegmentTree.cpp
       title: DataStructure/SegmentTree.cpp
     - icon: ':heavy_check_mark:'
@@ -60,28 +60,28 @@ data:
   verificationCategories:
   - name: Test/AOJ
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: Test/AOJ/SegmentTree-RAQ.test.cpp
       title: Test/AOJ/SegmentTree-RAQ.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: Test/AOJ/SegmentTree-RMQ.test.cpp
       title: Test/AOJ/SegmentTree-RMQ.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: Test/AOJ/SegmentTree-RMQandRAQ.test.cpp
       title: Test/AOJ/SegmentTree-RMQandRAQ.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
       title: Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: Test/AOJ/SegmentTree-RSQ.test.cpp
       title: Test/AOJ/SegmentTree-RSQ.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: Test/AOJ/SegmentTree-RSQandRAQ.test.cpp
       title: Test/AOJ/SegmentTree-RSQandRAQ.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: Test/AOJ/SegmentTree-RSQandRUQ.test.cpp
       title: Test/AOJ/SegmentTree-RSQandRUQ.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: Test/AOJ/SegmentTree-RUQ.test.cpp
       title: Test/AOJ/SegmentTree-RUQ.test.cpp
     - icon: ':heavy_check_mark:'
@@ -92,10 +92,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: Test/yosupo-judge/BinaryIndexedTree.test.cpp
       title: Test/yosupo-judge/BinaryIndexedTree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
       title: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
       title: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
     - icon: ':heavy_check_mark:'

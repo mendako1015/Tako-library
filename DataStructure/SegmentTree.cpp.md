@@ -3,43 +3,43 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: Test/AOJ/SegmentTree-RAQ.test.cpp
     title: Test/AOJ/SegmentTree-RAQ.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: Test/AOJ/SegmentTree-RMQ.test.cpp
     title: Test/AOJ/SegmentTree-RMQ.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: Test/AOJ/SegmentTree-RMQandRAQ.test.cpp
     title: Test/AOJ/SegmentTree-RMQandRAQ.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
     title: Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: Test/AOJ/SegmentTree-RSQ.test.cpp
     title: Test/AOJ/SegmentTree-RSQ.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: Test/AOJ/SegmentTree-RSQandRAQ.test.cpp
     title: Test/AOJ/SegmentTree-RSQandRAQ.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: Test/AOJ/SegmentTree-RSQandRUQ.test.cpp
     title: Test/AOJ/SegmentTree-RSQandRUQ.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: Test/AOJ/SegmentTree-RUQ.test.cpp
     title: Test/AOJ/SegmentTree-RUQ.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
     title: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
     title: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"DataStructure/SegmentTree.cpp\"\ntemplate <class T = int>\n\
-    class SegmentTree {\n\tint leaf_num;\n\tbool is_lazy;\n\tvector<T> data;\n\tvector<T>\
-    \ lazy, lazy_changed;\n\tT operation_identity_element, update_identity_element;\n\
+    class SegmentTree {\n\tint leaf_num;\n\tbool is_lazy;\n\tvector<T> data, lazy;\n\
+    \tvector<bool> lazy_changed;\n\tT operation_identity_element, update_identity_element;\n\
     \tfunction<T(T, T)> operation;\n\tfunction<T(T, T)> update_type;\n\tfunction<T(T,\
     \ int, int)> lazy_update;\n\n\tvoid evaluation(int pos, int btm, int tp) {\n\t\
     \tif(!lazy_changed[pos]) return ;\n\t\tdata[pos] = update_type(data[pos], lazy_update(lazy[pos],\
@@ -81,7 +81,7 @@ data:
     \ - 1] << \", \" << lazy[i + leaf_num - 1] << \"), \";\n\t\tcout << endl;\n\t\
     }\n};\n"
   code: "template <class T = int>\nclass SegmentTree {\n\tint leaf_num;\n\tbool is_lazy;\n\
-    \tvector<T> data;\n\tvector<T> lazy, lazy_changed;\n\tT operation_identity_element,\
+    \tvector<T> data, lazy;\n\tvector<bool> lazy_changed;\n\tT operation_identity_element,\
     \ update_identity_element;\n\tfunction<T(T, T)> operation;\n\tfunction<T(T, T)>\
     \ update_type;\n\tfunction<T(T, int, int)> lazy_update;\n\n\tvoid evaluation(int\
     \ pos, int btm, int tp) {\n\t\tif(!lazy_changed[pos]) return ;\n\t\tdata[pos]\
@@ -127,8 +127,8 @@ data:
   isVerificationFile: false
   path: DataStructure/SegmentTree.cpp
   requiredBy: []
-  timestamp: '2020-12-18 16:22:43+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2020-12-18 16:28:01+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
   - Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
