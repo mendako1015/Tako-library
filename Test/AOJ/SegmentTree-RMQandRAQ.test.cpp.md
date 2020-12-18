@@ -7,12 +7,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_H
     links:
     - https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_H
-  bundledCode: "#line 1 \"Test/AOJ/SegmentTree-RMQandRAQ.cpp\"\n#define PROBLEM \"\
-    https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_H\"\n\n#include <bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"Test/AOJ/SegmentTree-RMQandRAQ.test.cpp\"\n#define PROBLEM\
+    \ \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_H\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n#line 1 \"DataStructure/SegmentTree.cpp\"\ntemplate <class\
     \ T = int>\nclass SegmentTree {\n\tint leaf_num;\n\tbool is_lazy;\n\tvector<T>\
     \ data;\n\tvector<T> lazy, lazy_changed;\n\tT operation_identity_element, update_identity_element;\n\
@@ -55,8 +57,8 @@ data:
     \n\tT operator[](int pos) {\n\t\treturn data[pos + leaf_num - 1];\n\t}\n\n\tvoid\
     \ print(int n) {\n\t\tfor(int i = 0; i < n; i++) cout << \"(\" << data[i + leaf_num\
     \ - 1] << \", \" << lazy[i + leaf_num - 1] << \"), \";\n\t\tcout << endl;\n\t\
-    }\n};\n#line 6 \"Test/AOJ/SegmentTree-RMQandRAQ.cpp\"\ntypedef long long ll;\n\
-    \nint main() {\n\tll n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll> segtree(n+10,\
+    }\n};\n#line 6 \"Test/AOJ/SegmentTree-RMQandRAQ.test.cpp\"\ntypedef long long\
+    \ ll;\n\nint main() {\n\tll n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll> segtree(n+10,\
     \ true, INT_MAX, 0, \n\t[](ll x, ll y){ return min(x, y); },\n\t[](ll x, ll y){\
     \ return x + y; },\n\t[](ll x, ll btm, ll tp){ return x; });\n\n\tsegtree.update(0,\
     \ n, 0);\n\twhile(q--) {\n\t\tint com;\n\t\tcin >> com;\n\t\tif(com == 0) {\n\t\
@@ -74,16 +76,16 @@ data:
     \ << segtree.get(x, ++y) << endl;\n\t\t}\n\t}\n\treturn 0;\n}"
   dependsOn:
   - DataStructure/SegmentTree.cpp
-  isVerificationFile: false
-  path: Test/AOJ/SegmentTree-RMQandRAQ.cpp
+  isVerificationFile: true
+  path: Test/AOJ/SegmentTree-RMQandRAQ.test.cpp
   requiredBy: []
-  timestamp: '2020-12-18 14:50:07+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2020-12-18 14:55:47+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: Test/AOJ/SegmentTree-RMQandRAQ.cpp
+documentation_of: Test/AOJ/SegmentTree-RMQandRAQ.test.cpp
 layout: document
 redirect_from:
-- /library/Test/AOJ/SegmentTree-RMQandRAQ.cpp
-- /library/Test/AOJ/SegmentTree-RMQandRAQ.cpp.html
-title: Test/AOJ/SegmentTree-RMQandRAQ.cpp
+- /verify/Test/AOJ/SegmentTree-RMQandRAQ.test.cpp
+- /verify/Test/AOJ/SegmentTree-RMQandRAQ.test.cpp.html
+title: Test/AOJ/SegmentTree-RMQandRAQ.test.cpp
 ---

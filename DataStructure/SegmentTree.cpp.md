@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: Test/AOJ/SegmentTree-RMQandRAQ.cpp
-    title: Test/AOJ/SegmentTree-RMQandRAQ.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: Test/AOJ/SegmentTree-RAQ.test.cpp
@@ -12,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: Test/AOJ/SegmentTree-RMQ.test.cpp
     title: Test/AOJ/SegmentTree-RMQ.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: Test/AOJ/SegmentTree-RMQandRAQ.test.cpp
+    title: Test/AOJ/SegmentTree-RMQandRAQ.test.cpp
   - icon: ':heavy_check_mark:'
     path: Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
     title: Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
@@ -122,8 +122,7 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: DataStructure/SegmentTree.cpp
-  requiredBy:
-  - Test/AOJ/SegmentTree-RMQandRAQ.cpp
+  requiredBy: []
   timestamp: '2020-12-18 07:40:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -133,6 +132,7 @@ data:
   - Test/AOJ/SegmentTree-RMQ.test.cpp
   - Test/AOJ/SegmentTree-RSQandRAQ.test.cpp
   - Test/AOJ/SegmentTree-RSQ.test.cpp
+  - Test/AOJ/SegmentTree-RMQandRAQ.test.cpp
   - Test/AOJ/SegmentTree-RAQ.test.cpp
   - Test/AOJ/SegmentTree-RUQ.test.cpp
 documentation_of: DataStructure/SegmentTree.cpp
