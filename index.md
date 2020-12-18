@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/BinaryIndexedTree.cpp
       title: DataStructure/BinaryIndexedTree.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: DataStructure/SegmentTree.cpp
       title: DataStructure/SegmentTree.cpp
     - icon: ':heavy_check_mark:'
@@ -66,6 +66,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: Test/AOJ/SegmentTree-RMQ.test.cpp
       title: Test/AOJ/SegmentTree-RMQ.test.cpp
+    - icon: ':x:'
+      path: Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
+      title: Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
     - icon: ':heavy_check_mark:'
       path: Test/AOJ/SegmentTree-RSQ.test.cpp
       title: Test/AOJ/SegmentTree-RSQ.test.cpp

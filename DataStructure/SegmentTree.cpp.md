@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: Test/AOJ/SegmentTree-RMQ.test.cpp
     title: Test/AOJ/SegmentTree-RMQ.test.cpp
+  - icon: ':x:'
+    path: Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
+    title: Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
   - icon: ':heavy_check_mark:'
     path: Test/AOJ/SegmentTree-RSQ.test.cpp
     title: Test/AOJ/SegmentTree-RSQ.test.cpp
@@ -22,7 +25,7 @@ data:
     path: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
     title: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"DataStructure/SegmentTree.cpp\"\ntemplate <class T = int>\n\
@@ -115,10 +118,11 @@ data:
   path: DataStructure/SegmentTree.cpp
   requiredBy: []
   timestamp: '2020-12-18 07:40:15+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
   - Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
+  - Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
   - Test/AOJ/SegmentTree-RMQ.test.cpp
   - Test/AOJ/SegmentTree-RSQ.test.cpp
   - Test/AOJ/SegmentTree-RAQ.test.cpp

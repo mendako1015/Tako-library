@@ -7,14 +7,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_E
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_D
     links:
-    - https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_E
-  bundledCode: "#line 1 \"Test/AOJ/SegmentTree-RAQ.test.cpp\"\n#define PROBLEM \"\
-    https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_E\"\n\n#include <bits/stdc++.h>\n\
+    - https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_D
+  bundledCode: "#line 1 \"Test/AOJ/SegmentTree-RMQandRUQ.test.cpp\"\n#define PROBLEM\
+    \ \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_D\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n#line 1 \"DataStructure/SegmentTree.cpp\"\ntemplate <class\
     \ T = int>\nclass SegmentTree {\n\tint leaf_num;\n\tbool is_lazy;\n\tvector<T>\
     \ data;\n\tvector<T> lazy, lazy_changed;\n\tT operation_identity_element, update_identity_element;\n\
@@ -57,35 +57,35 @@ data:
     \n\tT operator[](int pos) {\n\t\treturn data[pos + leaf_num - 1];\n\t}\n\n\tvoid\
     \ print(int n) {\n\t\tfor(int i = 0; i < n; i++) cout << \"(\" << data[i + leaf_num\
     \ - 1] << \", \" << lazy[i + leaf_num - 1] << \"), \";\n\t\tcout << endl;\n\t\
-    }\n};\n#line 6 \"Test/AOJ/SegmentTree-RAQ.test.cpp\"\ntypedef long long ll;\n\n\
-    int main() {\n\tll n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll> segtree(n+10, true,\
-    \ 0, 0, \n\t[](ll x, ll y){ return x + y; },\n\t[](ll x, ll y){ return x + y;\
-    \ },\n\t[](ll x, ll btm, ll tp){ return x * (tp - btm); });\n\n\tsegtree.update(0,\
-    \ n, 0);\n\twhile(q--) {\n\t\tint com;\n\t\tcin >> com;\n\t\tif(com == 0) {\n\t\
-    \t\tll x, y, z;\n\t\t\tcin >> x >> y >> z;\n\t\t\tsegtree.update(--x, y, z);\n\
-    \t\t} else {\n\t\t\tll x, y, z;\n\t\t\tcin >> x;\n\t\t\tcout << segtree.get(--x)\
-    \ << endl;\n\t\t}\n\t}\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_E\"\n\n\
+    }\n};\n#line 6 \"Test/AOJ/SegmentTree-RMQandRUQ.test.cpp\"\ntypedef long long\
+    \ ll;\n\nint main() {\n\tll n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll> segtree(n+10,\
+    \ true, INT_MAX, 0, \n\t[](ll x, ll y){ return min(x, y); },\n\t[](ll x, ll y){\
+    \ return y; },\n\t[](ll x, ll btm, ll tp){ return x; });\n\n\tsegtree.update(0,\
+    \ n, 2147483647);\n\twhile(q--) {\n\t\tint com;\n\t\tcin >> com;\n\t\tif(com ==\
+    \ 0) {\n\t\t\tll x, y, z;\n\t\t\tcin >> x >> y >> z;\n\t\t\tsegtree.update(x,\
+    \ ++y, z);\n\t\t} else {\n\t\t\tll x, y, z;\n\t\t\tcin >> x >> y;\n\t\t\tcout\
+    \ << segtree.get(x, ++y) << endl;\n\t\t}\n\t}\n\treturn 0;\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_D\"\n\n\
     #include <bits/stdc++.h>\nusing namespace std;\n#include \"../../DataStructure/SegmentTree.cpp\"\
     \ntypedef long long ll;\n\nint main() {\n\tll n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll>\
-    \ segtree(n+10, true, 0, 0, \n\t[](ll x, ll y){ return x + y; },\n\t[](ll x, ll\
-    \ y){ return x + y; },\n\t[](ll x, ll btm, ll tp){ return x * (tp - btm); });\n\
-    \n\tsegtree.update(0, n, 0);\n\twhile(q--) {\n\t\tint com;\n\t\tcin >> com;\n\t\
-    \tif(com == 0) {\n\t\t\tll x, y, z;\n\t\t\tcin >> x >> y >> z;\n\t\t\tsegtree.update(--x,\
-    \ y, z);\n\t\t} else {\n\t\t\tll x, y, z;\n\t\t\tcin >> x;\n\t\t\tcout << segtree.get(--x)\
-    \ << endl;\n\t\t}\n\t}\n}"
+    \ segtree(n+10, true, INT_MAX, 0, \n\t[](ll x, ll y){ return min(x, y); },\n\t\
+    [](ll x, ll y){ return y; },\n\t[](ll x, ll btm, ll tp){ return x; });\n\n\tsegtree.update(0,\
+    \ n, 2147483647);\n\twhile(q--) {\n\t\tint com;\n\t\tcin >> com;\n\t\tif(com ==\
+    \ 0) {\n\t\t\tll x, y, z;\n\t\t\tcin >> x >> y >> z;\n\t\t\tsegtree.update(x,\
+    \ ++y, z);\n\t\t} else {\n\t\t\tll x, y, z;\n\t\t\tcin >> x >> y;\n\t\t\tcout\
+    \ << segtree.get(x, ++y) << endl;\n\t\t}\n\t}\n\treturn 0;\n}"
   dependsOn:
   - DataStructure/SegmentTree.cpp
   isVerificationFile: true
-  path: Test/AOJ/SegmentTree-RAQ.test.cpp
+  path: Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
   requiredBy: []
-  timestamp: '2020-12-18 14:17:37+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-12-18 14:37:58+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: Test/AOJ/SegmentTree-RAQ.test.cpp
+documentation_of: Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
 layout: document
 redirect_from:
-- /verify/Test/AOJ/SegmentTree-RAQ.test.cpp
-- /verify/Test/AOJ/SegmentTree-RAQ.test.cpp.html
-title: Test/AOJ/SegmentTree-RAQ.test.cpp
+- /verify/Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
+- /verify/Test/AOJ/SegmentTree-RMQandRUQ.test.cpp.html
+title: Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
 ---
