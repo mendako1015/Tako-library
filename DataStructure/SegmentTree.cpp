@@ -2,8 +2,8 @@ template <class T = int>
 class SegmentTree {
 	int leaf_num;
 	bool is_lazy;
-	vector<T> data;
-	vector<T> lazy, lazy_changed;
+	vector<T> data, lazy;
+	vector<bool> lazy_changed;
 	T operation_identity_element, update_identity_element;
 	function<T(T, T)> operation;
 	function<T(T, T)> update_type;
