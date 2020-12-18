@@ -57,6 +57,11 @@ data:
     - icon: ':warning:'
       path: String/LongestCommonString.cpp
       title: String/LongestCommonString.cpp
+  - name: Test/AOJ
+    pages:
+    - icon: ':warning:'
+      path: Test/AOJ/SegmentTree-RMQandRAQ.cpp
+      title: Test/AOJ/SegmentTree-RMQandRAQ.cpp
   verificationCategories:
   - name: Test/AOJ
     pages:

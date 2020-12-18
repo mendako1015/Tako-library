@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: Test/AOJ/SegmentTree-RMQandRAQ.cpp
+    title: Test/AOJ/SegmentTree-RMQandRAQ.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: Test/AOJ/SegmentTree-RAQ.test.cpp
@@ -119,7 +122,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: DataStructure/SegmentTree.cpp
-  requiredBy: []
+  requiredBy:
+  - Test/AOJ/SegmentTree-RMQandRAQ.cpp
   timestamp: '2020-12-18 07:40:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
