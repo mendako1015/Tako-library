@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: DataStructure/SegmentTree.cpp
     title: DataStructure/SegmentTree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_G
@@ -19,9 +19,9 @@ data:
     \ T = int>\nclass SegmentTree {\n\tint leaf_num;\n\tbool is_lazy;\n\tvector<T>\
     \ data;\n\tvector<T> lazy, lazy_changed;\n\tT operation_identity_element, update_identity_element;\n\
     \tfunction<T(T, T)> operation;\n\tfunction<T(T, T)> update_type;\n\tfunction<T(T,\
-    \ T, T)> lazy_update;\n\n\tvoid evaluation(int pos, int btm, int tp) {\n\t\tif(!lazy_changed[pos])\
-    \ return ;\n\t\tdata[pos] = update_type(data[pos], lazy_update(lazy[pos], btm,\
-    \ tp));\n\t\tif(tp - btm > 1) {\n\t\t\tlazy[pos * 2 + 1] = update_type(lazy[pos\
+    \ ll, ll)> lazy_update;\n\n\tvoid evaluation(int pos, int btm, int tp) {\n\t\t\
+    if(!lazy_changed[pos]) return ;\n\t\tdata[pos] = update_type(data[pos], lazy_update(lazy[pos],\
+    \ btm, tp));\n\t\tif(tp - btm > 1) {\n\t\t\tlazy[pos * 2 + 1] = update_type(lazy[pos\
     \ * 2 + 1], lazy[pos]), lazy_changed[pos * 2 + 1] = true;\n\t\t\tlazy[pos * 2\
     \ + 2] = update_type(lazy[pos * 2 + 2], lazy[pos]), lazy_changed[pos * 2 + 2]\
     \ = true;\n\t\t}\n\t\tlazy[pos] = update_identity_element, lazy_changed[pos] =\
@@ -79,8 +79,8 @@ data:
   isVerificationFile: true
   path: Test/AOJ/SegmentTree-RSQandRAQ.test.cpp
   requiredBy: []
-  timestamp: '2020-12-18 14:44:26+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-12-18 15:55:06+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: Test/AOJ/SegmentTree-RSQandRAQ.test.cpp
 layout: document
