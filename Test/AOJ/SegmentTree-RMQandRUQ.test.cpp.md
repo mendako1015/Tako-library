@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: DataStructure/SegmentTree.cpp
     title: DataStructure/SegmentTree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_D
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_F
     links:
-    - https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_D
+    - https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_F
   bundledCode: "#line 1 \"Test/AOJ/SegmentTree-RMQandRUQ.test.cpp\"\n#define PROBLEM\
-    \ \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_D\"\n\n#include <bits/stdc++.h>\n\
+    \ \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_F\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n#line 1 \"DataStructure/SegmentTree.cpp\"\ntemplate <class\
     \ T = int>\nclass SegmentTree {\n\tint leaf_num;\n\tbool is_lazy;\n\tvector<T>\
     \ data;\n\tvector<T> lazy, lazy_changed;\n\tT operation_identity_element, update_identity_element;\n\
@@ -65,7 +65,7 @@ data:
     \ 0) {\n\t\t\tll x, y, z;\n\t\t\tcin >> x >> y >> z;\n\t\t\tsegtree.update(x,\
     \ ++y, z);\n\t\t} else {\n\t\t\tll x, y, z;\n\t\t\tcin >> x >> y;\n\t\t\tcout\
     \ << segtree.get(x, ++y) << endl;\n\t\t}\n\t}\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_D\"\n\n\
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_F\"\n\n\
     #include <bits/stdc++.h>\nusing namespace std;\n#include \"../../DataStructure/SegmentTree.cpp\"\
     \ntypedef long long ll;\n\nint main() {\n\tll n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll>\
     \ segtree(n+10, true, INT_MAX, 0, \n\t[](ll x, ll y){ return min(x, y); },\n\t\
@@ -79,8 +79,8 @@ data:
   isVerificationFile: true
   path: Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
   requiredBy: []
-  timestamp: '2020-12-18 14:37:58+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-12-18 14:41:17+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
 layout: document
