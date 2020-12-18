@@ -22,6 +22,9 @@ data:
     path: Test/AOJ/SegmentTree-RSQandRAQ.test.cpp
     title: Test/AOJ/SegmentTree-RSQandRAQ.test.cpp
   - icon: ':heavy_check_mark:'
+    path: Test/AOJ/SegmentTree-RSQandRUQ.test.cpp
+    title: Test/AOJ/SegmentTree-RSQandRUQ.test.cpp
+  - icon: ':heavy_check_mark:'
     path: Test/AOJ/SegmentTree-RUQ.test.cpp
     title: Test/AOJ/SegmentTree-RUQ.test.cpp
   - icon: ':heavy_check_mark:'
@@ -132,6 +135,7 @@ data:
   - Test/AOJ/SegmentTree-RMQ.test.cpp
   - Test/AOJ/SegmentTree-RSQandRAQ.test.cpp
   - Test/AOJ/SegmentTree-RSQ.test.cpp
+  - Test/AOJ/SegmentTree-RSQandRUQ.test.cpp
   - Test/AOJ/SegmentTree-RMQandRAQ.test.cpp
   - Test/AOJ/SegmentTree-RAQ.test.cpp
   - Test/AOJ/SegmentTree-RUQ.test.cpp

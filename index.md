@@ -79,6 +79,9 @@ data:
       path: Test/AOJ/SegmentTree-RSQandRAQ.test.cpp
       title: Test/AOJ/SegmentTree-RSQandRAQ.test.cpp
     - icon: ':heavy_check_mark:'
+      path: Test/AOJ/SegmentTree-RSQandRUQ.test.cpp
+      title: Test/AOJ/SegmentTree-RSQandRUQ.test.cpp
+    - icon: ':heavy_check_mark:'
       path: Test/AOJ/SegmentTree-RUQ.test.cpp
       title: Test/AOJ/SegmentTree-RUQ.test.cpp
     - icon: ':heavy_check_mark:'
