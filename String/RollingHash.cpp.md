@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: Test/AOJ/RollingHash.test.cpp
+    title: Test/AOJ/RollingHash.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"String/RollingHash.cpp\"\ntemplate <typename T, T mod, T\
@@ -28,8 +31,9 @@ data:
   path: String/RollingHash.cpp
   requiredBy: []
   timestamp: '2020-12-30 21:28:36+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - Test/AOJ/RollingHash.test.cpp
 documentation_of: String/RollingHash.cpp
 layout: document
 redirect_from:

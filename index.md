@@ -57,7 +57,7 @@ data:
     - icon: ':warning:'
       path: String/LongestCommonString.cpp
       title: String/LongestCommonString.cpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: String/RollingHash.cpp
       title: String/RollingHash.cpp
   verificationCategories:
