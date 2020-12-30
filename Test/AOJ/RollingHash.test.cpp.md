@@ -18,10 +18,9 @@ data:
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n#include \"../../string/RollingHash.cpp\"\
     \ntypedef long long ll;\n\nint main() {\n\tstring t, p;\n\tcin >> t >> p;\n\t\
-    if(t.size() < p.size()) return 0;\n\tconst ll MOD = 1e9+7;\n\tconst ll BASE =\
-    \ 1777771;\n\tRollingHash<ll, MOD, BASE> rt(t), rp(p);\n\tfor(int i = 0; i < t.size()\
-    \ - p.size() + 1; i++) {\n\t\tif(rt.get(i, i + p.size()) == rp) cout << i << endl;\n\
-    \t}\n\treturn 0;\n}"
+    if(t.size() < p.size()) return 0;\n\tRollingHash<ll, 1000000007, 1777771> rt(t),\
+    \ rp(p);\n\tfor(int i = 0; i < t.size() - p.size() + 1; i++) {\n\t\tif(rt.get(i,\
+    \ i + p.size()) == rp) cout << i << endl;\n\t}\n\treturn 0;\n}"
   dependsOn: []
   isVerificationFile: true
   path: Test/AOJ/RollingHash.test.cpp
