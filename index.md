@@ -57,9 +57,15 @@ data:
     - icon: ':warning:'
       path: String/LongestCommonString.cpp
       title: String/LongestCommonString.cpp
+    - icon: ':warning:'
+      path: String/RollingHash.cpp
+      title: String/RollingHash.cpp
   verificationCategories:
   - name: Test/AOJ
     pages:
+    - icon: ':x:'
+      path: Test/AOJ/RollingHash.test.cpp
+      title: Test/AOJ/RollingHash.test.cpp
     - icon: ':heavy_check_mark:'
       path: Test/AOJ/SegmentTree-RAQ.test.cpp
       title: Test/AOJ/SegmentTree-RAQ.test.cpp
