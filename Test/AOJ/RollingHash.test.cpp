@@ -2,7 +2,7 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-#include "../../string/RollingHash.cpp"
+#include "../../String/RollingHash.cpp"
 typedef long long ll;
 
 int main() {
