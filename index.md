@@ -57,13 +57,13 @@ data:
     - icon: ':warning:'
       path: String/LongestCommonString.cpp
       title: String/LongestCommonString.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: String/RollingHash.cpp
       title: String/RollingHash.cpp
   verificationCategories:
   - name: Test/AOJ
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: Test/AOJ/RollingHash.test.cpp
       title: Test/AOJ/RollingHash.test.cpp
     - icon: ':heavy_check_mark:'

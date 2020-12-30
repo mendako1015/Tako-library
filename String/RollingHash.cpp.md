@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: Test/AOJ/RollingHash.test.cpp
     title: Test/AOJ/RollingHash.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"String/RollingHash.cpp\"\ntemplate <typename T, T mod, T\
@@ -31,7 +31,7 @@ data:
   path: String/RollingHash.cpp
   requiredBy: []
   timestamp: '2020-12-30 21:28:36+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - Test/AOJ/RollingHash.test.cpp
 documentation_of: String/RollingHash.cpp
