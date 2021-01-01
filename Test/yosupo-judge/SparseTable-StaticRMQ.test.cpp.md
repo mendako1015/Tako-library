@@ -28,24 +28,22 @@ data:
     \t\tlookup[i] = lookup[i >> 1] + 1;\n\t\t}\n\t}\n\n\tinline T query(int l, int\
     \ r) {\n\t\tint b = lookup[r - l];\n\t\treturn operation(table[b][l], table[b][r\
     \ - (1 << b)]);\n\t}\n};\n#line 6 \"Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp\"\
-    \ntypedef long long ll;\n\nint main() {\n\tcin.tie(0);\n\tcout.tie(0);\n\tios::sync_with_stdio(false);\n\
-    \n\tint n, q;\n\tcin >> n >> q;\n\tvector<int> a(n);\n\tfor(int i = 0; i < n;\
-    \ i++) cin >> a[i];\n\tSparseTable<int> sp(a, [](int x, int y) { return min(x,\
-    \ y); });\n\twhile(q--) {\n\t\tint l, r;\n\t\tcin >> l >> r;\n\t\tcout << sp.query(l,\
-    \ r) << endl;\n\t}\n\treturn 0;\n}\n"
+    \ntypedef long long ll;\n\nint main() {\n\tint n, q;\n\tcin >> n >> q;\n\tvector<int>\
+    \ a(n);\n\tfor(int i = 0; i < n; i++) cin >> a[i];\n\tSparseTable<int> sp(a, [](int\
+    \ x, int y) { return min(x, y); });\n\twhile(q--) {\n\t\tint l, r;\n\t\tcin >>\
+    \ l >> r;\n\t\tcout << sp.query(l, r) << endl;\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n#include \"../../DataStructure/SparseTable.cpp\"\
-    \ntypedef long long ll;\n\nint main() {\n\tcin.tie(0);\n\tcout.tie(0);\n\tios::sync_with_stdio(false);\n\
-    \n\tint n, q;\n\tcin >> n >> q;\n\tvector<int> a(n);\n\tfor(int i = 0; i < n;\
-    \ i++) cin >> a[i];\n\tSparseTable<int> sp(a, [](int x, int y) { return min(x,\
-    \ y); });\n\twhile(q--) {\n\t\tint l, r;\n\t\tcin >> l >> r;\n\t\tcout << sp.query(l,\
-    \ r) << endl;\n\t}\n\treturn 0;\n}"
+    \ntypedef long long ll;\n\nint main() {\n\tint n, q;\n\tcin >> n >> q;\n\tvector<int>\
+    \ a(n);\n\tfor(int i = 0; i < n; i++) cin >> a[i];\n\tSparseTable<int> sp(a, [](int\
+    \ x, int y) { return min(x, y); });\n\twhile(q--) {\n\t\tint l, r;\n\t\tcin >>\
+    \ l >> r;\n\t\tcout << sp.query(l, r) << endl;\n\t}\n\treturn 0;\n}"
   dependsOn:
   - DataStructure/SparseTable.cpp
   isVerificationFile: true
   path: Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp
   requiredBy: []
-  timestamp: '2021-01-02 01:00:24+09:00'
+  timestamp: '2021-01-02 01:06:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp
