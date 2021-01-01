@@ -9,6 +9,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/SegmentTree.cpp
       title: DataStructure/SegmentTree.cpp
+    - icon: ':warning:'
+      path: DataStructure/SparseTable.cpp
+      title: DataStructure/SparseTable.cpp
     - icon: ':heavy_check_mark:'
       path: DataStructure/UnionFind.cpp
       title: DataStructure/UnionFind.cpp
