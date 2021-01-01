@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp
+    title: Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"DataStructure/SparseTable.cpp\"\ntemplate<typename T>\n\
@@ -37,8 +40,9 @@ data:
   path: DataStructure/SparseTable.cpp
   requiredBy: []
   timestamp: '2021-01-02 00:55:12+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp
 documentation_of: DataStructure/SparseTable.cpp
 layout: document
 redirect_from:

@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/SegmentTree.cpp
       title: DataStructure/SegmentTree.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/SparseTable.cpp
       title: DataStructure/SparseTable.cpp
     - icon: ':heavy_check_mark:'
@@ -105,8 +105,14 @@ data:
       path: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
       title: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
     - icon: ':heavy_check_mark:'
+      path: Test/yosupo-judge/SegmentTree-StaticRMQ.test.cpp
+      title: Test/yosupo-judge/SegmentTree-StaticRMQ.test.cpp
+    - icon: ':heavy_check_mark:'
       path: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
       title: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp
+      title: Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp
     - icon: ':heavy_check_mark:'
       path: Test/yosupo-judge/UnionFind.test.cpp
       title: Test/yosupo-judge/UnionFind.test.cpp

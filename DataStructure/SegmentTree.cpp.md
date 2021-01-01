@@ -31,6 +31,9 @@ data:
     path: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
     title: Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: Test/yosupo-judge/SegmentTree-StaticRMQ.test.cpp
+    title: Test/yosupo-judge/SegmentTree-StaticRMQ.test.cpp
+  - icon: ':heavy_check_mark:'
     path: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
     title: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
   _pathExtension: cpp
@@ -132,6 +135,7 @@ data:
   verifiedWith:
   - Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
   - Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
+  - Test/yosupo-judge/SegmentTree-StaticRMQ.test.cpp
   - Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
   - Test/AOJ/SegmentTree-RMQ.test.cpp
   - Test/AOJ/SegmentTree-RSQandRAQ.test.cpp
