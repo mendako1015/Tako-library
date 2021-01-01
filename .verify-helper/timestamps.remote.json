@@ -11,7 +11,9 @@
 "Test/AOJ/WeighedUnionFind.test.cpp": "2020-12-16 18:35:24 +0900",
 "Test/yosupo-judge/BinaryIndexedTree.test.cpp": "2020-12-16 19:14:26 +0900",
 "Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp": "2020-12-18 16:58:46 +0900",
+"Test/yosupo-judge/SegmentTree-StaticRMQ.test.cpp": "2021-01-02 01:02:19 +0900",
 "Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp": "2020-12-18 16:58:46 +0900",
+"Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp": "2021-01-02 01:00:24 +0900",
 "Test/yosupo-judge/UnionFind.test.cpp": "2020-12-16 18:35:24 +0900",
 "Test/yosupo-judge/example-test.test.cpp": "2020-12-16 18:33:09 +0900"
 }
