@@ -21,9 +21,6 @@ data:
   - name: Graph
     pages:
     - icon: ':warning:'
-      path: Graph/Bellman_Ford.cpp
-      title: Graph/Bellman_Ford.cpp
-    - icon: ':warning:'
       path: Graph/Dijkstra.cpp
       title: Graph/Dijkstra.cpp
     - icon: ':warning:'
