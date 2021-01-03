@@ -1,5 +1,6 @@
-const int MAX_V = ;
-const int MAX_E = ;
+const int MAX_V;
+const int MAX_E;
+const int INF;
 bool negative = false; // 負閉路があるか否か
 
 struct edge {
