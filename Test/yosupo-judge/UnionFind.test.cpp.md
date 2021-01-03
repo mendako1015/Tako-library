@@ -16,13 +16,13 @@ data:
   bundledCode: "#line 1 \"Test/yosupo-judge/UnionFind.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n#line 1 \"DataStructure/UnionFind.cpp\"\ntemplate<class\
-    \ T = int>\nstruct UnionFind {\n\tvector<T> data;\n\tvector<int> size;\n\n\tUnionFind(int\
-    \ n): data(n, -1), size(n, 0) {}\n\n\tvoid unite(int x, int y) {\n\t\tx = root(x),\
-    \ y = root(y);\n\t\tif(x == y) return ;\n\t\tif(data[x] > data[y]) swap(x, y);\n\
-    \t\tdata[x] += data[y];\n\t\tsize[x] += size[y];\n\t\tdata[y] = x;\n\t}\n\n\t\
-    int root(int x) {\n\t\tif(data[x] < 0) return x;\n\t\treturn (data[x] = root(data[x]));\n\
-    \t}\n\n\tbool same(int x, int y) {\n\t\treturn root(x) == root(y);\n\t}\n\n\t\
-    int getsize(int x) {\n\t\treturn size[root(x)];\n\t}\n};\n#line 6 \"Test/yosupo-judge/UnionFind.test.cpp\"\
+    \ T = int>\nstruct UnionFind {\n\tvector<T> par;\n\tvector<int> size;\n\n\tUnionFind(int\
+    \ n): par(n, -1), size(n, 1) {}\n\n\tvoid unite(int x, int y) {\n\t\tx = root(x),\
+    \ y = root(y);\n\t\tif(x == y) return ;\n\t\tif(size[x] < size[y]) swap(x, y);\n\
+    \t\tpar[y] = x;\n\t\tsize[x] = size[y] = size[x] + size[y];\n\t}\n\n\tint root(int\
+    \ x) {\n\t\tif(par[x] < 0) return x;\n\t\treturn (par[x] = root(par[x]));\n\t\
+    }\n\n\tbool same(int x, int y) {\n\t\treturn root(x) == root(y);\n\t}\n\n\tint\
+    \ getsize(int x) {\n\t\treturn size[root(x)];\n\t}\n};\n#line 6 \"Test/yosupo-judge/UnionFind.test.cpp\"\
     \n\n\nint main() {\n\tint n, q;\n\tcin >> n >> q;\n\tUnionFind<int> ut(n);\n\t\
     for(int i = 0; i < q; i++) {\n\t\tint t, u, v;\n\t\tcin >> t >> u >> v;\n\t\t\
     if(t == 0) ut.unite(u, v);\n\t\telse cout << ut.same(u, v) << endl;\n\t}\n\treturn\
@@ -38,7 +38,7 @@ data:
   isVerificationFile: true
   path: Test/yosupo-judge/UnionFind.test.cpp
   requiredBy: []
-  timestamp: '2021-01-03 02:20:16+09:00'
+  timestamp: '2021-01-04 00:42:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Test/yosupo-judge/UnionFind.test.cpp
