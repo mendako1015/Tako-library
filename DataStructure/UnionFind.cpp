@@ -1,22 +1,21 @@
 template<class T = int>
 struct UnionFind {
-	vector<T> data;
+	vector<T> par;
 	vector<int> size;
 
-	UnionFind(int n): data(n, -1), size(n, 0) {}
+	UnionFind(int n): par(n, -1), size(n, 1) {}
 
 	void unite(int x, int y) {
 		x = root(x), y = root(y);
 		if(x == y) return ;
-		if(data[x] > data[y]) swap(x, y);
-		data[x] += data[y];
-		size[x] += size[y];
-		data[y] = x;
+		if(size[x] < size[y]) swap(x, y);
+		par[y] = x;
+		size[x] = size[y] = size[x] + size[y];
 	}
 
 	int root(int x) {
-		if(data[x] < 0) return x;
-		return (data[x] = root(data[x]));
+		if(par[x] < 0) return x;
+		return (par[x] = root(par[x]));
 	}
 
 	bool same(int x, int y) {
