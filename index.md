@@ -24,6 +24,9 @@ data:
       path: Graph/Dijkstra.cpp
       title: Graph/Dijkstra.cpp
     - icon: ':warning:'
+      path: Graph/EulerTour.cpp
+      title: Graph/EulerTour.cpp
+    - icon: ':warning:'
       path: Graph/Kruskal.cpp
       title: Graph/Kruskal.cpp
     - icon: ':warning:'
