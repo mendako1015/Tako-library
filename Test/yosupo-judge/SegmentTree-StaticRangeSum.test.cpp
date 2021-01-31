@@ -6,17 +6,15 @@ using namespace std;
 typedef long long ll;
 
 int main() {
-	int n, q;
+	ll n, q;
 	cin >> n >> q;
-	SegmentTree<ll> segtree(n, false, 0, 0,
+	SegmentTree<ll> segtree(n, false, 0LL, 0LL,
 		[](ll a, ll b) { return a + b; },
 		[](ll a, ll b) { return b; },
 		[](ll x, ll btm, ll tp) { return x; });
-	for(int i = 0; i < n; i++) {
-		int a;
-		cin >> a;
-		segtree.update(i, a);
-	}
+	vector<int> a(n);
+	for(int i = 0; i < n; i++) cin >> a[i];
+	segtree.build(a);
 	while(q--) {
 		int l, r;
 		cin >> l >> r;
