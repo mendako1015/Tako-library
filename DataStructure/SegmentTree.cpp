@@ -63,6 +63,11 @@ class SegmentTree {
 		lazy_changed = vector<bool>(2 * leaf_num - 1, false);
 	}
 
+	void build(vector<int> &v) {
+		for(int i = 0; i < v.size(); i++) data[i + leaf_num] = v[i];
+		for(int i = leaf_num - 1; i > 0; i--) data[i] = operation(data[i * 2 + 1], data[i * 2 + 2]);
+	}
+
 	// update [pos] (0-indexed)
 	void update(int pos, T x) {
 		if(is_lazy) return range_update(pos, pos + 1, x, 0, 0, leaf_num);
