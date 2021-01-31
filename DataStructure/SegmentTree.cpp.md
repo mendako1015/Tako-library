@@ -33,11 +33,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: Test/yosupo-judge/SegmentTree-StaticRMQ.test.cpp
     title: Test/yosupo-judge/SegmentTree-StaticRMQ.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
     title: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"DataStructure/SegmentTree.cpp\"\ntemplate <class T = int>\n\
@@ -71,18 +72,20 @@ data:
     \ update_identity_element(upd_id_el), operation(ope), update_type(upd), lazy_update(lazy_upd)\
     \ {\n\t\tleaf_num = 1;\n\t\twhile(leaf_num < n) leaf_num *= 2;\n\t\tdata = vector<T>(2\
     \ * leaf_num - 1, 0);\n\t\tlazy = vector<T>(2 * leaf_num - 1, update_identity_element);\n\
-    \t\tlazy_changed = vector<bool>(2 * leaf_num - 1, false);\n\t}\n\n\t// update\
-    \ [pos] (0-indexed)\n\tvoid update(int pos, T x) {\n\t\tif(is_lazy) return range_update(pos,\
-    \ pos + 1, x, 0, 0, leaf_num);\n\t\telse point_update(pos, x);\n\t}\n\n\t// update\
-    \ [l, r) (0-indexed)\n\tvoid update(int l, int r, T x) {\n\t\tif(is_lazy) range_update(l,\
-    \ r, x, 0, 0, leaf_num);\n\t\telse {\n\t\t\tfor(int i = l; i < r; i++) point_update(i,\
-    \ x);\n\t\t}\n\t}\n\n\t// get [pos] (0-indexed)\n\tT get(int pos) {\n\t\treturn\
-    \ get_interval(pos, pos + 1, 0, 0, leaf_num);\n\t}\n\n\t// get [l, r) (0-indexed)\n\
-    \tT get(int l, int r) {\n\t\treturn get_interval(l, r, 0, 0, leaf_num);\n\t}\n\
-    \n\tT operator[](int pos) {\n\t\treturn data[pos + leaf_num - 1];\n\t}\n\n\tvoid\
-    \ print(int n) {\n\t\tfor(int i = 0; i < n; i++) cout << \"(\" << data[i + leaf_num\
-    \ - 1] << \", \" << lazy[i + leaf_num - 1] << \"), \";\n\t\tcout << endl;\n\t\
-    }\n};\n"
+    \t\tlazy_changed = vector<bool>(2 * leaf_num - 1, false);\n\t}\n\n\tvoid build(vector<int>\
+    \ &v) {\n\t\tfor(int i = 0; i < v.size(); i++) data[i + leaf_num] = v[i];\n\t\t\
+    for(int i = leaf_num - 1; i > 0; i--) data[i] = operation(data[i * 2 + 1], data[i\
+    \ * 2 + 2]);\n\t}\n\n\t// update [pos] (0-indexed)\n\tvoid update(int pos, T x)\
+    \ {\n\t\tif(is_lazy) return range_update(pos, pos + 1, x, 0, 0, leaf_num);\n\t\
+    \telse point_update(pos, x);\n\t}\n\n\t// update [l, r) (0-indexed)\n\tvoid update(int\
+    \ l, int r, T x) {\n\t\tif(is_lazy) range_update(l, r, x, 0, 0, leaf_num);\n\t\
+    \telse {\n\t\t\tfor(int i = l; i < r; i++) point_update(i, x);\n\t\t}\n\t}\n\n\
+    \t// get [pos] (0-indexed)\n\tT get(int pos) {\n\t\treturn get_interval(pos, pos\
+    \ + 1, 0, 0, leaf_num);\n\t}\n\n\t// get [l, r) (0-indexed)\n\tT get(int l, int\
+    \ r) {\n\t\treturn get_interval(l, r, 0, 0, leaf_num);\n\t}\n\n\tT operator[](int\
+    \ pos) {\n\t\treturn data[pos + leaf_num - 1];\n\t}\n\n\tvoid print(int n) {\n\
+    \t\tfor(int i = 0; i < n; i++) cout << \"(\" << data[i + leaf_num - 1] << \",\
+    \ \" << lazy[i + leaf_num - 1] << \"), \";\n\t\tcout << endl;\n\t}\n};\n"
   code: "template <class T = int>\nclass SegmentTree {\n\tint leaf_num;\n\tbool is_lazy;\n\
     \tvector<T> data, lazy;\n\tvector<bool> lazy_changed;\n\tT operation_identity_element,\
     \ update_identity_element;\n\tfunction<T(T, T)> operation;\n\tfunction<T(T, T)>\
@@ -114,36 +117,38 @@ data:
     \ operation(ope), update_type(upd), lazy_update(lazy_upd) {\n\t\tleaf_num = 1;\n\
     \t\twhile(leaf_num < n) leaf_num *= 2;\n\t\tdata = vector<T>(2 * leaf_num - 1,\
     \ 0);\n\t\tlazy = vector<T>(2 * leaf_num - 1, update_identity_element);\n\t\t\
-    lazy_changed = vector<bool>(2 * leaf_num - 1, false);\n\t}\n\n\t// update [pos]\
-    \ (0-indexed)\n\tvoid update(int pos, T x) {\n\t\tif(is_lazy) return range_update(pos,\
-    \ pos + 1, x, 0, 0, leaf_num);\n\t\telse point_update(pos, x);\n\t}\n\n\t// update\
-    \ [l, r) (0-indexed)\n\tvoid update(int l, int r, T x) {\n\t\tif(is_lazy) range_update(l,\
-    \ r, x, 0, 0, leaf_num);\n\t\telse {\n\t\t\tfor(int i = l; i < r; i++) point_update(i,\
-    \ x);\n\t\t}\n\t}\n\n\t// get [pos] (0-indexed)\n\tT get(int pos) {\n\t\treturn\
-    \ get_interval(pos, pos + 1, 0, 0, leaf_num);\n\t}\n\n\t// get [l, r) (0-indexed)\n\
-    \tT get(int l, int r) {\n\t\treturn get_interval(l, r, 0, 0, leaf_num);\n\t}\n\
-    \n\tT operator[](int pos) {\n\t\treturn data[pos + leaf_num - 1];\n\t}\n\n\tvoid\
-    \ print(int n) {\n\t\tfor(int i = 0; i < n; i++) cout << \"(\" << data[i + leaf_num\
-    \ - 1] << \", \" << lazy[i + leaf_num - 1] << \"), \";\n\t\tcout << endl;\n\t\
-    }\n};"
+    lazy_changed = vector<bool>(2 * leaf_num - 1, false);\n\t}\n\n\tvoid build(vector<int>\
+    \ &v) {\n\t\tfor(int i = 0; i < v.size(); i++) data[i + leaf_num] = v[i];\n\t\t\
+    for(int i = leaf_num - 1; i > 0; i--) data[i] = operation(data[i * 2 + 1], data[i\
+    \ * 2 + 2]);\n\t}\n\n\t// update [pos] (0-indexed)\n\tvoid update(int pos, T x)\
+    \ {\n\t\tif(is_lazy) return range_update(pos, pos + 1, x, 0, 0, leaf_num);\n\t\
+    \telse point_update(pos, x);\n\t}\n\n\t// update [l, r) (0-indexed)\n\tvoid update(int\
+    \ l, int r, T x) {\n\t\tif(is_lazy) range_update(l, r, x, 0, 0, leaf_num);\n\t\
+    \telse {\n\t\t\tfor(int i = l; i < r; i++) point_update(i, x);\n\t\t}\n\t}\n\n\
+    \t// get [pos] (0-indexed)\n\tT get(int pos) {\n\t\treturn get_interval(pos, pos\
+    \ + 1, 0, 0, leaf_num);\n\t}\n\n\t// get [l, r) (0-indexed)\n\tT get(int l, int\
+    \ r) {\n\t\treturn get_interval(l, r, 0, 0, leaf_num);\n\t}\n\n\tT operator[](int\
+    \ pos) {\n\t\treturn data[pos + leaf_num - 1];\n\t}\n\n\tvoid print(int n) {\n\
+    \t\tfor(int i = 0; i < n; i++) cout << \"(\" << data[i + leaf_num - 1] << \",\
+    \ \" << lazy[i + leaf_num - 1] << \"), \";\n\t\tcout << endl;\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: DataStructure/SegmentTree.cpp
   requiredBy: []
-  timestamp: '2020-12-18 16:58:46+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-01-31 23:04:35+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
-  - Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
   - Test/yosupo-judge/SegmentTree-StaticRMQ.test.cpp
-  - Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
-  - Test/AOJ/SegmentTree-RMQ.test.cpp
-  - Test/AOJ/SegmentTree-RSQandRAQ.test.cpp
+  - Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
   - Test/AOJ/SegmentTree-RSQ.test.cpp
-  - Test/AOJ/SegmentTree-RSQandRUQ.test.cpp
-  - Test/AOJ/SegmentTree-RMQandRAQ.test.cpp
-  - Test/AOJ/SegmentTree-RAQ.test.cpp
   - Test/AOJ/SegmentTree-RUQ.test.cpp
+  - Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
+  - Test/AOJ/SegmentTree-RSQandRAQ.test.cpp
+  - Test/AOJ/SegmentTree-RMQ.test.cpp
+  - Test/AOJ/SegmentTree-RMQandRAQ.test.cpp
+  - Test/AOJ/SegmentTree-RSQandRUQ.test.cpp
+  - Test/AOJ/SegmentTree-RAQ.test.cpp
 documentation_of: DataStructure/SegmentTree.cpp
 layout: document
 redirect_from:

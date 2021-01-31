@@ -1,11 +1,12 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: DataStructure/SegmentTree.cpp
     title: DataStructure/SegmentTree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -46,25 +47,28 @@ data:
     \ update_identity_element(upd_id_el), operation(ope), update_type(upd), lazy_update(lazy_upd)\
     \ {\n\t\tleaf_num = 1;\n\t\twhile(leaf_num < n) leaf_num *= 2;\n\t\tdata = vector<T>(2\
     \ * leaf_num - 1, 0);\n\t\tlazy = vector<T>(2 * leaf_num - 1, update_identity_element);\n\
-    \t\tlazy_changed = vector<bool>(2 * leaf_num - 1, false);\n\t}\n\n\t// update\
-    \ [pos] (0-indexed)\n\tvoid update(int pos, T x) {\n\t\tif(is_lazy) return range_update(pos,\
-    \ pos + 1, x, 0, 0, leaf_num);\n\t\telse point_update(pos, x);\n\t}\n\n\t// update\
-    \ [l, r) (0-indexed)\n\tvoid update(int l, int r, T x) {\n\t\tif(is_lazy) range_update(l,\
-    \ r, x, 0, 0, leaf_num);\n\t\telse {\n\t\t\tfor(int i = l; i < r; i++) point_update(i,\
-    \ x);\n\t\t}\n\t}\n\n\t// get [pos] (0-indexed)\n\tT get(int pos) {\n\t\treturn\
-    \ get_interval(pos, pos + 1, 0, 0, leaf_num);\n\t}\n\n\t// get [l, r) (0-indexed)\n\
-    \tT get(int l, int r) {\n\t\treturn get_interval(l, r, 0, 0, leaf_num);\n\t}\n\
-    \n\tT operator[](int pos) {\n\t\treturn data[pos + leaf_num - 1];\n\t}\n\n\tvoid\
-    \ print(int n) {\n\t\tfor(int i = 0; i < n; i++) cout << \"(\" << data[i + leaf_num\
-    \ - 1] << \", \" << lazy[i + leaf_num - 1] << \"), \";\n\t\tcout << endl;\n\t\
-    }\n};\n#line 6 \"Test/AOJ/SegmentTree-RUQ.test.cpp\"\ntypedef long long ll;\n\n\
-    int main() {\n\tll n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll> segtree(n+10, true,\
-    \ 0, 0, \n\t[](ll x, ll y){ return x + y; },\n\t[](ll x, ll y){ return y; },\n\
-    \t[](ll x, ll btm, ll tp){ return x * (tp - btm); });\n\n\tsegtree.update(0, n,\
-    \ 2147483647);\n\twhile(q--) {\n\t\tint com;\n\t\tcin >> com;\n\t\tif(com == 0)\
-    \ {\n\t\t\tll x, y, z;\n\t\t\tcin >> x >> y >> z;\n\t\t\tsegtree.update(x, ++y,\
-    \ z);\n\t\t} else {\n\t\t\tll x, y, z;\n\t\t\tcin >> x;\n\t\t\tcout << segtree.get(x)\
-    \ << endl;\n\t\t}\n\t\t// segtree.print(n);\n\t}\n\treturn 0;\n}\n"
+    \t\tlazy_changed = vector<bool>(2 * leaf_num - 1, false);\n\t}\n\n\tvoid build(vector<int>\
+    \ &v) {\n\t\tfor(int i = 0; i < v.size(); i++) data[i + leaf_num] = v[i];\n\t\t\
+    for(int i = leaf_num - 1; i > 0; i--) data[i] = operation(data[i * 2 + 1], data[i\
+    \ * 2 + 2]);\n\t}\n\n\t// update [pos] (0-indexed)\n\tvoid update(int pos, T x)\
+    \ {\n\t\tif(is_lazy) return range_update(pos, pos + 1, x, 0, 0, leaf_num);\n\t\
+    \telse point_update(pos, x);\n\t}\n\n\t// update [l, r) (0-indexed)\n\tvoid update(int\
+    \ l, int r, T x) {\n\t\tif(is_lazy) range_update(l, r, x, 0, 0, leaf_num);\n\t\
+    \telse {\n\t\t\tfor(int i = l; i < r; i++) point_update(i, x);\n\t\t}\n\t}\n\n\
+    \t// get [pos] (0-indexed)\n\tT get(int pos) {\n\t\treturn get_interval(pos, pos\
+    \ + 1, 0, 0, leaf_num);\n\t}\n\n\t// get [l, r) (0-indexed)\n\tT get(int l, int\
+    \ r) {\n\t\treturn get_interval(l, r, 0, 0, leaf_num);\n\t}\n\n\tT operator[](int\
+    \ pos) {\n\t\treturn data[pos + leaf_num - 1];\n\t}\n\n\tvoid print(int n) {\n\
+    \t\tfor(int i = 0; i < n; i++) cout << \"(\" << data[i + leaf_num - 1] << \",\
+    \ \" << lazy[i + leaf_num - 1] << \"), \";\n\t\tcout << endl;\n\t}\n};\n#line\
+    \ 6 \"Test/AOJ/SegmentTree-RUQ.test.cpp\"\ntypedef long long ll;\n\nint main()\
+    \ {\n\tll n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll> segtree(n+10, true, 0, 0,\
+    \ \n\t[](ll x, ll y){ return x + y; },\n\t[](ll x, ll y){ return y; },\n\t[](ll\
+    \ x, ll btm, ll tp){ return x * (tp - btm); });\n\n\tsegtree.update(0, n, 2147483647);\n\
+    \twhile(q--) {\n\t\tint com;\n\t\tcin >> com;\n\t\tif(com == 0) {\n\t\t\tll x,\
+    \ y, z;\n\t\t\tcin >> x >> y >> z;\n\t\t\tsegtree.update(x, ++y, z);\n\t\t} else\
+    \ {\n\t\t\tll x, y, z;\n\t\t\tcin >> x;\n\t\t\tcout << segtree.get(x) << endl;\n\
+    \t\t}\n\t\t// segtree.print(n);\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_D\"\n\n\
     #include <bits/stdc++.h>\nusing namespace std;\n#include \"../../DataStructure/SegmentTree.cpp\"\
     \ntypedef long long ll;\n\nint main() {\n\tll n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll>\
@@ -79,7 +83,7 @@ data:
   isVerificationFile: true
   path: Test/AOJ/SegmentTree-RUQ.test.cpp
   requiredBy: []
-  timestamp: '2020-12-18 16:58:46+09:00'
+  timestamp: '2021-01-31 23:04:35+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Test/AOJ/SegmentTree-RUQ.test.cpp

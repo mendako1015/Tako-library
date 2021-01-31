@@ -1,13 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: DataStructure/SegmentTree.cpp
     title: DataStructure/SegmentTree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
@@ -47,39 +48,42 @@ data:
     \ operation(ope), update_type(upd), lazy_update(lazy_upd) {\n\t\tleaf_num = 1;\n\
     \t\twhile(leaf_num < n) leaf_num *= 2;\n\t\tdata = vector<T>(2 * leaf_num - 1,\
     \ 0);\n\t\tlazy = vector<T>(2 * leaf_num - 1, update_identity_element);\n\t\t\
-    lazy_changed = vector<bool>(2 * leaf_num - 1, false);\n\t}\n\n\t// update [pos]\
-    \ (0-indexed)\n\tvoid update(int pos, T x) {\n\t\tif(is_lazy) return range_update(pos,\
-    \ pos + 1, x, 0, 0, leaf_num);\n\t\telse point_update(pos, x);\n\t}\n\n\t// update\
-    \ [l, r) (0-indexed)\n\tvoid update(int l, int r, T x) {\n\t\tif(is_lazy) range_update(l,\
-    \ r, x, 0, 0, leaf_num);\n\t\telse {\n\t\t\tfor(int i = l; i < r; i++) point_update(i,\
-    \ x);\n\t\t}\n\t}\n\n\t// get [pos] (0-indexed)\n\tT get(int pos) {\n\t\treturn\
-    \ get_interval(pos, pos + 1, 0, 0, leaf_num);\n\t}\n\n\t// get [l, r) (0-indexed)\n\
-    \tT get(int l, int r) {\n\t\treturn get_interval(l, r, 0, 0, leaf_num);\n\t}\n\
-    \n\tT operator[](int pos) {\n\t\treturn data[pos + leaf_num - 1];\n\t}\n\n\tvoid\
-    \ print(int n) {\n\t\tfor(int i = 0; i < n; i++) cout << \"(\" << data[i + leaf_num\
-    \ - 1] << \", \" << lazy[i + leaf_num - 1] << \"), \";\n\t\tcout << endl;\n\t\
-    }\n};\n#line 6 \"Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp\"\ntypedef\
-    \ long long ll;\n\nint main() {\n\tint n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll>\
-    \ segtree(n, false, 0, 0,\n\t\t[](ll a, ll b) { return a + b; },\n\t\t[](ll a,\
-    \ ll b) { return b; },\n\t\t[](ll x, ll btm, ll tp) { return x; });\n\tfor(int\
-    \ i = 0; i < n; i++) {\n\t\tint a;\n\t\tcin >> a;\n\t\tsegtree.update(i, a);\n\
-    \t}\n\twhile(q--) {\n\t\tint l, r;\n\t\tcin >> l >> r;\n\t\tcout << segtree.get(l,\
-    \ r) << endl;\n\t}\n\treturn 0;\n}\n"
+    lazy_changed = vector<bool>(2 * leaf_num - 1, false);\n\t}\n\n\tvoid build(vector<int>\
+    \ &v) {\n\t\tfor(int i = 0; i < v.size(); i++) data[i + leaf_num] = v[i];\n\t\t\
+    for(int i = leaf_num - 1; i > 0; i--) data[i] = operation(data[i * 2 + 1], data[i\
+    \ * 2 + 2]);\n\t}\n\n\t// update [pos] (0-indexed)\n\tvoid update(int pos, T x)\
+    \ {\n\t\tif(is_lazy) return range_update(pos, pos + 1, x, 0, 0, leaf_num);\n\t\
+    \telse point_update(pos, x);\n\t}\n\n\t// update [l, r) (0-indexed)\n\tvoid update(int\
+    \ l, int r, T x) {\n\t\tif(is_lazy) range_update(l, r, x, 0, 0, leaf_num);\n\t\
+    \telse {\n\t\t\tfor(int i = l; i < r; i++) point_update(i, x);\n\t\t}\n\t}\n\n\
+    \t// get [pos] (0-indexed)\n\tT get(int pos) {\n\t\treturn get_interval(pos, pos\
+    \ + 1, 0, 0, leaf_num);\n\t}\n\n\t// get [l, r) (0-indexed)\n\tT get(int l, int\
+    \ r) {\n\t\treturn get_interval(l, r, 0, 0, leaf_num);\n\t}\n\n\tT operator[](int\
+    \ pos) {\n\t\treturn data[pos + leaf_num - 1];\n\t}\n\n\tvoid print(int n) {\n\
+    \t\tfor(int i = 0; i < n; i++) cout << \"(\" << data[i + leaf_num - 1] << \",\
+    \ \" << lazy[i + leaf_num - 1] << \"), \";\n\t\tcout << endl;\n\t}\n};\n#line\
+    \ 6 \"Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp\"\ntypedef long long\
+    \ ll;\n\nint main() {\n\tll n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll> segtree(n,\
+    \ false, 0LL, 0LL,\n\t\t[](ll a, ll b) { return a + b; },\n\t\t[](ll a, ll b)\
+    \ { return b; },\n\t\t[](ll x, ll btm, ll tp) { return x; });\n\tvector<int> a(n);\n\
+    \tfor(int i = 0; i < n; i++) cin >> a[i];\n\tsegtree.build(a);\n\twhile(q--) {\n\
+    \t\tint l, r;\n\t\tcin >> l >> r;\n\t\tcout << segtree.get(l, r) << endl;\n\t\
+    }\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n\
     #include <bits/stdc++.h>\nusing namespace std;\n#include \"../../DataStructure/SegmentTree.cpp\"\
-    \ntypedef long long ll;\n\nint main() {\n\tint n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll>\
-    \ segtree(n, false, 0, 0,\n\t\t[](ll a, ll b) { return a + b; },\n\t\t[](ll a,\
-    \ ll b) { return b; },\n\t\t[](ll x, ll btm, ll tp) { return x; });\n\tfor(int\
-    \ i = 0; i < n; i++) {\n\t\tint a;\n\t\tcin >> a;\n\t\tsegtree.update(i, a);\n\
-    \t}\n\twhile(q--) {\n\t\tint l, r;\n\t\tcin >> l >> r;\n\t\tcout << segtree.get(l,\
-    \ r) << endl;\n\t}\n\treturn 0;\n}"
+    \ntypedef long long ll;\n\nint main() {\n\tll n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll>\
+    \ segtree(n, false, 0LL, 0LL,\n\t\t[](ll a, ll b) { return a + b; },\n\t\t[](ll\
+    \ a, ll b) { return b; },\n\t\t[](ll x, ll btm, ll tp) { return x; });\n\tvector<int>\
+    \ a(n);\n\tfor(int i = 0; i < n; i++) cin >> a[i];\n\tsegtree.build(a);\n\twhile(q--)\
+    \ {\n\t\tint l, r;\n\t\tcin >> l >> r;\n\t\tcout << segtree.get(l, r) << endl;\n\
+    \t}\n\treturn 0;\n}"
   dependsOn:
   - DataStructure/SegmentTree.cpp
   isVerificationFile: true
   path: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2020-12-18 16:58:46+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-01-31 23:04:47+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
 layout: document
