@@ -30,6 +30,9 @@ data:
       path: Graph/Kruskal.cpp
       title: Graph/Kruskal.cpp
     - icon: ':warning:'
+      path: Graph/MaxFlow.cpp
+      title: Graph/MaxFlow.cpp
+    - icon: ':warning:'
       path: Graph/Warshall-Floyd.cpp
       title: Graph/Warshall-Floyd.cpp
   - name: Mathmatics
