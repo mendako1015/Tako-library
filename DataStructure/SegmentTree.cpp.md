@@ -33,12 +33,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: Test/yosupo-judge/SegmentTree-StaticRMQ.test.cpp
     title: Test/yosupo-judge/SegmentTree-StaticRMQ.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
     title: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"DataStructure/SegmentTree.cpp\"\ntemplate <class T = int>\n\
@@ -136,7 +136,7 @@ data:
   path: DataStructure/SegmentTree.cpp
   requiredBy: []
   timestamp: '2021-01-31 23:04:35+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - Test/AOJ/SegmentTree-RUQ.test.cpp
   - Test/AOJ/SegmentTree-RAQ.test.cpp

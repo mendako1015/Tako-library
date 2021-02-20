@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/BinaryIndexedTree.cpp
       title: DataStructure/BinaryIndexedTree.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/SegmentTree.cpp
       title: DataStructure/SegmentTree.cpp
     - icon: ':heavy_check_mark:'
@@ -110,7 +110,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: Test/yosupo-judge/SegmentTree-StaticRMQ.test.cpp
       title: Test/yosupo-judge/SegmentTree-StaticRMQ.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
       title: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
     - icon: ':heavy_check_mark:'

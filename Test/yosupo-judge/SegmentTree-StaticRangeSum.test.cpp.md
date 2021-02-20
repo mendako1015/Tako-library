@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: DataStructure/SegmentTree.cpp
     title: DataStructure/SegmentTree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
@@ -65,25 +65,25 @@ data:
     \ 6 \"Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp\"\ntypedef long long\
     \ ll;\n\nint main() {\n\tll n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll> segtree(n,\
     \ false, 0LL, 0LL,\n\t\t[](ll a, ll b) { return a + b; },\n\t\t[](ll a, ll b)\
-    \ { return b; },\n\t\t[](ll x, ll btm, ll tp) { return x; });\n\tvector<int> a(n);\n\
-    \tfor(int i = 0; i < n; i++) cin >> a[i];\n\tsegtree.build(a);\n\twhile(q--) {\n\
-    \t\tint l, r;\n\t\tcin >> l >> r;\n\t\tcout << segtree.get(l, r) << endl;\n\t\
-    }\n\treturn 0;\n}\n"
+    \ { return b; },\n\t\t[](ll x, ll btm, ll tp) { return x; });\n\tfor(int i = 0;\
+    \ i < n; i++) {\n\t\tint a;\n\t\tcin >> a;\n\t\tsegtree.update(i, a);\n\t}\n\t\
+    while(q--) {\n\t\tint l, r;\n\t\tcin >> l >> r;\n\t\tcout << segtree.get(l, r)\
+    \ << endl;\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n\
     #include <bits/stdc++.h>\nusing namespace std;\n#include \"../../DataStructure/SegmentTree.cpp\"\
     \ntypedef long long ll;\n\nint main() {\n\tll n, q;\n\tcin >> n >> q;\n\tSegmentTree<ll>\
     \ segtree(n, false, 0LL, 0LL,\n\t\t[](ll a, ll b) { return a + b; },\n\t\t[](ll\
-    \ a, ll b) { return b; },\n\t\t[](ll x, ll btm, ll tp) { return x; });\n\tvector<int>\
-    \ a(n);\n\tfor(int i = 0; i < n; i++) cin >> a[i];\n\tsegtree.build(a);\n\twhile(q--)\
-    \ {\n\t\tint l, r;\n\t\tcin >> l >> r;\n\t\tcout << segtree.get(l, r) << endl;\n\
-    \t}\n\treturn 0;\n}"
+    \ a, ll b) { return b; },\n\t\t[](ll x, ll btm, ll tp) { return x; });\n\tfor(int\
+    \ i = 0; i < n; i++) {\n\t\tint a;\n\t\tcin >> a;\n\t\tsegtree.update(i, a);\n\
+    \t}\n\twhile(q--) {\n\t\tint l, r;\n\t\tcin >> l >> r;\n\t\tcout << segtree.get(l,\
+    \ r) << endl;\n\t}\n\treturn 0;\n}\n"
   dependsOn:
   - DataStructure/SegmentTree.cpp
   isVerificationFile: true
   path: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2021-01-31 23:04:47+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-02-21 01:56:15+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
 layout: document
