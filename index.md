@@ -29,7 +29,7 @@ data:
     - icon: ':warning:'
       path: Graph/Kruskal.cpp
       title: Graph/Kruskal.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: Graph/MaxFlow.cpp
       title: Graph/MaxFlow.cpp
     - icon: ':warning:'
@@ -69,6 +69,9 @@ data:
   verificationCategories:
   - name: Test/AOJ
     pages:
+    - icon: ':heavy_check_mark:'
+      path: Test/AOJ/MaxFlow.test.cpp
+      title: Test/AOJ/MaxFlow.test.cpp
     - icon: ':heavy_check_mark:'
       path: Test/AOJ/RollingHash.test.cpp
       title: Test/AOJ/RollingHash.test.cpp
