@@ -12,9 +12,11 @@ int main() {
 		[](ll a, ll b) { return a + b; },
 		[](ll a, ll b) { return b; },
 		[](ll x, ll btm, ll tp) { return x; });
-	vector<int> a(n);
-	for(int i = 0; i < n; i++) cin >> a[i];
-	segtree.build(a);
+	for(int i = 0; i < n; i++) {
+		int a;
+		cin >> a;
+		segtree.update(i, a);
+	}
 	while(q--) {
 		int l, r;
 		cin >> l >> r;
