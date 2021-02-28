@@ -41,6 +41,9 @@ data:
       path: Mathmatics/Combination.cpp
       title: Mathmatics/Combination.cpp
     - icon: ':warning:'
+      path: Mathmatics/Extended-Euclidean.cpp
+      title: Mathmatics/Extended-Euclidean.cpp
+    - icon: ':warning:'
       path: Mathmatics/Modint.cpp
       title: Mathmatics/Modint.cpp
     - icon: ':warning:'
