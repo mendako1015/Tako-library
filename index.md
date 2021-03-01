@@ -40,7 +40,7 @@ data:
     - icon: ':warning:'
       path: Mathmatics/Combination.cpp
       title: Mathmatics/Combination.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: Mathmatics/Extended-Euclidean.cpp
       title: Mathmatics/Extended-Euclidean.cpp
     - icon: ':warning:'
@@ -72,6 +72,9 @@ data:
   verificationCategories:
   - name: Test/AOJ
     pages:
+    - icon: ':heavy_check_mark:'
+      path: Test/AOJ/Extended-Euclidean.test.cpp
+      title: Test/AOJ/Extended-Euclidean.test.cpp
     - icon: ':heavy_check_mark:'
       path: Test/AOJ/MaxFlow.test.cpp
       title: Test/AOJ/MaxFlow.test.cpp

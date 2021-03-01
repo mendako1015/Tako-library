@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: Test/AOJ/Extended-Euclidean.test.cpp
+    title: Test/AOJ/Extended-Euclidean.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"Mathmatics/Extended-Euclidean.cpp\"\ntemplate<typename T>\n\
@@ -20,8 +23,9 @@ data:
   path: Mathmatics/Extended-Euclidean.cpp
   requiredBy: []
   timestamp: '2021-03-01 08:33:22+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - Test/AOJ/Extended-Euclidean.test.cpp
 documentation_of: Mathmatics/Extended-Euclidean.cpp
 layout: document
 redirect_from:
