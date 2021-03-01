@@ -3,6 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #include "../../Mathmatics/Extended-Euclidean.cpp"
+typedef long long ll;
 
 int main() {
 	int a, b, x, y;
