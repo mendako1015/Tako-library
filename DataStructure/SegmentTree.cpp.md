@@ -138,17 +138,17 @@ data:
   timestamp: '2021-01-31 23:04:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - Test/AOJ/SegmentTree-RUQ.test.cpp
-  - Test/AOJ/SegmentTree-RAQ.test.cpp
-  - Test/AOJ/SegmentTree-RSQandRUQ.test.cpp
-  - Test/AOJ/SegmentTree-RMQandRAQ.test.cpp
-  - Test/AOJ/SegmentTree-RSQandRAQ.test.cpp
-  - Test/AOJ/SegmentTree-RMQ.test.cpp
   - Test/AOJ/SegmentTree-RMQandRUQ.test.cpp
+  - Test/AOJ/SegmentTree-RSQandRAQ.test.cpp
+  - Test/AOJ/SegmentTree-RSQandRUQ.test.cpp
+  - Test/AOJ/SegmentTree-RAQ.test.cpp
+  - Test/AOJ/SegmentTree-RMQ.test.cpp
+  - Test/AOJ/SegmentTree-RMQandRAQ.test.cpp
+  - Test/AOJ/SegmentTree-RUQ.test.cpp
   - Test/AOJ/SegmentTree-RSQ.test.cpp
   - Test/yosupo-judge/SegmentTree-StaticRMQ.test.cpp
-  - Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
   - Test/yosupo-judge/SegmentTree-PointAddRangeSum.test.cpp
+  - Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
 documentation_of: DataStructure/SegmentTree.cpp
 layout: document
 redirect_from:
