@@ -15,11 +15,12 @@ data:
     \ factorialModInit(T maxval) {\n\t\tfactorialflg = true;\n\t\tfactorial = vector<T>(maxval+1);\
     \ \n\t\tfactorial[0] = factorial[1] = 1;\n\t\tfor (T i = 2;i < (maxval+1);i++)\
     \ {\n\t\t\tfactorial[i] = (factorial[i-1]*i)%mod;\n\t\t}\n\t}\n\npublic:\n\tInteger()\
-    \  : primeflg(false),factorialflg(false) {}\n\n\t//\u7D20\u6570\u95A2\u9023\n\t\
-    void Eratosthenes(T n) { // n\u4EE5\u4E0B\u306E\u6570\u3067\u30A8\u30E9\u30C8\u30B9\
-    \u30C6\u30CD\u30B9\u306E\u3075\u308B\u3044\u3092\u4F5C\u308B\u3002 \n\t\tprimeflg\
-    \ = true;\n\t\tprime_table = vector<bool>(n+1,true);\n\t\tprime_num = vector<long>(n+1,0);\n\
-    \t\tT maxiter = sqrt(n);\n\t\tfor(T i = 2;i < maxiter+1;i++){\n\t\t\tif (prime_table[i])\
+    \ : primeflg(false),factorialflg(false) {}\n\n\tInteger(int n) : primeflg(false),factorialflg(false)\
+    \ {\n\t\tEratosthenes(n);\n\t}\n\n\t//\u7D20\u6570\u95A2\u9023\n\tvoid Eratosthenes(T\
+    \ n) { // n\u4EE5\u4E0B\u306E\u6570\u3067\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\
+    \u306E\u3075\u308B\u3044\u3092\u4F5C\u308B\u3002 \n\t\tprimeflg = true;\n\t\t\
+    prime_table = vector<bool>(n+1,true);\n\t\tprime_num = vector<long>(n+1,0);\n\t\
+    \tT maxiter = sqrt(n);\n\t\tfor(T i = 2;i < maxiter+1;i++){\n\t\t\tif (prime_table[i])\
     \ {\n\t\t\t\tfor (T j = (i + i);j <= n;j += i){\n\t\t\t\t\tprime_table[j] = false;\n\
     \t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tT prnum = 0;\n\t\tfor(T i = 2;i < n+1;i++){\n\t\
     \t\tif (prime_table[i]) {\n\t\t\t\tprnum++;\n\t\t\t\tprime_list.push_back(i);\n\
@@ -61,10 +62,11 @@ data:
     \n\tvoid factorialModInit(T maxval) {\n\t\tfactorialflg = true;\n\t\tfactorial\
     \ = vector<T>(maxval+1); \n\t\tfactorial[0] = factorial[1] = 1;\n\t\tfor (T i\
     \ = 2;i < (maxval+1);i++) {\n\t\t\tfactorial[i] = (factorial[i-1]*i)%mod;\n\t\t\
-    }\n\t}\n\npublic:\n\tInteger()  : primeflg(false),factorialflg(false) {}\n\n\t\
-    //\u7D20\u6570\u95A2\u9023\n\tvoid Eratosthenes(T n) { // n\u4EE5\u4E0B\u306E\u6570\
-    \u3067\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u3075\u308B\u3044\u3092\
-    \u4F5C\u308B\u3002 \n\t\tprimeflg = true;\n\t\tprime_table = vector<bool>(n+1,true);\n\
+    }\n\t}\n\npublic:\n\tInteger() : primeflg(false),factorialflg(false) {}\n\n\t\
+    Integer(int n) : primeflg(false),factorialflg(false) {\n\t\tEratosthenes(n);\n\
+    \t}\n\n\t//\u7D20\u6570\u95A2\u9023\n\tvoid Eratosthenes(T n) { // n\u4EE5\u4E0B\
+    \u306E\u6570\u3067\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u3075\u308B\
+    \u3044\u3092\u4F5C\u308B\u3002 \n\t\tprimeflg = true;\n\t\tprime_table = vector<bool>(n+1,true);\n\
     \t\tprime_num = vector<long>(n+1,0);\n\t\tT maxiter = sqrt(n);\n\t\tfor(T i =\
     \ 2;i < maxiter+1;i++){\n\t\t\tif (prime_table[i]) {\n\t\t\t\tfor (T j = (i +\
     \ i);j <= n;j += i){\n\t\t\t\t\tprime_table[j] = false;\n\t\t\t\t}\n\t\t\t}\n\t\
@@ -106,7 +108,7 @@ data:
   isVerificationFile: false
   path: Mathmatics/IntegerTheory.cpp
   requiredBy: []
-  timestamp: '2021-03-26 10:15:53+09:00'
+  timestamp: '2021-03-26 10:44:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: Mathmatics/IntegerTheory.cpp
