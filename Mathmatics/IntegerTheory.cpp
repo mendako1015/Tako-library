@@ -20,7 +20,11 @@ private:
 	}
 
 public:
-	Integer()  : primeflg(false),factorialflg(false) {}
+	Integer() : primeflg(false),factorialflg(false) {}
+
+	Integer(int n) : primeflg(false),factorialflg(false) {
+		Eratosthenes(n);
+	}
 
 	//素数関連
 	void Eratosthenes(T n) { // n以下の数でエラトステネスのふるいを作る。 
