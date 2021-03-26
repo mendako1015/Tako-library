@@ -47,9 +47,6 @@ data:
       path: Mathmatics/IntegerTheory.cpp
       title: Mathmatics/IntegerTheory.cpp
     - icon: ':warning:'
-      path: Mathmatics/mod_series.cpp
-      title: Mathmatics/mod_series.cpp
-    - icon: ':warning:'
       path: "Mathmatics/n\u9032\u6CD5\u5909\u63DB.cpp"
       title: "Mathmatics/n\u9032\u6CD5\u5909\u63DB.cpp"
   - name: String
