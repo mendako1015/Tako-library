@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: Test/AOJ/Exponentiation.test.cpp
     title: Test/AOJ/Exponentiation.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: Test/AOJ/LCM.test.cpp
+    title: Test/AOJ/LCM.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -115,6 +118,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - Test/AOJ/Exponentiation.test.cpp
+  - Test/AOJ/LCM.test.cpp
 documentation_of: Mathmatics/IntegerTheory.cpp
 layout: document
 redirect_from:

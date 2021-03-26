@@ -70,6 +70,9 @@ data:
       path: Test/AOJ/Extended-Euclidean.test.cpp
       title: Test/AOJ/Extended-Euclidean.test.cpp
     - icon: ':heavy_check_mark:'
+      path: Test/AOJ/LCM.test.cpp
+      title: Test/AOJ/LCM.test.cpp
+    - icon: ':heavy_check_mark:'
       path: Test/AOJ/MaxFlow.test.cpp
       title: Test/AOJ/MaxFlow.test.cpp
     - icon: ':heavy_check_mark:'
