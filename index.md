@@ -44,17 +44,14 @@ data:
       path: Mathmatics/Extended-Euclidean.cpp
       title: Mathmatics/Extended-Euclidean.cpp
     - icon: ':warning:'
-      path: Mathmatics/divisor_enumeration.cpp
-      title: Mathmatics/divisor_enumeration.cpp
+      path: Mathmatics/IntegerTheory.cpp
+      title: Mathmatics/IntegerTheory.cpp
     - icon: ':warning:'
       path: Mathmatics/mod_series.cpp
       title: Mathmatics/mod_series.cpp
     - icon: ':warning:'
       path: "Mathmatics/n\u9032\u6CD5\u5909\u63DB.cpp"
       title: "Mathmatics/n\u9032\u6CD5\u5909\u63DB.cpp"
-    - icon: ':warning:'
-      path: "Mathmatics/\u7D20\u56E0\u6570\u5206\u89E3.cpp"
-      title: "Mathmatics/\u7D20\u56E0\u6570\u5206\u89E3.cpp"
   - name: String
     pages:
     - icon: ':warning:'
