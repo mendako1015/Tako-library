@@ -43,7 +43,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: Mathmatics/Extended-Euclidean.cpp
       title: Mathmatics/Extended-Euclidean.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: Mathmatics/IntegerTheory.cpp
       title: Mathmatics/IntegerTheory.cpp
     - icon: ':warning:'
@@ -63,6 +63,9 @@ data:
   verificationCategories:
   - name: Test/AOJ
     pages:
+    - icon: ':heavy_check_mark:'
+      path: Test/AOJ/Exponentiation.test.cpp
+      title: Test/AOJ/Exponentiation.test.cpp
     - icon: ':heavy_check_mark:'
       path: Test/AOJ/Extended-Euclidean.test.cpp
       title: Test/AOJ/Extended-Euclidean.test.cpp
