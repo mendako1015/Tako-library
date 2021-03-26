@@ -44,9 +44,6 @@ data:
       path: Mathmatics/Extended-Euclidean.cpp
       title: Mathmatics/Extended-Euclidean.cpp
     - icon: ':warning:'
-      path: Mathmatics/Modint.cpp
-      title: Mathmatics/Modint.cpp
-    - icon: ':warning:'
       path: Mathmatics/divisor_enumeration.cpp
       title: Mathmatics/divisor_enumeration.cpp
     - icon: ':warning:'
