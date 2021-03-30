@@ -34,17 +34,17 @@ data:
     \u6570\u304B\u3069\u3046\u304B\u5224\u5B9A\n\t\tif (!primeflg) Eratosthenes(max(n,(T)100));\
     \ \n\t\treturn prime_table[n];\n\t}\n\n\tvector<T> getPrimeList(T n = 100){ //n\u4EE5\
     \u4E0B\u306E\u7D20\u6570\u30EA\u30B9\u30C8\n\t\tif (!primeflg) Eratosthenes(n);\
-    \ \n\t\treturn (&prime_list);\n\t}\n\n\tlong getPrimeNumUnder_N(T n) { //n\u4EE5\
+    \ \n\t\treturn (prime_list);\n\t}\n\n\tlong getPrimeNumUnder_N(T n) { //n\u4EE5\
     \u4E0B\u306E\u7D20\u6570\u306E\u500B\u6570\u3002\n\t\tif (!primeflg) Eratosthenes(max(n,(T)100));\
     \ \n\t\treturn prime_num[n];\n\t}\n\n\tlong getPrimeNum_NM(T k,T m){  //k\u4EE5\
     \u4E0Am\u4EE5\u4E0B\u306E\u7D20\u6570\u306E\u500B\u6570\u3002(k\u306FN\u4EE5\u4E0B\
     \u306A\u3089ok)\n\t\tif (!primeflg) Eratosthenes(max(m,(T)100)); \n\t\treturn\
     \ prime_num[m] - prime_num[k];\n\t}\n\n\t//\u7D04\u6570\u500D\u6570\u95A2\u9023\
-    \n\tmap<T,long>* getFactoring(T n) { // \u7D20\u56E0\u6570\u5206\u89E3 key->\u56E0\
+    \n\tmap<T,long> getFactoring(T n) { // \u7D20\u56E0\u6570\u5206\u89E3 key->\u56E0\
     \u6570 val->\u56E0\u6570\u306E\u6570\n\t\tT copy_n = n;\n\t\tT maxiter = sqrt(n);\n\
     \t\tfor (T i = 2;i < maxiter+1;i ++) {\n\t\t\tif (copy_n == 1) break;\n\t\t\t\
     while (!(copy_n % i)) {\n\t\t\t\tif (IN(i,factoring)) factoring[i]++;\n\t\t\t\t\
-    else factoring[i] = 1;\n\t\t\t\tcopy_n /= i;\n\t\t\t}\n\t\t}\n\t\treturn (&factoring);\n\
+    else factoring[i] = 1;\n\t\t\t\tcopy_n /= i;\n\t\t\t}\n\t\t}\n\t\treturn (factoring);\n\
     \t}\n\n\tT gcd(T a,T b) {\n \t\t return b != 0 ? gcd(b, a % b) : a;\n\t}\n\n\t\
     T lcm(T a,T b) {\n  \t\treturn (a / gcd(a, b))*b;\n\t}\n\n\tlong getFactorial(T\
     \ n) { // n\u306E\u968E\u4E57\u306E\u5024\u3092\u6C42\u3081\u308B\u3002\n\t\t\
@@ -82,17 +82,17 @@ data:
     \u304B\u5224\u5B9A\n\t\tif (!primeflg) Eratosthenes(max(n,(T)100)); \n\t\treturn\
     \ prime_table[n];\n\t}\n\n\tvector<T> getPrimeList(T n = 100){ //n\u4EE5\u4E0B\
     \u306E\u7D20\u6570\u30EA\u30B9\u30C8\n\t\tif (!primeflg) Eratosthenes(n); \n\t\
-    \treturn (&prime_list);\n\t}\n\n\tlong getPrimeNumUnder_N(T n) { //n\u4EE5\u4E0B\
+    \treturn (prime_list);\n\t}\n\n\tlong getPrimeNumUnder_N(T n) { //n\u4EE5\u4E0B\
     \u306E\u7D20\u6570\u306E\u500B\u6570\u3002\n\t\tif (!primeflg) Eratosthenes(max(n,(T)100));\
     \ \n\t\treturn prime_num[n];\n\t}\n\n\tlong getPrimeNum_NM(T k,T m){  //k\u4EE5\
     \u4E0Am\u4EE5\u4E0B\u306E\u7D20\u6570\u306E\u500B\u6570\u3002(k\u306FN\u4EE5\u4E0B\
     \u306A\u3089ok)\n\t\tif (!primeflg) Eratosthenes(max(m,(T)100)); \n\t\treturn\
     \ prime_num[m] - prime_num[k];\n\t}\n\n\t//\u7D04\u6570\u500D\u6570\u95A2\u9023\
-    \n\tmap<T,long>* getFactoring(T n) { // \u7D20\u56E0\u6570\u5206\u89E3 key->\u56E0\
+    \n\tmap<T,long> getFactoring(T n) { // \u7D20\u56E0\u6570\u5206\u89E3 key->\u56E0\
     \u6570 val->\u56E0\u6570\u306E\u6570\n\t\tT copy_n = n;\n\t\tT maxiter = sqrt(n);\n\
     \t\tfor (T i = 2;i < maxiter+1;i ++) {\n\t\t\tif (copy_n == 1) break;\n\t\t\t\
     while (!(copy_n % i)) {\n\t\t\t\tif (IN(i,factoring)) factoring[i]++;\n\t\t\t\t\
-    else factoring[i] = 1;\n\t\t\t\tcopy_n /= i;\n\t\t\t}\n\t\t}\n\t\treturn (&factoring);\n\
+    else factoring[i] = 1;\n\t\t\t\tcopy_n /= i;\n\t\t\t}\n\t\t}\n\t\treturn (factoring);\n\
     \t}\n\n\tT gcd(T a,T b) {\n \t\t return b != 0 ? gcd(b, a % b) : a;\n\t}\n\n\t\
     T lcm(T a,T b) {\n  \t\treturn (a / gcd(a, b))*b;\n\t}\n\n\tlong getFactorial(T\
     \ n) { // n\u306E\u968E\u4E57\u306E\u5024\u3092\u6C42\u3081\u308B\u3002\n\t\t\
@@ -114,7 +114,7 @@ data:
   isVerificationFile: false
   path: Mathmatics/IntegerTheory.cpp
   requiredBy: []
-  timestamp: '2021-03-30 20:53:31+09:00'
+  timestamp: '2021-03-30 20:58:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - Test/AOJ/Exponentiation.test.cpp
