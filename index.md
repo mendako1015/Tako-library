@@ -49,6 +49,9 @@ data:
     - icon: ':warning:'
       path: "Mathmatics/n\u9032\u6CD5\u5909\u63DB.cpp"
       title: "Mathmatics/n\u9032\u6CD5\u5909\u63DB.cpp"
+    - icon: ':warning:'
+      path: Mathmatics/simple-IntegerTheory.cpp
+      title: Mathmatics/simple-IntegerTheory.cpp
   - name: String
     pages:
     - icon: ':warning:'
