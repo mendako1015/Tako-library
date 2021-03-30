@@ -54,7 +54,7 @@ public:
 		return prime_table[n];
 	}
 
-	vector<T>* getPrimeList(T n = 100){ //n以下の素数リスト
+	vector<T> getPrimeList(T n = 100){ //n以下の素数リスト
 		if (!primeflg) Eratosthenes(n); 
 		return (&prime_list);
 	}
