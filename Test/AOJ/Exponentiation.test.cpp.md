@@ -34,7 +34,7 @@ data:
     \ {\n\t\t\t\tprnum++;\n\t\t\t\tprime_list.push_back(i);\n\t\t\t}\n\t\t\tprime_num[i]\
     \ = prnum;\n\t\t}\n\t}\n\n\tbool isPrimeNum(T n) { //\u7D20\u6570\u304B\u3069\u3046\
     \u304B\u5224\u5B9A\n\t\tif (!primeflg) Eratosthenes(max(n,(T)100)); \n\t\treturn\
-    \ prime_table[n];\n\t}\n\n\tvector<T>* getPrimeList(T n = 100){ //n\u4EE5\u4E0B\
+    \ prime_table[n];\n\t}\n\n\tvector<T> getPrimeList(T n = 100){ //n\u4EE5\u4E0B\
     \u306E\u7D20\u6570\u30EA\u30B9\u30C8\n\t\tif (!primeflg) Eratosthenes(n); \n\t\
     \treturn (&prime_list);\n\t}\n\n\tlong getPrimeNumUnder_N(T n) { //n\u4EE5\u4E0B\
     \u306E\u7D20\u6570\u306E\u500B\u6570\u3002\n\t\tif (!primeflg) Eratosthenes(max(n,(T)100));\
@@ -76,7 +76,7 @@ data:
   isVerificationFile: true
   path: Test/AOJ/Exponentiation.test.cpp
   requiredBy: []
-  timestamp: '2021-03-26 10:48:43+09:00'
+  timestamp: '2021-03-30 20:53:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Test/AOJ/Exponentiation.test.cpp
