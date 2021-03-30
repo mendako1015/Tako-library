@@ -56,7 +56,7 @@ public:
 
 	vector<T> getPrimeList(T n = 100){ //n以下の素数リスト
 		if (!primeflg) Eratosthenes(n); 
-		return (&prime_list);
+		return (prime_list);
 	}
 
 	long getPrimeNumUnder_N(T n) { //n以下の素数の個数。
@@ -70,7 +70,7 @@ public:
 	}
 
 	//約数倍数関連
-	map<T,long>* getFactoring(T n) { // 素因数分解 key->因数 val->因数の数
+	map<T,long> getFactoring(T n) { // 素因数分解 key->因数 val->因数の数
 		T copy_n = n;
 		T maxiter = sqrt(n);
 		for (T i = 2;i < maxiter+1;i ++) {
@@ -81,7 +81,7 @@ public:
 				copy_n /= i;
 			}
 		}
-		return (&factoring);
+		return (factoring);
 	}
 
 	T gcd(T a,T b) {
