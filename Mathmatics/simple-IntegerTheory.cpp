@@ -7,10 +7,10 @@ int mod_pow(int A, int B, int mod = MOD) {
 	return C * C % mod;
 }
 
-void fact_init(int n, int mod = MOD) {
+void fact_init(int n) {
 	fact.resize(n);
-	fact[1] = 1;
-	for(int i = 2; i < n; i++) fact[i] = fact[i - 1] * i % mod;
+	fact[0] = 1;
+	for(int i = 1; i < n; i++) fact[i] = fact[i - 1] * i % MOD;
 }
 
 int comb(int n, int k, int mod = MOD) {
