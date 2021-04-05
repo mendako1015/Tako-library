@@ -55,6 +55,11 @@ data:
     - icon: ':warning:'
       path: Mathmatics/simple-IntegerTheory.cpp
       title: Mathmatics/simple-IntegerTheory.cpp
+  - name: Others
+    pages:
+    - icon: ':warning:'
+      path: Others/template.cpp
+      title: Others/template.cpp
   - name: String
     pages:
     - icon: ':warning:'
