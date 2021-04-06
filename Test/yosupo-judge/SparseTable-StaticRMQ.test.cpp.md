@@ -27,21 +27,21 @@ data:
     \ l, int r) {\n        int d = log2(r - l + 1);\n        return min(table[d][l],\
     \ table[d][r - (1 << d) + 1]);\n    }\n};\n#line 6 \"Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp\"\
     \ntypedef long long ll;\n\nint main() {\n\tint n, q;\n\tcin >> n >> q;\n\tvector<int>\
-    \ a(n);\n\tfor(int i = 0; i < n; i++) cin >> a[i];\n\tSparseTable<int> sp(a, [](int\
-    \ x, int y) { return min(x, y); });\n\twhile(q--) {\n\t\tint l, r;\n\t\tcin >>\
-    \ l >> r;\n\t\tcout << sp.query(l, r) << endl;\n\t}\n\treturn 0;\n}\n"
+    \ a(n);\n\tfor(int i = 0; i < n; i++) cin >> a[i];\n\tSparseTable<int> sp(a);\n\
+    \twhile(q--) {\n\t\tint l, r;\n\t\tcin >> l >> r;\n\t\tcout << sp.query(l, r)\
+    \ << endl;\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n#include \"../../DataStructure/SparseTable.cpp\"\
     \ntypedef long long ll;\n\nint main() {\n\tint n, q;\n\tcin >> n >> q;\n\tvector<int>\
-    \ a(n);\n\tfor(int i = 0; i < n; i++) cin >> a[i];\n\tSparseTable<int> sp(a, [](int\
-    \ x, int y) { return min(x, y); });\n\twhile(q--) {\n\t\tint l, r;\n\t\tcin >>\
-    \ l >> r;\n\t\tcout << sp.query(l, r) << endl;\n\t}\n\treturn 0;\n}"
+    \ a(n);\n\tfor(int i = 0; i < n; i++) cin >> a[i];\n\tSparseTable<int> sp(a);\n\
+    \twhile(q--) {\n\t\tint l, r;\n\t\tcin >> l >> r;\n\t\tcout << sp.query(l, r)\
+    \ << endl;\n\t}\n\treturn 0;\n}"
   dependsOn:
   - DataStructure/SparseTable.cpp
   isVerificationFile: true
   path: Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp
   requiredBy: []
-  timestamp: '2021-04-06 22:03:02+09:00'
+  timestamp: '2021-04-07 08:52:42+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp
