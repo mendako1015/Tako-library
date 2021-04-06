@@ -18,6 +18,7 @@ class SparseTable {
     }
 
     T query(int l, int r) {
+		l++;
         int d = log2(r - l + 1);
         return min(table[d][l], table[d][r - (1 << d) + 1]);
     }
