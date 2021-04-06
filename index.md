@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/SegmentTree.cpp
       title: DataStructure/SegmentTree.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: DataStructure/SparseTable.cpp
       title: DataStructure/SparseTable.cpp
     - icon: ':heavy_check_mark:'
@@ -130,7 +130,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
       title: Test/yosupo-judge/SegmentTree-StaticRangeSum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp
       title: Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp
     - icon: ':heavy_check_mark:'

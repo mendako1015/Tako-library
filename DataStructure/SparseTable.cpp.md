@@ -3,45 +3,40 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp
     title: Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"DataStructure/SparseTable.cpp\"\ntemplate<typename T>\n\
-    class SparseTable {\n\tvector<vector<T>> table;\n\tvector<int> lookup;\n\tfunction<T(T,\
-    \ T)> operation;\n\n\tpublic:\n\tSparseTable(const vector<T> &v, function<T(T,\
-    \ T)> ope): operation(ope) {\n\t\tint log_len = 0;\n\t\twhile((1 << log_len) <=\
-    \ v.size()) ++log_len;\n\t\ttable = vector<vector<T>>(log_len, vector<int>(1 <<\
-    \ log_len));\n\t\tlookup = vector<int>(v.size() + 1);\n\n\t\tfor(int i = 0; i\
-    \ < v.size(); i++) {\n\t\t\ttable[0][i] = v[i];\n\t\t}\n\t\tfor(int i = 1; i <\
-    \ log_len; i++) {\n\t\t\tfor(int j = 0; j + (1 << i) <= (1 << log_len); j++) {\n\
-    \t\t\t\ttable[i][j] = operation(table[i-1][j], table[i - 1][j + (1 << (i - 1))]);\n\
-    \t\t\t}\n\t\t}\n\t\tfor(int i = 2; i < lookup.size(); i++) {\n\t\t\tlookup[i]\
-    \ = lookup[i >> 1] + 1;\n\t\t}\n\t}\n\n\tinline T query(int l, int r) {\n\t\t\
-    int b = lookup[r - l];\n\t\treturn operation(table[b][l], table[b][r - (1 << b)]);\n\
-    \t}\n};\n"
-  code: "template<typename T>\nclass SparseTable {\n\tvector<vector<T>> table;\n\t\
-    vector<int> lookup;\n\tfunction<T(T, T)> operation;\n\n\tpublic:\n\tSparseTable(const\
-    \ vector<T> &v, function<T(T, T)> ope): operation(ope) {\n\t\tint log_len = 0;\n\
-    \t\twhile((1 << log_len) <= v.size()) ++log_len;\n\t\ttable = vector<vector<T>>(log_len,\
-    \ vector<int>(1 << log_len));\n\t\tlookup = vector<int>(v.size() + 1);\n\n\t\t\
-    for(int i = 0; i < v.size(); i++) {\n\t\t\ttable[0][i] = v[i];\n\t\t}\n\t\tfor(int\
-    \ i = 1; i < log_len; i++) {\n\t\t\tfor(int j = 0; j + (1 << i) <= (1 << log_len);\
-    \ j++) {\n\t\t\t\ttable[i][j] = operation(table[i-1][j], table[i - 1][j + (1 <<\
-    \ (i - 1))]);\n\t\t\t}\n\t\t}\n\t\tfor(int i = 2; i < lookup.size(); i++) {\n\t\
-    \t\tlookup[i] = lookup[i >> 1] + 1;\n\t\t}\n\t}\n\n\tinline T query(int l, int\
-    \ r) {\n\t\tint b = lookup[r - l];\n\t\treturn operation(table[b][l], table[b][r\
-    \ - (1 << b)]);\n\t}\n};"
+    class SparseTable {\n    vector<vector<T>> table;\n\n    public:\n    SparseTable(vector<T>\
+    \ &a) {\n        int len = a.size();\n        table = vector<vector<T>>(log2(len)\
+    \ + 1, vector<T>(len + 1));\n        for(int i = 0; i < len; i++) {\n        \
+    \    table[0][i + 1] = a[i];\n        }\n        // build\n        for(int j =\
+    \ 1; j < (int)(log2(len) + 1); j++) {\n            for(int i = 1; i + (1 << j)\
+    \ - 1 <= len; i++) {\n                table[j][i] = min(table[j - 1][i], table[j\
+    \ - 1][i + (1 << (j - 1))]);\n            }\n        }\n    }\n\n    T query(int\
+    \ l, int r) {\n        int d = log2(r - l + 1);\n        return min(table[d][l],\
+    \ table[d][r - (1 << d) + 1]);\n    }\n};\n"
+  code: "template<typename T>\nclass SparseTable {\n    vector<vector<T>> table;\n\
+    \n    public:\n    SparseTable(vector<T> &a) {\n        int len = a.size();\n\
+    \        table = vector<vector<T>>(log2(len) + 1, vector<T>(len + 1));\n     \
+    \   for(int i = 0; i < len; i++) {\n            table[0][i + 1] = a[i];\n    \
+    \    }\n        // build\n        for(int j = 1; j < (int)(log2(len) + 1); j++)\
+    \ {\n            for(int i = 1; i + (1 << j) - 1 <= len; i++) {\n            \
+    \    table[j][i] = min(table[j - 1][i], table[j - 1][i + (1 << (j - 1))]);\n \
+    \           }\n        }\n    }\n\n    T query(int l, int r) {\n        int d\
+    \ = log2(r - l + 1);\n        return min(table[d][l], table[d][r - (1 << d) +\
+    \ 1]);\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: DataStructure/SparseTable.cpp
   requiredBy: []
-  timestamp: '2021-01-02 00:55:12+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-04-06 22:03:02+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp
 documentation_of: DataStructure/SparseTable.cpp
