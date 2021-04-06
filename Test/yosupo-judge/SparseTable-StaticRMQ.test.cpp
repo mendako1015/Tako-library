@@ -10,7 +10,7 @@ int main() {
 	cin >> n >> q;
 	vector<int> a(n);
 	for(int i = 0; i < n; i++) cin >> a[i];
-	SparseTable<int> sp(a, [](int x, int y) { return min(x, y); });
+	SparseTable<int> sp(a);
 	while(q--) {
 		int l, r;
 		cin >> l >> r;
