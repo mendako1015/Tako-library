@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: DataStructure/SparseTable.cpp
     title: DataStructure/SparseTable.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
@@ -24,7 +24,7 @@ data:
     \ 1; j < (int)(log2(len) + 1); j++) {\n            for(int i = 1; i + (1 << j)\
     \ - 1 <= len; i++) {\n                table[j][i] = min(table[j - 1][i], table[j\
     \ - 1][i + (1 << (j - 1))]);\n            }\n        }\n    }\n\n    T query(int\
-    \ l, int r) {\n        int d = log2(r - l + 1);\n        return min(table[d][l],\
+    \ l, int r) {\n\t\tl++;\n        int d = log2(r - l + 1);\n        return min(table[d][l],\
     \ table[d][r - (1 << d) + 1]);\n    }\n};\n#line 6 \"Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp\"\
     \ntypedef long long ll;\n\nint main() {\n\tint n, q;\n\tcin >> n >> q;\n\tvector<int>\
     \ a(n);\n\tfor(int i = 0; i < n; i++) cin >> a[i];\n\tSparseTable<int> sp(a);\n\
@@ -41,8 +41,8 @@ data:
   isVerificationFile: true
   path: Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp
   requiredBy: []
-  timestamp: '2021-04-07 08:52:42+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-04-07 08:58:16+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Test/yosupo-judge/SparseTable-StaticRMQ.test.cpp
 layout: document
