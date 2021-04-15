@@ -6,6 +6,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/BinaryIndexedTree.cpp
       title: DataStructure/BinaryIndexedTree.cpp
+    - icon: ':warning:'
+      path: DataStructure/PartiallyPersistentUF.cpp
+      title: DataStructure/PartiallyPersistentUF.cpp
     - icon: ':heavy_check_mark:'
       path: DataStructure/SegmentTree.cpp
       title: DataStructure/SegmentTree.cpp
