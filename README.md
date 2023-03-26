@@ -4,6 +4,6 @@
 
 mendakoの競技プログラミング用ライブラリです.
 
-Twitter: [@mdk51kyopuro](https://twitter.com/mdk51kyopuro)  
+Twitter: [@MendakoCpp](https://twitter.com/MendakoCpp)  
 AtCoder: [Haru1000](https://atcoder.jp/users/mdk_51)  
 AOJ: [muscat1015](https://onlinejudge.u-aizu.ac.jp/status/users/muscat1015)
